@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\C_portfolio;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -13,29 +14,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('jasanyaView.home',[
-        "title"=>"home"
+    return view('jasanyaView.home', [
+        "title" => "home"
     ]);
 });
 
-Route::get('/about',function(){
-    return view('jasanyaView.about',[
-        "title"=>"about"
+Route::get('/about', function () {
+    return view('jasanyaView.about', [
+        "title" => "about"
     ]);
 });
 
-Route::get('/service',function(){
-    return view('jasanyaView.service',[
-        "title"=>"service"
+Route::get('/service', function () {
+    return view('jasanyaView.service', [
+        "title" => "service"
     ]);
 });
 
-Route::get('/project',function(){
-    return view('jasanyaView.project',[
-        "title"=>"project"
+Route::get('/project', function () {
+    return view('jasanyaView.project', [
+        "title" => "project"
     ]);
 });
 
 // Route::get('home',[pageController::class,'landingPageHome']);
 // Route::get('about',[pageController::class,'landingPageAbout']);
 
+
+// Porfolio Route
+Route::group(['prefix' => '/portfolio'], function () {
+    Route::get('/', [C_portfolio::class, 'index']);
+    Route::get('/{name}', [C_portfolio::class, 'show']);
+});
