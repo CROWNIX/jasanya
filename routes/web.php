@@ -18,24 +18,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about',function(){
-    return view('jasanyaView.about',[
-        "title"=>"about"
+Route::get('/team',function(){
+    return view('jasanyaView.team',[
+        "title"=>"team"
     ]);
 });
-
-Route::get('/service',function(){
-    return view('jasanyaView.service',[
-        "title"=>"service"
-    ]);
-});
-
-Route::get('/project',function(){
-    return view('jasanyaView.project',[
-        "title"=>"project"
-    ]);
-});
-
-// Route::get('home',[pageController::class,'landingPageHome']);
-// Route::get('about',[pageController::class,'landingPageAbout']);
 

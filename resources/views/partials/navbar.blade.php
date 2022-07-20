@@ -14,10 +14,10 @@
                         <a href="{{ url('/#about') }}" class="nav-item nav-link">About</a>
                         <a href="{{ url('/#service') }}" class="nav-item nav-link">Service</a>
                         <a href="{{ url('/#project') }}" class="nav-item nav-link">Project</a>
-                        <div class="nav-item dropdown">
+                        <div class="nav-item dropdown" id="drop">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="{{ url('/#team') }}" class="dropdown-item">Our Team</a>
+                                <a href="{{ url('/team') }}" class="dropdown-item">Our Team</a>
                                 <a href="{{ url('/#testimoni') }}" class="dropdown-item">Testimonial</a>
                                 <a href="404.html" class="dropdown-item">404 Page</a>
                             </div>
