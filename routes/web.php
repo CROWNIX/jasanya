@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\C_portfolio;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
