@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +13,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('jasanyaView.home',[
+        "title"=>"home"
+    ]);
 });
+
+Route::get('/about',function(){
+    return view('jasanyaView.about',[
+        "title"=>"about"
+    ]);
+});
+
+Route::get('/service',function(){
+    return view('jasanyaView.service',[
+        "title"=>"service"
+    ]);
+});
+
+Route::get('/project',function(){
+    return view('jasanyaView.project',[
+        "title"=>"project"
+    ]);
+});
+
+// Route::get('home',[pageController::class,'landingPageHome']);
+// Route::get('about',[pageController::class,'landingPageAbout']);
+
