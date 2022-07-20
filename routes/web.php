@@ -19,6 +19,11 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/team',function(){
+    return view('jasanyaView.team',[
+        "title"=>"team"
+    ]);
+});
 // Porfolio Route
 Route::group(['prefix' => '/portfolio'], function () {
     Route::get('/', [C_portfolio::class, 'index']);
