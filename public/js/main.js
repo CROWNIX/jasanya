@@ -88,10 +88,13 @@
 
     const typed = new Typed(".auto-type", {
         strings: [
-            "Design UI / UX and Application",
-            "Frontend web and Application",
-            "Backend web and Application",
-            "Fullstack web and Application",
+            "Bikin Website",
+            "Bikin Aplikasi",
+            "Bikin REST API",
+            "Design UI / UX",
+            "Frontend",
+            "Backend",
+            "Full Stack",
         ],
         typeSpeed: 60,
         backSpeed: 40,

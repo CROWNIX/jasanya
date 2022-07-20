@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('jasanyaView.home',[
-        "title"=>"home"
+    return view('jasanyaView.home', [
+        "title" => "home"
     ]);
+});
+
+// Porfolio Route
+Route::group(['prefix' => '/portfolio'], function () {
+    Route::get('/', [C_portfolio::class, 'index']);
+    Route::get('/{name}', [C_portfolio::class, 'show']);
 });
