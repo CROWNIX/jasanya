@@ -24,10 +24,11 @@
                         </div>
                         <a href="{{ url('./#contact') }}" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
                 </div>
-            </nav>
-
-            
+                <a href="{{ url('./#contact') }}" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
         </div>
-        <!-- Navbar & Hero End -->
+    </nav>
+</div>
+<!-- Navbar & Hero End -->
