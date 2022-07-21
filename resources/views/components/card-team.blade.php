@@ -6,10 +6,10 @@
             <span>{{ $job }}</span>
         </div>
         <div class="d-flex justify-content-center p-4">
-            <a class="btn btn-square mx-1" href="{{ $linkGithub }}"><i class="fab fa-github"></i></a>
-            <a class="btn btn-square mx-1" href="{{ $linkIg }}"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-square mx-1" href="{{ $linkLingkedin }}"><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-square mx-1" href="{{ $linkFb }}"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-square mx-1 bg-dark" href="{{ $linkGithub }}"><i class="fab fa-github text-white"></i></a>
+            <a class="btn btn-square mx-1 ig-icon" href="{{ $linkIg }}"><i class="fab fa-instagram text-white"></i></a>
+            <a class="btn btn-square mx-1 bg-info" href="{{ $linkLingkedin }}"><i class="fab fa-linkedin-in text-white"></i></a>
+            <a class="btn btn-square mx-1 bg-primary" href="{{ $linkFb }}"><i class="fab fa-facebook-f text-white"></i></a>
         </div>
     </div>
 </div>

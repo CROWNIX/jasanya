@@ -207,8 +207,11 @@ h6,
 .hero-header {
     margin-bottom: 3rem;
     padding: 12rem 0;
-    background: url(../img/blob-top-left.png), url(../img/blob-top-right.png), url(../img/blob-bottom-left.png), url(../img/blob-bottom-right.png), url(../img/blob-center.png), url(../img/bg-bottom.png);
-    background-position: left 0px top 0px, right 0px top 0px, left 0px bottom 0px, right 0px bottom 0px, center center, center bottom;
+    background: url(../img/blob-top-left.png), url(../img/blob-top-right.png),
+        url(../img/blob-bottom-left.png), url(../img/blob-bottom-right.png),
+        url(../img/blob-center.png), url(../img/bg-bottom.png);
+    background-position: left 0px top 0px, right 0px top 0px,
+        left 0px bottom 0px, right 0px bottom 0px, center center, center bottom;
     background-repeat: no-repeat;
 }
 
@@ -299,8 +302,11 @@ h6,
 /*** Fact ***/
 .fact {
     margin: 6rem 0;
-    background: url(../img/blob-top-left.png), url(../img/blob-top-right.png), url(../img/blob-bottom-left.png), url(../img/blob-bottom-right.png), url(../img/blob-center.png);
-    background-position: left 0px top 0px, right 0px top 0px, left 0px bottom 0px, right 0px bottom 0px, center center;
+    background: url(../img/blob-top-left.png), url(../img/blob-top-right.png),
+        url(../img/blob-bottom-left.png), url(../img/blob-bottom-right.png),
+        url(../img/blob-center.png);
+    background-position: left 0px top 0px, right 0px top 0px,
+        left 0px bottom 0px, right 0px bottom 0px, center center;
     background-repeat: no-repeat;
 }
 
@@ -414,8 +420,11 @@ h6,
 /*** Newsletter ***/
 .newsletter {
     margin: 6rem 0;
-    background: url(../img/blob-top-left.png), url(../img/blob-top-right.png), url(../img/blob-bottom-left.png), url(../img/blob-bottom-right.png), url(../img/blob-center.png);
-    background-position: left 0px top 0px, right 0px top 0px, left 0px bottom 0px, right 0px bottom 0px, center center;
+    background: url(../img/blob-top-left.png), url(../img/blob-top-right.png),
+        url(../img/blob-bottom-left.png), url(../img/blob-bottom-right.png),
+        url(../img/blob-center.png);
+    background-position: left 0px top 0px, right 0px top 0px,
+        left 0px bottom 0px, right 0px bottom 0px, center center;
     background-repeat: no-repeat;
 }
 
@@ -540,5 +549,21 @@ h6,
 }
 
 .hover-scale-1:hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
+}
+
+.hover-scale-1 {
+    transition: 0.5s;
+}
+
+.ig-icon {
+    background: radial-gradient(
+        circle at 33% 100%,
+        #fed373 4%,
+        #f15245 30%,
+        #d92e7f 62%,
+        #9b36b7 85%,
+        #515ecf
+    ) !important;
+    /* background-color: red !important; */
 }
