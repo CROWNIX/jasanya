@@ -67,7 +67,7 @@
                 </x-card-team>
                 <x-card-team>
                     @slot('foto')
-                    /digitalTemplate/img/team-1.jpg
+                    /img/imgTeam/bangRidwan.jpeg
                     @endslot
                     @slot('nama')
                     Muhammad Ridwan
@@ -76,7 +76,7 @@
                     UI/UX Design
                     @endslot
                     @slot('linkIg')
-                    '/digitalTemplate/img/team-1.jpg',
+                    https://www.instagram.com/muhammadridwan_king11
                     @endslot
                     @slot('linkFb')
                     '/digitalTemplate/img/team-1.jpg',
@@ -141,7 +141,7 @@
 
                 <x-card-team>
                     @slot('foto')
-                    /digitalTemplate/img/team-1.jpg
+                    /img/imgTeam/bangSarul.jpg
                     @endslot
                     @slot('nama')
                     M.Syahrul Saefulah
@@ -150,48 +150,22 @@
                     Full Stack
                     @endslot
                     @slot('linkIg')
-                    '/digitalTemplate/img/team-1.jpg',
+                    https://www.instagram.com/SyahrulSaef
                     @endslot
                     @slot('linkFb')
                     '/digitalTemplate/img/team-1.jpg',
                     @endslot
                     @slot('linkGithub')
-                    '/digitalTemplate/img/team-1.jpg',
+                    https://github.com/sahrulprograming/
                     @endslot
                     @slot('linkLingkedin')
                     '/digitalTemplate/img/team-1.jpg',
                     @endslot
 
                 </x-card-team>
-
                 <x-card-team>
                     @slot('foto')
-                    /digitalTemplate/img/team-1.jpg
-                    @endslot
-                    @slot('nama')
-                    Dede Maulana
-                    @endslot
-                    @slot('job')
-                    Front End & UI/UX
-                    @endslot
-                    @slot('linkIg')
-                    '/digitalTemplate/img/team-1.jpg',
-                    @endslot
-                    @slot('linkFb')
-                    '/digitalTemplate/img/team-1.jpg',
-                    @endslot
-                    @slot('linkGithub')
-                    '/digitalTemplate/img/team-1.jpg',
-                    @endslot
-                    @slot('linkLingkedin')
-                    '/digitalTemplate/img/team-1.jpg',
-                    @endslot
-
-                </x-card-team>
-
-                <x-card-team>
-                    @slot('foto')
-                    /digitalTemplate/img/team-1.jpg
+                    /img/imgTeam/rama.jpeg
                     @endslot
                     @slot('nama')
                     Syaiban Ahmad Ramadhan
@@ -207,6 +181,30 @@
                     @endslot
                     @slot('linkGithub')
                     https://github.com/SyaibanAhmadRamadhan/
+                    @endslot
+                    @slot('linkLingkedin')
+                    '/digitalTemplate/img/team-1.jpg',
+                    @endslot
+
+                </x-card-team>
+                <x-card-team>
+                    @slot('foto')
+                    /digitalTemplate/img/team-1.jpg
+                    @endslot
+                    @slot('nama')
+                    Dede Maulana
+                    @endslot
+                    @slot('job')
+                    Front End & UI/UX
+                    @endslot
+                    @slot('linkIg')
+                    https://www.instagram.com/maullana_d19
+                    @endslot
+                    @slot('linkFb')
+                    '/digitalTemplate/img/team-1.jpg',
+                    @endslot
+                    @slot('linkGithub')
+                    https://github.com/maullana19/
                     @endslot
                     @slot('linkLingkedin')
                     '/digitalTemplate/img/team-1.jpg',

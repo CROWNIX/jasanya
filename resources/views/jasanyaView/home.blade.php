@@ -41,7 +41,7 @@
 <!-- Navbar & Hero End -->
 
 
-{{--
+
 <!-- Feature Start -->
 <div class="container-xxl">
     <div class="container py-5 px-lg-5">
@@ -73,7 +73,7 @@
         </div>
     </div>
 </div>
-<!-- Feature End --> --}}
+<!-- Feature End -->
 
 
 <!-- About Start -->
@@ -127,7 +127,7 @@
 <!-- About End -->
 
 
-{{--
+
 <!-- Facts Start -->
 <div class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5 px-lg-5">
@@ -155,7 +155,7 @@
         </div>
     </div>
 </div>
-<!-- Facts End --> --}}
+<!-- Facts End -->
 
 
 <!-- Service Start -->
@@ -222,7 +222,7 @@
 <!-- Service End -->
 
 
-{{--
+
 <!-- Newsletter Start -->
 <div class="container-xxl bg-primary newsletter wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5 px-lg-5">
@@ -242,7 +242,7 @@
         </div>
     </div>
 </div>
-<!-- Newsletter End --> --}}
+<!-- Newsletter End -->
 
 
 <!-- Projects Start -->
