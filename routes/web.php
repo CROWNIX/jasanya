@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\C_portfolio;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('jasanyaView.home', [
+        "title" => "home"
+    ]);
+});
+
+Route::get('/team',function(){
+    return view('jasanyaView.team',[
+        "title"=>"team"
+    ]);
+});
+// Porfolio Route
+Route::group(['prefix' => '/portfolio'], function () {
+    Route::get('/', [C_portfolio::class, 'index']);
+    Route::get('/{name}', [C_portfolio::class, 'show']);
 });
