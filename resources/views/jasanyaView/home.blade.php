@@ -17,7 +17,7 @@
     <div class="container-xxl bg-primary hero-header">
         <div class="container px-lg-5" id="home">
             <div class="row g-5 align-items-end">
-                <div class="col-lg-6 text-center text-lg-start">
+                <div class="col-lg-7 text-center text-lg-start">
                     <h1 class="text-white mb-4 animated slideInDown">Jasa <span class="auto-type text-warning"></span>
                     </h1>
                     <p class="text-white pb-3 animated slideInDown">Penyedia jasa pembuatan Website, aplikasi mobile,
@@ -31,8 +31,9 @@
                     <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
                         Us</a>
                 </div>
-                <div class="col-lg-6 text-center text-lg-start">
-                    <img class="img-fluid animated zoomIn" src="/img/hero.png" alt="">
+                <div class="col-lg-5 text-center text-lg-end">
+                    <img class="img-fluid animated zoomIn" src="/img/image-removebg-preview.png" alt=""
+                        style=" width:330px">
                 </div>
             </div>
         </div>
@@ -49,25 +50,25 @@
             <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="feature-item bg-light rounded text-center p-4">
                     <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                    <h5 class="mb-3">Digital Marketing</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
-                        diam sed stet lorem.</p>
+                    <h5 class="mb-3">API</h5>
+                    <p class="m-0">Application Programming Interface, cara berinteraksi secara terprogram dengan
+                        komponen perangkat lunak</p>
                 </div>
             </div>
             <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="feature-item bg-light rounded text-center p-4">
                     <i class="fa fa-3x fa-search text-primary mb-4"></i>
-                    <h5 class="mb-3">SEO & Backlinks</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
-                        diam sed stet lorem.</p>
+                    <h5 class="mb-3">Aplikasi Mobile</h5>
+                    <p class="m-0">Aplikasi mobile (Mobile Apps) yaitu aplikasi yang dibuat untuk perangkat-perangkat
+                        bergerak (Mobile)</p>
                 </div>
             </div>
             <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="feature-item bg-light rounded text-center p-4">
                     <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                    <h5 class="mb-3">Design & Development</h5>
-                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
-                        diam sed stet lorem.</p>
+                    <h5 class="mb-3">UI / UX</h5>
+                    <p class="m-0">Desain Antarmuka Pengguna, adalah desain yang berfokus pada pengalaman
+                        pengguna dan interaksi</p>
                 </div>
             </div>
         </div>
@@ -82,13 +83,15 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary">About Us<span></span></p>
-                <h1 class="mb-5">#1 Digital solution with 10 years of experience</h1>
-                <p class="mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita
-                    erat ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo eirmod magna dolore
-                    erat amet</p>
+                <h1 class="mb-5">Jasanya Company</h1>
+                <p class="mb-4">Di era 2022 ini, kita tidak akan asing apa itu tekhnologi, baik dalam bidang website,
+                    aplikasi android, maupun, aplikasi desktop. Jasanya Company ini menyediakan jasa, untuk yang
+                    berkeinginan membuat aplikasi, baik dari segi backend maupun frontend. Terkhususnya untuk Website
+                    dan Aplikasi Android(mobil)
+                </p>
                 <div class="skill mb-4">
                     <div class="d-flex justify-content-between">
-                        <p class="mb-2">Digital Marketing</p>
+                        <p class="mb-2">Fullstack</p>
                         <p class="mb-2">85%</p>
                     </div>
                     <div class="progress">
@@ -98,7 +101,7 @@
                 </div>
                 <div class="skill mb-4">
                     <div class="d-flex justify-content-between">
-                        <p class="mb-2">SEO & Backlinks</p>
+                        <p class="mb-2">Backend / frontend</p>
                         <p class="mb-2">90%</p>
                     </div>
                     <div class="progress">
@@ -108,7 +111,7 @@
                 </div>
                 <div class="skill mb-4">
                     <div class="d-flex justify-content-between">
-                        <p class="mb-2">Design & Development</p>
+                        <p class="mb-2">UI / UX</p>
                         <p class="mb-2">95%</p>
                     </div>
                     <div class="progress">
@@ -116,7 +119,7 @@
                             aria-valuemax="100"></div>
                     </div>
                 </div>
-                <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a>
+                {{-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a> --}}
             </div>
             <div class="col-lg-6">
                 <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="/img/about.png">
@@ -134,22 +137,22 @@
         <div class="row g-4">
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                 <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">1000</h1>
                 <p class="text-white mb-0">Years Experience</p>
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                 <i class="fa fa-users-cog fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">7</h1>
                 <p class="text-white mb-0">Team Members</p>
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                 <i class="fa fa-users fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">1000</h1>
                 <p class="text-white mb-0">Satisfied Clients</p>
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                 <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">1000</h1>
                 <p class="text-white mb-0">Compleate Projects</p>
             </div>
         </div>
@@ -184,10 +187,10 @@
                     <div class="service-icon flex-shrink-0">
                         <i class="fa fa-laptop-code fa-2x"></i>
                     </div>
-                    <h5 class="mb-3">Web Design</h5>
-                    <p class="m-0">jasa pembuatan desaign website</p>
+                    <h5 class="mb-3">UI / UX</h5>
+                    <p class="m-0">jasa pembuatan UI / UX</p>
                     <a class="btn btn-square"
-                        href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20desaign%20website"
+                        href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%UI%20/%20UX"
                         target="blank"><i class="fa fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -424,10 +427,10 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="wow fadeInUp" data-wow-delay="0.3s">
-                    <p class="text-center mb-4">The contact form is currently inactive. Get a functional and
+                    {{-- <p class="text-center mb-4">The contact form is currently inactive. Get a functional and
                         working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a
                         little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.
-                    </p>
+                    </p> --}}
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">

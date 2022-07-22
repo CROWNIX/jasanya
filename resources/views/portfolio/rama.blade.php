@@ -1,1 +1,1 @@
-<h1>Porfolio {{ $nama_lengkap }}</h1>
+<h1>Porfolio {{ $SyaibanAhmadRamadhan }}</h1>
