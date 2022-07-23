@@ -23,6 +23,31 @@ Route::get('/team',function(){
         "title"=>"team"
     ]);
 });
+
+Route::get('/admin',function(){
+    return view('adminView.home',[
+        "title"=>"admin"
+    ]);
+});
+
+Route::get('/icon',function(){
+    return view('adminView.iconMdi',[
+        "title"=>"icon"
+    ]);
+});
+
+Route::get('/formElement',function(){
+    return view('adminView.formElement',[
+        "title"=>"form"
+    ]);
+});
+
+Route::get('/tables',function(){
+    return view('adminView.tables',[
+        "title"=>"form"
+    ]);
+});
+
 // Porfolio Route
 Route::group(['prefix' => '/portfolio'], function () {
     Route::get('/', [C_portfolio::class, 'index']);
