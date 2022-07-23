@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\C_portfolio;
+use App\Http\Controllers\C_home;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -12,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix' => '/'], function () {
+    Route::get('/', [C_home::class, 'index']);
+    Route::post('/kritikSaran', [C_home::class, 'kritikSaran']);
+});
 
-Route::get('/', function () {
-    return view('jasanyaView.home', [
-        "title" => "home"
-    ]);
+Route::get('/token', function () {
+    return csrf_token(); 
 });
 
 Route::get('/team',function(){
