@@ -10,7 +10,6 @@
 </div>
 <!-- Spinner End -->
 
-
 <!-- Navbar & Hero Start -->
 <div class="container-xxl position-relative p-0">
     @include('partials.navbar')
@@ -27,8 +26,8 @@
                     </p>
                     <a href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya" target="_blank"
                         class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">
-                        <span class="fa-whatsapp-square"></span>Hubungi Kami</a>
-                    <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
+                        <i class="fa fa-phone-alt"></i> Hubungi Kami</a>
+                    <a href="#contact" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
                         Us</a>
                 </div>
                 <div class="col-lg-5 text-center text-lg-end">
@@ -41,15 +40,13 @@
 </div>
 <!-- Navbar & Hero End -->
 
-
-
 <!-- Feature Start -->
 <div class="container-xxl">
     <div class="container py-5 px-lg-5">
         <div class="row g-4">
             <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="feature-item bg-light rounded text-center p-4">
-                    <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
+                    <i class="fa fa-3x fa-server text-primary mb-4"></i>
                     <h5 class="mb-3">API</h5>
                     <p class="m-0">Application Programming Interface, cara berinteraksi secara terprogram dengan
                         komponen perangkat lunak</p>
@@ -57,7 +54,7 @@
             </div>
             <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="feature-item bg-light rounded text-center p-4">
-                    <i class="fa fa-3x fa-search text-primary mb-4"></i>
+                    <i class="fa fa-3x fa-mobile text-primary mb-4"></i>
                     <h5 class="mb-3">Aplikasi Mobile</h5>
                     <p class="m-0">Aplikasi mobile (Mobile Apps) yaitu aplikasi yang dibuat untuk perangkat-perangkat
                         bergerak (Mobile)</p>
@@ -76,14 +73,13 @@
 </div>
 <!-- Feature End -->
 
-
 <!-- About Start -->
 <div class="container-xxl py-5" id="about">
     <div class="container py-5 px-lg-5">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <p class="section-title text-secondary">About Us<span></span></p>
-                <h1 class="mb-5">Jasanya Company</h1>
+                {{-- <p class="section-title text-secondary">About Us<span></span></p> --}}
+                <h1 class="mb-5">Jasanya.Tech</h1>
                 <p class="mb-4">Di era 2022 ini, kita tidak akan asing apa itu tekhnologi, baik dalam bidang website,
                     aplikasi android, maupun, aplikasi desktop. Jasanya Company ini menyediakan jasa, untuk yang
                     berkeinginan membuat aplikasi, baik dari segi backend maupun frontend. Terkhususnya untuk Website
@@ -122,14 +118,12 @@
                 {{-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a> --}}
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="/img/about.png">
+                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="/img/logo/4.png">
             </div>
         </div>
     </div>
 </div>
 <!-- About End -->
-
-
 
 <!-- Facts Start -->
 <div class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -137,8 +131,8 @@
         <div class="row g-4">
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                 <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1000</h1>
-                <p class="text-white mb-0">Years Experience</p>
+                <h1 class="text-white mb-2" data-toggle="counter-up">{{ $hari }}</h1>
+                <p class="text-white mb-0">Days Experience</p>
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                 <i class="fa fa-users-cog fa-3x text-secondary mb-3"></i>
@@ -147,19 +141,18 @@
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                 <i class="fa fa-users fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1000</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
                 <p class="text-white mb-0">Satisfied Clients</p>
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                 <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1000</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
                 <p class="text-white mb-0">Compleate Projects</p>
             </div>
         </div>
     </div>
 </div>
 <!-- Facts End -->
-
 
 <!-- Service Start -->
 <div class="container-xxl" id="service">
@@ -173,13 +166,13 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0 ">
-                        <i class="fa fa-search fa-2x"></i>
+                        <i class="fa fa-laptop fa-2x"></i>
                     </div>
                     <h5 class="mb-3">Website</h5>
-                    <p class="m-0">jasa pembuatan website</p>
+                    <p class="m-0">Penyedia Jasa website</p>
                     <a class="btn btn-square"
                         href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20website"
-                        target="blank"><i class="fa fa-arrow-right"></i></a>
+                        target="blank"><i class="fa fa-phone-alt"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -188,34 +181,34 @@
                         <i class="fa fa-laptop-code fa-2x"></i>
                     </div>
                     <h5 class="mb-3">UI / UX</h5>
-                    <p class="m-0">jasa pembuatan UI / UX</p>
+                    <p class="m-0">Penyedia Jasa UI / UX</p>
                     <a class="btn btn-square"
                         href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%UI%20/%20UX"
-                        target="blank"><i class="fa fa-arrow-right"></i></a>
+                        target="blank"><i class="fa fa-phone-alt"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
-                        <i class="fab fa-facebook-f fa-2x"></i>
+                        <i class="fa fa-mobile fa-2x"></i>
                     </div>
                     <h5 class="mb-3">Aplikasi Mobile</h5>
-                    <p class="m-0">jasa pembuatan aplikasi mobile</p>
+                    <p class="m-0">Penyedia Jasa aplikasi mobile</p>
                     <a class="btn btn-square"
                         href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20aplikasi%20mobile"
-                        target="blank"><i class="fa fa-arrow-right"></i></a>
+                        target="blank"><i class="fa fa-phone-alt"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item d-flex flex-column text-center rounded">
                     <div class="service-icon flex-shrink-0">
-                        <i class="fa fa-mail-bulk fa-2x"></i>
+                        <i class="fa fa-server fa-2x"></i>
                     </div>
                     <h5 class="mb-3">API</h5>
-                    <p class="m-0">jasa pembuatan API</p>
+                    <p class="m-0">Penyedia Jasa API</p>
                     <a class="btn btn-square"
                         href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20API"
-                        target="blank"><i class="fa fa-arrow-right"></i></a>
+                        target="blank"><i class="fa fa-phone-alt"></i></a>
                 </div>
             </div>
         </div>
@@ -224,97 +217,81 @@
 </div>
 <!-- Service End -->
 
-
-
-<!-- Newsletter Start -->
-<div class="container-xxl bg-primary newsletter wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5 px-lg-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-7 text-center">
-                <p class="section-title text-white justify-content-center"><span></span>Newsletter<span></span></p>
-                <h1 class="text-center text-white mb-4">Stay Always In Touch</h1>
-                <p class="text-white mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                    Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo</p>
-                <div class="position-relative w-100 mt-3">
-                    <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
-                        placeholder="Enter Your Email" style="height: 48px;">
-                    <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
-                            class="fa fa-paper-plane text-primary fs-4"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Newsletter End -->
-
-
 <!-- Projects Start -->
 <div class="container-xxl py-5" id="project">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
-            <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span>
-            </p>
-            <h1 class="text-center mb-5">Recently Completed Projects</h1>
+            {{-- <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span>
+            </p> --}}
+            <h1 class="text-center mb-5">Project Yang Kami Buat</h1>
         </div>
         <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
             <div class="col-12 text-center">
                 <ul class="list-inline mb-5" id="portfolio-flters">
                     <li class="mx-2 active" data-filter="*">All</li>
-                    <li class="mx-2" data-filter=".first">Web Design</li>
-                    <li class="mx-2" data-filter=".second">Graphic Design</li>
+                    <li class="mx-2" data-filter=".mobile">Aplikasi Mobile</li>
+                    <li class="mx-2" data-filter=".website">Website</li>
+                    <li class="mx-2" data-filter=".api">Api</li>
+                    <li class="mx-2" data-filter=".ui">UI / UX</li>
                 </ul>
             </div>
         </div>
         <div class="row g-4 portfolio-container pb-5">
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 portfolio-item mobile wow fadeInUp" data-wow-delay="0.1s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/portfolio-1.jpg" alt="">
+                        <img class="img-fluid w-100" src="/img/imgProject/aplikasiMobile.png" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/portfolio-1.jpg"
+                            <a class="btn btn-square btn-outline-light mx-1" href="/img/imgProject/aplikasiMobile.png"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                     <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
+                        <a href="https://dart.dev/" target="blank">
+                            <p class="text-primary fw-medium mb-2">Aplikasi Mobile Dart-Flutter</p>
+                        </a>
+                        <h5 class="lh-base mb-0">Pembuatan Aplikasi Mobile Dart Flutter</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-4 col-md-6 portfolio-item api wow fadeInUp" data-wow-delay="0.3s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1 ">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/portfolio-2.jpg" alt="">
+                        <img class="img-fluid w-100" src="/img/imgProject/api.png" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/portfolio-2.jpg"
+                            <a class="btn btn-square btn-outline-light mx-1" href="/img/imgProject/api.png"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                     <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
+                        <a href="https://lumen.laravel.com/docs/9.x" target="blank">
+                            <p class="text-primary fw-medium mb-2">Api laravel-lumen</p>
+                        </a>
+                        <h5 class="lh-base mb-0">Pembuatan Api Menggunakan laravel lumen</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.5s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/portfolio-3.jpg" alt="">
+                        <img class="img-fluid w-100" src="/img/imgProject/phpNative.png" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/portfolio-3.jpg"
+                            <a class="btn btn-square btn-outline-light mx-1" href="/img/imgProject/phpNative.png"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                     <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
+                        <a href="https://www.php.net/" target="blank">
+                            <p class="text-primary fw-medium mb-2">Website PHP native</p>
+                        </a>
+                        <h5 class="lh-base mb-0">pembuatan website dengan php-native
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.1s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="/img/portfolio-4.jpg" alt="">
@@ -330,7 +307,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.3s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="/img/portfolio-5.jpg" alt="">
@@ -346,7 +323,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.5s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="/img/portfolio-6.jpg" alt="">
@@ -371,7 +348,8 @@
 <!-- Testimonial Start -->
 <div class="container-xxl pt-5 wow fadeInUp" data-wow-delay="0.1s" id="testimoni">
     <div class="container py-5 px-lg-5">
-        <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
+        {{-- <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
+        --}}
         <h1 class="text-center mb-5">What Say Our Clients!</h1>
         <div class="owl-carousel testimonial-carousel">
             <div class="testimonial-item bg-light rounded my-4">
@@ -417,12 +395,14 @@
     </div>
 </div>
 <!-- Testimonial End -->
+
 <!-- Contact Start -->
 <div class="container-xxl" id="contact">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
-            <p class="section-title text-secondary justify-content-center"><span></span>Contact Us<span></span></p>
-            <h1 class="text-center mb-5">Contact For Any Query</h1>
+            {{-- <p class="section-title text-secondary justify-content-center"><span></span>Contact Us<span></span></p>
+            --}}
+            <h1 class="text-center mb-5">Kritik Dan Saran</h1>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-7">
@@ -431,30 +411,35 @@
                         working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a
                         little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.
                     </p> --}}
-                    <form>
+                    <form method="POST" action="{{ url('/kritikSaran') }}">
+                        @csrf
+                        @include('sweetalert::alert')
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" name="name" id="name"
+                                        placeholder="Your Name">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Your Email">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" name="subject" id="subject"
+                                        placeholder="Subject">
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                        style="height: 150px"></textarea>
+                                    <textarea class="form-control" name="message" placeholder="Leave a message here"
+                                        id="message" style="height: 150px"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>

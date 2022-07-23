@@ -2,7 +2,7 @@
     <div class="container py-5 px-lg-5">
         <div class="row g-5">
             <div class="col-md-6 col-lg-3">
-                <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                <p class="section-title text-white h5 mb-4">Address</p>
                 <p><i class="fa fa-map-marker-alt me-3"></i>Bina Sarana Informatika</p>
                 <p><i class="fa fa-phone-alt me-3"></i>+62 812-9085-3613</p>
                 <p><i class="fa fa-envelope me-3"></i>syahrul@gmail.com</p>
@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
-                <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                <p class="section-title text-white h5 mb-4">Quick Link</p>
                 <a class="btn btn-link" href=" {{ url('/#home') }} ">Home</a>
                 <a class="btn btn-link" href=" {{ url('/#about') }} ">About Us</a>
                 <a class="btn btn-link" href=" {{ url('/#service') }} ">Service</a>
@@ -24,7 +24,7 @@
                 {{-- <a class="btn btn-link" href="">Career</a> --}}
             </div>
             <div class="col-md-6 col-lg-3">
-                <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
+                <p class="section-title text-white h5 mb-4">Gallery</p>
                 <div class="row g-2">
                     <div class="col-4">
                         <img class="img-fluid" src="/digitalTemplate/img/portfolio-1.jpg" alt="Image">
@@ -47,15 +47,14 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
-                <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
-                <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu
-                </p>
-                <div class="position-relative w-100 mt-3">
-                    <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
-                        placeholder="Your Email" style="height: 48px;">
-                    <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
-                            class="fa fa-paper-plane text-primary fs-4"></i></button>
-                </div>
+                <p class="section-title text-white h5 mb-4">Jasanya.Tech Team</p>
+                <p>M.Syahrul Saefulah</p>
+                <p>Dede Maulana</p>
+                <p>Syaiban Ahmad Ramadhan</p>
+                <p>Yesicha Audria</p>
+                <p>Atikah Rahmawati</p>
+                <p>Muhammad Ridwan</p>
+                <p>Fauzi Widianto</p>
             </div>
         </div>
     </div>

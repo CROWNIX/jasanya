@@ -18,7 +18,7 @@
             <div class="container my-5 py-5 px-lg-5">
                 <div class="row g-5 py-5">
                     <div class="col-12 text-center">
-                        <h1 class="text-white animated slideInDown">Our Team</h1>
+                        <h1 class="text-white animated slideInDown">Jasanya.Tech Team</h1>
                         <hr class="bg-white mx-auto mt-0" style="width: 90px;">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
@@ -52,16 +52,16 @@
                     Backend
                     @endslot
                     @slot('linkIg')
-                    '/digitalTemplate/img/team-1.jpg',
+                    https://www.instagram.com/fri3nds_715
                     @endslot
                     @slot('linkFb')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkGithub')
-                    '/digitalTemplate/img/team-1.jpg',
+                    https://github.com/CROWNIX/
                     @endslot
                     @slot('linkLingkedin')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
 
                 </x-card-team>
@@ -79,13 +79,13 @@
                     https://www.instagram.com/muhammadridwan_king11
                     @endslot
                     @slot('linkFb')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkGithub')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkLingkedin')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                 </x-card-team>
 
@@ -100,16 +100,16 @@
                     UI/UX Design
                     @endslot
                     @slot('linkIg')
-                    '/digitalTemplate/img/team-1.jpg',
+                    https://www.instagram.com/atikahrahma26
                     @endslot
                     @slot('linkFb')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkGithub')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkLingkedin')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
 
                 </x-card-team>
@@ -125,16 +125,16 @@
                     UI/UX Design
                     @endslot
                     @slot('linkIg')
-                    '/digitalTemplate/img/team-1.jpg',
+                    https://www.instagram.com/audriayesicha12
                     @endslot
                     @slot('linkFb')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkGithub')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkLingkedin')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
 
                 </x-card-team>
@@ -153,13 +153,13 @@
                     https://www.instagram.com/SyahrulSaef
                     @endslot
                     @slot('linkFb')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkGithub')
                     https://github.com/sahrulprograming/
                     @endslot
                     @slot('linkLingkedin')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
 
                 </x-card-team>
@@ -177,13 +177,13 @@
                     https://www.instagram.com/ibanrmaa
                     @endslot
                     @slot('linkFb')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkGithub')
                     https://github.com/SyaibanAhmadRamadhan/
                     @endslot
                     @slot('linkLingkedin')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
 
                 </x-card-team>
@@ -201,13 +201,13 @@
                     https://www.instagram.com/maullana_d19
                     @endslot
                     @slot('linkFb')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
                     @slot('linkGithub')
                     https://github.com/maullana19/
                     @endslot
                     @slot('linkLingkedin')
-                    '/digitalTemplate/img/team-1.jpg',
+
                     @endslot
 
                 </x-card-team>
