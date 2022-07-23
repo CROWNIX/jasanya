@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\M_kritikSaran;
 use Carbon\Carbon;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class C_home extends Controller
 {
@@ -23,7 +24,8 @@ class C_home extends Controller
         $kritikSaran->email = $request->email;
         $kritikSaran->subject = $request->subject;
         $kritikSaran->message = $request->message;
-        $kritikSaran->save(); 
+        $kritikSaran->save();
+        Alert::success('kritik/saran berhasil dikirim, terimakasih');
         return redirect('/#contact'); 
     }
 }

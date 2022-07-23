@@ -18,10 +18,6 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/kritikSaran', [C_home::class, 'kritikSaran']);
 });
 
-Route::get('/token', function () {
-    return csrf_token(); 
-});
-
 Route::get('/team',function(){
     return view('jasanyaView.team',[
         "title"=>"team"
