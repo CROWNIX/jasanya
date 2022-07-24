@@ -487,15 +487,15 @@ h6,
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--light);
+    /* color: var(--light); */
     border: 1px solid rgba(256, 256, 256, 0.1);
     border-radius: 40px;
     transition: 0.3s;
 }
 
-.footer .btn.btn-social:hover {
+/* .footer .btn.btn-social:hover {
     color: var(--primary);
-}
+} */
 
 .footer .btn.btn-link {
     display: block;
@@ -566,4 +566,16 @@ h6,
         #515ecf
     ) !important;
     /* background-color: red !important; */
+}
+
+.facebook-icon {
+    background-color: #0d6efd !important;
+}
+
+.twitter-icon {
+    background-color: #1da1f2 !important;
+}
+
+.waves {
+    width: 100%;
 }

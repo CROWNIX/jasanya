@@ -7,10 +7,10 @@
                 <p><i class="fa fa-phone-alt me-3"></i>+62 812-9085-3613</p>
                 <p><i class="fa fa-envelope me-3"></i>syahrul@gmail.com</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn twitter-icon btn-social" href=""><i class="fab fa-twitter text-white"></i></a>
+                    <a class="btn facebook-icon btn-social" href=""><i class="fab fa-facebook-f text-white"></i></a>
+                    <a class="btn ig-icon btn-social" href=""><i class="fab fa-instagram text-white"></i></a>
+                    <a class="btn bg-info btn-social" href=""><i class="fab fa-linkedin-in text-white"></i></a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
