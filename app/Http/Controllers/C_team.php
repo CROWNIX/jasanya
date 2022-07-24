@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\M_team;
+use App\Models\M_jobdesk;
 use Illuminate\Http\Request;
-
 
 class C_team extends Controller
 {
@@ -16,10 +16,16 @@ class C_team extends Controller
      */
     public function index()
     {
+        $M_team = M_team::latest();
+        if(request('search')){
+            $M_team->where('nama_lengkap','like','%'.request('search').'%');
+        }
         $no = 1;
-        $M_team = M_team::latest()->paginate(5);
-        return view('adminView.showTeam',compact('M_team'),['no'=>$no])
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('adminView.showTeam',[
+            'no' => $no,
+            'title' => 'data team',
+            'M_team' => $M_team->paginate(4),
+        ]);
     }
     /**
      * Store a newly created resource in storage.
@@ -57,8 +63,12 @@ class C_team extends Controller
      */
     public function show($id)
     {
+        $M_jobdesk = M_jobdesk::latest();
         $M_team = M_team::find($id);
-        return view('adminView.editTeam',compact('M_team'));
+        return view('adminView.editTeam',compact('M_team'),[
+            'title'=>'edit',
+            'M_jobdesk'=>$M_jobdesk->get()
+        ]);
     }
     
     /**

@@ -19,7 +19,7 @@
                                     <table class="table table-dark">
                                         <div class="row justify-content-center">
                                             <div class="col-md-6">
-                                                <form action={{ url('/R_team') }}>
+                                                <form action={{ url('/R_jobdesk') }}>
                                                     <div class="input-group mb-2">
                                                         <input type="text" class="form-control"
                                                             placeholder="Search products" name="search"
@@ -34,36 +34,20 @@
                                         <thead>
                                             <tr>
                                                 <th> no </th>
-                                                <th> name </th>
-                                                <th> jobdesk </th>
-                                                <th> github </th>
-                                                <th> instgram </th>
-                                                <th> linkedin </th>
-                                                <th> facebook </th>
+                                                <th> name Jobdesk </th>
                                                 <th class="text-center"> aksi </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($M_team as $x)
+                                            @forelse ($M_jobdesk as $x)
                                             <tr>
 
-                                                <td> <a href="{{ route('R_team.show',$x->id) }}">{{ $no++ }}</a></td>
-                                                <td><a href="{{ route('R_team.show',$x->id) }}">{{ $x->nama_lengkap
-                                                        }}</a>
-                                                </td>
-                                                <td><a href="{{ route('R_team.show',$x->id) }}">{{ $x->jobdesk }}</a>
-                                                </td>
-                                                <td><a href="{{ route('R_team.show',$x->id) }}">{{ $x->github }}</a>
-                                                </td>
-                                                <td><a href="{{ route('R_team.show',$x->id) }}">{{ $x->instagram }}</a>
-                                                </td>
-                                                <td><a href="{{ route('R_team.show',$x->id) }}">{{ $x->linkedin }}</a>
-                                                </td>
-                                                <td><a href="{{ route('R_team.show',$x->id) }}">{{ $x->facebook }}</a>
-                                                </td>
+                                                <td>{{ $no++ }}</td>
+                                                <td>{{ $x->nama}} </td>
 
                                                 <td class="text-center">
-                                                    <form action="{{ route('R_team.destroy', $x->id) }}" method="POST">
+                                                    <form action="{{ route('R_jobdesk.destroy', $x->id) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">Hapus</button>
@@ -78,7 +62,7 @@
                                             @endforelse
                                         </tbody>
                                     </table>
-                                    {!! $M_team->links('vendor.pagination.custom') !!}
+                                    {!! $M_jobdesk->links('vendor.pagination.custom') !!}
                                 </div>
                             </div>
                         </div>

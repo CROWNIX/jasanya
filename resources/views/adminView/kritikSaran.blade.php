@@ -11,15 +11,13 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
-                <div class="page-header">
-                    <h3 class="page-title"> Kritik Saran </h3>
-                </div>
                 <div class="row">
                     <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-dark">
+                                        <h3 class="page-title"> Kritik Saran </h3>
                                         <thead>
                                             <tr>
                                                 <th> no </th>
@@ -57,7 +55,7 @@
                                         </tbody>
                                     </table>
                                     <div class="r">
-                                        {!! $kritikSaran->links() !!}
+                                        {!! $kritikSaran->links('vendor.pagination.custom') !!}
                                     </div>
                                 </div>
                             </div>
@@ -65,8 +63,6 @@
                     </div>
                 </div>
             </div>
-            <!-- content-wrapper ends -->
-            @include('partials.footerAdmin')
         </div>
         <!-- main-panel ends -->
     </div>

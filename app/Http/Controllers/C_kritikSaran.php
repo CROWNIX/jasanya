@@ -19,9 +19,9 @@ class C_kritikSaran extends Controller
     {
        
         $no = 1;
-        $kritikSaran = M_kritikSaran::latest()->paginate(5);
+        $kritikSaran = M_kritikSaran::latest()->paginate(4);
         return view('adminView.kritikSaran',compact('kritikSaran'),['no'=>$no])
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 4);
     }
     /**
      * destroy

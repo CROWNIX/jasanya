@@ -77,14 +77,6 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="tables">
-                <span class="menu-icon">
-                    <i class="mdi mdi-table-large"></i>
-                </span>
-                <span class="menu-title">Tables</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
             <a class="nav-link" href="{{ url('icon') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-contacts"></i>
@@ -93,42 +85,45 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#Team" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-icon">
                     <i class="mdi mdi-laptop"></i>
                 </span>
-                <span class="menu-title">Tables</span>
+                <span class="menu-title">Team Jasanya</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="tables">
+            <div class="collapse" id="Team">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('kritikSaran') }}">Kritik
-                            dan
-                            saran</a>
-                    </li>
                     <li class="nav-item"> <a class="nav-link" href="{{ url('/R_team') }}">Team</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="">Typography</a>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('/addTeam ') }}">Add Team</a>
                     </li>
                 </ul>
             </div>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#form" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#jobdesk" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-icon">
                     <i class="mdi mdi-laptop"></i>
                 </span>
-                <span class="menu-title">Forms</span>
+                <span class="menu-title">Jobdesk Jasanya</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="form">
+            <div class="collapse" id="jobdesk">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('/formcreateTeam ') }}">Add Team</a>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('/R_jobdesk ') }}">Jobdesk</a>
                     </li>
-                    <li class="nav-item"> <a class="nav-link" href="">Dropdowns</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="">Typography</a>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('/addJobdesk ') }}">Add Jobdesk</a>
                     </li>
                 </ul>
             </div>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ url('kritikSaran') }}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-contacts"></i>
+                </span>
+                <span class="menu-title">Kritik Dan Saran</span>
+            </a>
         </li>
     </ul>
 </nav>

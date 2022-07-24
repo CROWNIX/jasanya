@@ -19,7 +19,7 @@
                     <h3 class="page-title"> Form Create Team </h3>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('R_team') }}">team</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Form Create Team</li>
                         </ol>
                     </nav>
@@ -40,6 +40,15 @@
                                         <label for="exampleInputEmail3">Jobdesk</label>
                                         <input type="text" name="jobdesk" class="form-control" id="exampleInputEmail3"
                                             placeholder="Jobdesk">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Jobdesk</label>
+                                        <select name="jobdesk" class="form-control" style="width:100%" required>
+                                            <option value="">Pilih Job</option>
+                                            @foreach ( $M_jobdesk as $x )
+                                            <option value="{{ $x->nama }}">{{ $x->nama }}</option>
+                                            @endforeach ()
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>File upload</label>

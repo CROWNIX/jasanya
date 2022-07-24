@@ -16,7 +16,7 @@
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="page-header">
-                    <h3 class="page-title"> Form Create Team </h3>
+                    <h3 class="page-title"> Detail Data {{ $M_team->nama_lengkap }} </h3>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ url('R_team') }}">team</a></li>
@@ -38,13 +38,18 @@
                                             value="{{ $M_team->nama_lengkap }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail3">Jobdesk</label>
-                                        <input type="text" name="jobdesk" class="form-control" id="exampleInputEmail3"
-                                            value="{{ $M_team->jobdesk }}">
+                                        <label>Jobdesk</label>
+                                        <select name="jobdesk" class="form-control" style="width:100%" required>
+                                            <option value="">Pilih Job</option>
+                                            @foreach ( $M_jobdesk as $x )
+                                            <option value="{{ $x->nama }}">{{ $x->nama }}</option>
+                                            @endforeach ()
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>File upload</label>
-                                        <input type="file" name="foto" class="file-upload-default">
+                                        <input value="{{ $M_team->foto }}" type="file" name="foto"
+                                            class="file-upload-default">
                                         <img src="/img/imgTeam/{{ $M_team->foto }}" width="100px">
                                         <div class="input-group col-xs-12">
                                             <input type="text" class="form-control file-upload-info" disabled
@@ -88,15 +93,7 @@
             </div>
             <!-- content-wrapper ends -->
             <!-- partial:../../partials/_footer.html -->
-            <footer class="footer">
-                <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
-                        bootstrapdash.com 2020</span>
-                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a
-                            href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap
-                            admin templates</a> from Bootstrapdash.com</span>
-                </div>
-            </footer>
+            @include('partials.footerAdmin')
             <!-- partial -->
         </div>
         <!-- main-panel ends -->
