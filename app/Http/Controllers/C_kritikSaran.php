@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\M_kritikSaran;
+use App\Models\M_portfolio;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class C_admin extends Controller
+class C_kritikSaran extends Controller
 {
     
     public function home(){
         return view('adminView.home',['title'=>'admin']);
     }
+
+    // kritik saran
     public function getKritikSaran()
     {
        
@@ -20,8 +23,6 @@ class C_admin extends Controller
         return view('adminView.kritikSaran',compact('kritikSaran'),['no'=>$no])
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-
-    
     /**
      * destroy
      *
@@ -46,5 +47,18 @@ class C_admin extends Controller
     {
         $detailKritikSaran = M_kritikSaran::find($id);
         return view('adminView.detailKritikSaran',compact('detailKritikSaran'));
+    }
+    // end kritik saran
+
+    public function kritikSaran(Request $request)
+    {
+        $kritikSaran = new M_kritikSaran;
+        $kritikSaran->name = $request->name;
+        $kritikSaran->email = $request->email;
+        $kritikSaran->subject = $request->subject;
+        $kritikSaran->message = $request->message;
+        $kritikSaran->save();
+        Alert::success('kritik/saran berhasil dikirim, terimakasih');
+        return redirect('/#contact'); 
     }
 }

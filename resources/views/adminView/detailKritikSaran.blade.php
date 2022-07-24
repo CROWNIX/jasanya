@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword4">subject</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword4"
+                                        <input type="text" class="form-control" id="exampleInputPassword4"
                                             placeholder="{{ $detailKritikSaran->email }}" readonly>
                                     </div>
                                     <div class="form-group">

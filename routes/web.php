@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\C_portfolio;
 use App\Http\Controllers\C_home;
-use App\Http\Controllers\C_admin;
+use App\Http\Controllers\C_kritikSaran;
+use App\Http\Controllers\C_team;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -17,34 +18,46 @@ use Illuminate\Support\Facades\Route;
 // jasanya view route
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [C_home::class, 'index']);
-    Route::post('/kritikSaran', [C_home::class, 'kritikSaran']);
+    Route::get('/team', [C_home::class, 'team']);
+    
 });
 
 // admin view route
 Route::group(['prefix' => '/'], function () {
-    Route::get('/admin', [C_admin::class, 'home']);
-    Route::get('/kritikSaran', [C_admin::class, 'getKritikSaran']);
-    Route::resource('adminView', C_admin::class);
+    // kritik saaran
+    Route::resource('adminView', C_kritikSaran::class);
+    Route::post('/kritikSaran', [C_kritikSaran::class, 'kritikSaran']);
+    Route::get('/admin', [C_kritikSaran::class, 'home']);
+    Route::get('/kritikSaran', [C_kritikSaran::class, 'getKritikSaran']);
+    // team
+    Route::get('/formcreateTeam',function(){
+        return view('adminView.formAddTeam',[
+            "title"=>"icon"
+        ]);
+    });
+    Route::resource('R_team', C_team::class);
+    // icon
     Route::get('/icon',function(){
         return view('adminView.iconMdi',[
             "title"=>"icon"
         ]);
     });
+    // form element
     Route::get('/formElement',function(){
         return view('adminView.formElement',[
             "title"=>"form"
         ]);
     });
+    // tables element
     Route::get('/tables',function(){
         return view('adminView.tables',[
             "title"=>"form"
         ]);
     });
 });
-Route::get('/team',function(){
-    return view('jasanyaView.team',[
-        "title"=>"team"
-    ]);
+
+Route::get('/token',function(){
+    return csrf_token(); 
 });
 
 

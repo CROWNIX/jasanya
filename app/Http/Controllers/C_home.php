@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\M_kritikSaran;
 use Carbon\Carbon;
+use App\Models\M_team;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class C_home extends Controller
@@ -17,16 +18,10 @@ class C_home extends Controller
         return view('jasanyaView.home',['title' => 'home', 'hari'=>$selisih ]);
     }
 
-    public function kritikSaran(Request $request)
+    public function team()
     {
-        $kritikSaran = new M_kritikSaran;
-        $kritikSaran->name = $request->name;
-        $kritikSaran->email = $request->email;
-        $kritikSaran->subject = $request->subject;
-        $kritikSaran->message = $request->message;
-        $kritikSaran->save();
-        Alert::success('kritik/saran berhasil dikirim, terimakasih');
-        return redirect('/#contact'); 
+        $M_team = M_team::all();
+        return view('jasanyaView.team',compact('M_team'),['title'=>'team']);
     }
 
     

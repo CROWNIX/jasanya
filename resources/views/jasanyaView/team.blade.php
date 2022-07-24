@@ -41,176 +41,36 @@
                 <h1 class="text-center mb-5">Team Member</h1>
             </div>
             <div class="row g-4">
+                @forelse ($M_team as $x)
                 <x-card-team>
                     @slot('foto')
-                    /digitalTemplate/img/team-1.jpg
+                    /img/imgTeam/{{ $x->foto }}
                     @endslot
                     @slot('nama')
-                    Rahmat Fauzi Widianto
+                    {{ $x->nama_lengkap }}
                     @endslot
                     @slot('job')
-                    Backend
+                    {{ $x->jobdesk }}
                     @endslot
                     @slot('linkIg')
-                    https://www.instagram.com/fri3nds_715
+                    https://www.instagram.com/{{ $x->instagram }}
                     @endslot
                     @slot('linkFb')
 
                     @endslot
                     @slot('linkGithub')
-                    https://github.com/CROWNIX/
+                    https://github.com/{{ $x->github }}/
                     @endslot
                     @slot('linkLingkedin')
 
                     @endslot
 
                 </x-card-team>
-                <x-card-team>
-                    @slot('foto')
-                    /img/imgTeam/bangRidwan.jpeg
-                    @endslot
-                    @slot('nama')
-                    Muhammad Ridwan
-                    @endslot
-                    @slot('job')
-                    UI/UX Design
-                    @endslot
-                    @slot('linkIg')
-                    https://www.instagram.com/muhammadridwan_king11
-                    @endslot
-                    @slot('linkFb')
-
-                    @endslot
-                    @slot('linkGithub')
-
-                    @endslot
-                    @slot('linkLingkedin')
-
-                    @endslot
-                </x-card-team>
-
-                <x-card-team>
-                    @slot('foto')
-                    /digitalTemplate/img/team-1.jpg
-                    @endslot
-                    @slot('nama')
-                    Atikah Rahmawati
-                    @endslot
-                    @slot('job')
-                    UI/UX Design
-                    @endslot
-                    @slot('linkIg')
-                    https://www.instagram.com/atikahrahma26
-                    @endslot
-                    @slot('linkFb')
-
-                    @endslot
-                    @slot('linkGithub')
-
-                    @endslot
-                    @slot('linkLingkedin')
-
-                    @endslot
-
-                </x-card-team>
-
-                <x-card-team>
-                    @slot('foto')
-                    /digitalTemplate/img/team-1.jpg
-                    @endslot
-                    @slot('nama')
-                    Yesicha Audria
-                    @endslot
-                    @slot('job')
-                    UI/UX Design
-                    @endslot
-                    @slot('linkIg')
-                    https://www.instagram.com/audriayesicha12
-                    @endslot
-                    @slot('linkFb')
-
-                    @endslot
-                    @slot('linkGithub')
-
-                    @endslot
-                    @slot('linkLingkedin')
-
-                    @endslot
-
-                </x-card-team>
-
-                <x-card-team>
-                    @slot('foto')
-                    /img/imgTeam/bangSarul.jpg
-                    @endslot
-                    @slot('nama')
-                    M.Syahrul Saefulah
-                    @endslot
-                    @slot('job')
-                    Full Stack
-                    @endslot
-                    @slot('linkIg')
-                    https://www.instagram.com/SyahrulSaef
-                    @endslot
-                    @slot('linkFb')
-
-                    @endslot
-                    @slot('linkGithub')
-                    https://github.com/sahrulprograming/
-                    @endslot
-                    @slot('linkLingkedin')
-
-                    @endslot
-
-                </x-card-team>
-                <x-card-team>
-                    @slot('foto')
-                    /img/imgTeam/rama.jpeg
-                    @endslot
-                    @slot('nama')
-                    Syaiban Ahmad Ramadhan
-                    @endslot
-                    @slot('job')
-                    Backend
-                    @endslot
-                    @slot('linkIg')
-                    https://www.instagram.com/ibanrmaa
-                    @endslot
-                    @slot('linkFb')
-
-                    @endslot
-                    @slot('linkGithub')
-                    https://github.com/SyaibanAhmadRamadhan/
-                    @endslot
-                    @slot('linkLingkedin')
-
-                    @endslot
-
-                </x-card-team>
-                <x-card-team>
-                    @slot('foto')
-                    /digitalTemplate/img/team-1.jpg
-                    @endslot
-                    @slot('nama')
-                    Dede Maulana
-                    @endslot
-                    @slot('job')
-                    Front End & UI/UX
-                    @endslot
-                    @slot('linkIg')
-                    https://www.instagram.com/maullana_d19
-                    @endslot
-                    @slot('linkFb')
-
-                    @endslot
-                    @slot('linkGithub')
-                    https://github.com/maullana19/
-                    @endslot
-                    @slot('linkLingkedin')
-
-                    @endslot
-
-                </x-card-team>
+                @empty
+                <div class="alert alert-danger">
+                    Tidak Team.
+                </div>
+                @endforelse
             </div>
         </div>
     </div>
