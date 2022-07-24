@@ -2,13 +2,17 @@
 
 @section('container')
 <div class="container-scroller">
-    <!-- partial:../../partials/_sidebar.html -->
+
+    {{-- side bar --}}
     @include('partials.sidebarAdmin')
-    <!-- partial -->
+    {{-- end side bar --}}
+
     <div class="container-fluid page-body-wrapper">
-        <!-- partial:../../partials/_navbar.html -->
+
+        {{-- navbar --}}
         @include('partials.navbarAdmin')
-        <!-- partial -->
+        {{-- end navbar --}}
+
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="page-header">

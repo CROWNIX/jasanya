@@ -28,4 +28,6 @@ class C_home extends Controller
         Alert::success('kritik/saran berhasil dikirim, terimakasih');
         return redirect('/#contact'); 
     }
+
+    
 }

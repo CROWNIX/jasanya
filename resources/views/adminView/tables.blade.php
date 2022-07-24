@@ -42,7 +42,9 @@
                                                 <td>Jacob</td>
                                                 <td>53275531</td>
                                                 <td>12 May 2017</td>
-                                                <td><label class="badge badge-danger">Pending</label></td>
+                                                <a href="">
+                                                    <td><label class="badge badge-danger">Pending</label></td>
+                                                </a>
                                             </tr>
                                             <tr>
                                                 <td>Messsy</td>
