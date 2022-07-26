@@ -15,36 +15,11 @@ class C_jobdesk extends Controller
      */
     public function index (){
         $M_jobdesk = M_jobdesk::latest();
-        if(request('search')){
-            $M_jobdesk->where('nama','like','%'.request('search').'%');
-        }
         $no = 1;
-        return view('adminView.showJobdesk',[
+        return view('adminView.S_jobdesk',[
             'no' => $no,
-            'title' => 'data team',
-            'M_jobdesk' => $M_jobdesk->paginate(4),
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\M_jobdesk 
-     * @return \Illuminate\Http\Response
-     */
-    public function showJobdesk(){
-        $M_jobdesk = M_jobdesk::latest();
-        return view('adminView.addTeam',[
-            'title'=>'add team',
-            'M_jobdesk'=>$M_jobdesk->get(),
-        ]);
-    }
-
-    public function formAddJobdesk(){
-        $M_jobdesk = M_jobdesk::latest();
-        return view('adminView.addJobdesk',[
-            'title'=>'add jobdesk',
-            'M_jobdesk'=>$M_jobdesk->get(),
+            'title' => 'jobdesk',
+            'M_jobdesk' => $M_jobdesk->get(),
         ]);
     }
 
@@ -56,12 +31,12 @@ class C_jobdesk extends Controller
      */
     public function store(Request $request){
         $M_jobdesk = new M_jobdesk;
-        $users_count = $M_jobdesk->where('nama', '=', request('name'))->count();
-        if ($users_count > 0){
-            return redirect()->route('R_jobdesk.index')
-                        ->with('success','Product deleted successfully');
-            exit;
-        }
+        // $users_count = $M_jobdesk->where('nama', '=', request('name'))->count();
+        // if ($users_count > 0){
+        //     return redirect()->route('R_jobdesk.index')
+        //                 ->with('success','Product deleted successfully');
+        //     exit;
+        // }
         $M_jobdesk->nama = $request->name;
         $M_jobdesk->save();
         return redirect()->route('R_jobdesk.index')

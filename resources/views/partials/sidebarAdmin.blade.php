@@ -1,129 +1,117 @@
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="index.html"><img
-                src="/coronaAdminTemplate/template/assets/images/logo.svg" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="index.html"><img
-                src="/coronaAdminTemplate/template/assets/images/logo-mini.svg" alt="logo" /></a>
+<div class="sidebar sidebar-style-2" data-background-color="dark2">
+    <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+            <div class="user">
+                <div class="avatar-sm float-left mr-2">
+                    <img src="/atlantisTemplate/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+                <div class="info">
+                    <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                        <span>
+                            Hizrian
+                            <span class="user-level">Administrator</span>
+                            <span class="caret"></span>
+                        </span>
+                    </a>
+                    <div class="clearfix"></div>
+
+                    <div class="collapse in" id="collapseExample">
+                        <ul class="nav">
+                            <li>
+                                <a href="#profile">
+                                    <span class="link-collapse">My Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#edit">
+                                    <span class="link-collapse">Edit Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#settings">
+                                    <span class="link-collapse">Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav nav-primary">
+                <li class="nav-item {{ $title === 'admin' ?'active':'' }}">
+                    <a href="{{ url('admin') }}">
+                        <i class="fas fa-desktop"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Components</h4>
+                </li>
+                <li class="nav-item {{ $title === 'datateam' ? 'active':'' }} {{ $title === 'add team'?'active':'' }}">
+                    <a data-toggle="collapse" href="#team" class="collapsed" aria-expanded="false">
+                        <i class="fas fa-home"></i>
+                        <p>Team</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse {{ $title === 'datateam'?'show':'' }} {{ $title === 'add team'?'show':'' }}"
+                        id="team">
+                        <ul class="nav nav-collapse">
+                            <li class="{{ $title === 'datateam'?'active':'' }}">
+                                <a href="{{ url('/R_team') }}">
+                                    <span class="sub-item">team</span>
+                                </a>
+                            </li>
+                            <li class="{{ $title === 'add team'?'active':'' }}">
+                                <a href="{{ url('/addTeam ') }}">
+                                    <span class="sub-item">add team</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item {{ $title === 'jobdesk' ? 'active':'' }}">
+                    <a href="{{ url('R_jobdesk') }}">
+                        <i class="fas fa-desktop"></i>
+                        <p>Jobdesk</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ $title === 'layanan' ? 'active':'' }}">
+                    <a href="{{ url('R_layanan') }}">
+                        <i class="fas fa-desktop"></i>
+                        <p>Layanan</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="collapse" href="#Project" class="collapsed" aria-expanded="false">
+                        <i class="fas fa-home"></i>
+                        <p>Project</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="Project">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ url('/R_project ') }}">
+                                    <span class="sub-item">Project</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/addProject ') }}">
+                                    <span class="sub-item">add Project</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item {{ $title === 'kritiksaran' ?'active':'' }}">
+                    <a href="{{ url('kritikSaran') }}">
+                        <i class="fas fa-desktop"></i>
+                        <p>Kritik dan Saran</p>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
     </div>
-    <ul class="nav">
-        <li class="nav-item profile">
-            <div class="profile-desc">
-                <div class="profile-pic">
-                    <div class="count-indicator">
-                        <img class="img-xs rounded-circle "
-                            src="/coronaAdminTemplate/template/assets/images/faces/face15.jpg" alt="">
-                        <span class="count bg-success"></span>
-                    </div>
-                    <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                        <span>Gold Member</span>
-                    </div>
-                </div>
-                <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
-                <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list"
-                    aria-labelledby="profile-dropdown">
-                    <a href="#" class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-settings text-primary"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-onepassword  text-info"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                                <i class="mdi mdi-calendar-today text-success"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </li>
-        <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('admin') }}">
-                <span class="menu-icon">
-                    <i class="mdi mdi-speedometer"></i>
-                </span>
-                <span class="menu-title">Dashboard</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('formElement') }}">
-                <span class="menu-icon">
-                    <i class="mdi mdi-playlist-play"></i>
-                </span>
-                <span class="menu-title">Form Elements</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('icon') }}">
-                <span class="menu-icon">
-                    <i class="mdi mdi-contacts"></i>
-                </span>
-                <span class="menu-title">Icons</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#Team" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-icon">
-                    <i class="mdi mdi-laptop"></i>
-                </span>
-                <span class="menu-title">Team Jasanya</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="Team">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('/R_team') }}">Team</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('/addTeam ') }}">Add Team</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#jobdesk" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-icon">
-                    <i class="mdi mdi-laptop"></i>
-                </span>
-                <span class="menu-title">Jobdesk Jasanya</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="jobdesk">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('/R_jobdesk ') }}">Jobdesk</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('/addJobdesk ') }}">Add Jobdesk</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('kritikSaran') }}">
-                <span class="menu-icon">
-                    <i class="mdi mdi-contacts"></i>
-                </span>
-                <span class="menu-title">Kritik Dan Saran</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+</div>

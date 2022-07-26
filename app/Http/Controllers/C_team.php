@@ -21,10 +21,10 @@ class C_team extends Controller
             $M_team->where('nama_lengkap','like','%'.request('search').'%');
         }
         $no = 1;
-        return view('adminView.showTeam',[
+        return view('adminView.S_team',[
             'no' => $no,
-            'title' => 'data team',
-            'M_team' => $M_team->paginate(4),
+            'title' => 'datateam',
+            'M_team' => $M_team->get(),
         ]);
     }
     /**
@@ -54,6 +54,20 @@ class C_team extends Controller
         return redirect()->route('R_team.index')
                         ->with('success','Product deleted successfully');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\M_jobdesk 
+     * @return \Illuminate\Http\Response
+     */
+    public function F_A_team(){
+        $M_jobdesk = M_jobdesk::latest();
+        return view('adminView.A_team',[
+            'title'=>'add team',
+            'M_jobdesk'=>$M_jobdesk->get(),
+        ]);
+    }
     
     /**
      * Display the specified resource.
@@ -65,7 +79,17 @@ class C_team extends Controller
     {
         $M_jobdesk = M_jobdesk::latest();
         $M_team = M_team::find($id);
-        return view('adminView.editTeam',compact('M_team'),[
+        return view('adminView.E_team',compact('M_team'),[
+            'title'=>'edit',
+            'M_jobdesk'=>$M_jobdesk->get()
+        ]);
+    }
+
+    public function detailTeam($id)
+    {
+        $M_jobdesk = M_jobdesk::latest();
+        $M_team = M_team::find($id);
+        return view('adminView.D_team',compact('M_team'),[
             'title'=>'edit',
             'M_jobdesk'=>$M_jobdesk->get()
         ]);

@@ -19,9 +19,8 @@ class C_kritikSaran extends Controller
     {
        
         $no = 1;
-        $kritikSaran = M_kritikSaran::latest()->paginate(4);
-        return view('adminView.kritikSaran',compact('kritikSaran'),['no'=>$no])
-            ->with('i', (request()->input('page', 1) - 1) * 4);
+        $kritikSaran = M_kritikSaran::latest()->get();
+        return view('adminView.S_kritikSaran',compact('kritikSaran'),['no'=>$no,'title'=>'kritiksaran']);
     }
     /**
      * destroy
@@ -46,7 +45,7 @@ class C_kritikSaran extends Controller
     public function show($id)
     {
         $detailKritikSaran = M_kritikSaran::find($id);
-        return view('adminView.detailKritikSaran',compact('detailKritikSaran'));
+        return view('adminView.D_kritikSaran',compact('detailKritikSaran'));
     }
     // end kritik saran
 
