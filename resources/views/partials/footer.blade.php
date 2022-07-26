@@ -54,7 +54,7 @@
                 <p>Yesicha Audria</p>
                 <p>Atikah Rahmawati</p>
                 <p>Muhammad Ridwan</p>
-                <p>Fauzi Widianto</p>
+                <p>Rahmat Fauzi </p>
             </div>
         </div>
     </div>
