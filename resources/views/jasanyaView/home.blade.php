@@ -419,14 +419,14 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Your Name">
+                                        placeholder="Your Name" maxlength="35">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email">
+                                        placeholder="Your Email" maxlength="35">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>

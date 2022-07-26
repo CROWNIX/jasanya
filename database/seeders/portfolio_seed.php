@@ -39,8 +39,8 @@ class portfolio_seed extends Seeder
                 'prefix' => 'rahmat',
             ],
             [
-                'nama_lengkap' => 'Rama ',
-                'jobdesk' => 'Full Stack',
+                'nama_lengkap' => 'Syaiban Ahmad Ramadhan ',
+                'jobdesk' => 'Back End',
                 'deskripsi' => '',
                 'foto' => 'default.jpg',
                 'instagram' => '',

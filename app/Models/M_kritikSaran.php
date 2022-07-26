@@ -10,6 +10,6 @@ class M_kritikSaran extends Model
     use HasFactory;
 
     protected $table = 'kritik_saran';
-    protected $primaryKey = 'id';
+    // protected $primaryKey = 'id';
     protected $fillabel = ['name','email','subject','message'];
 }
