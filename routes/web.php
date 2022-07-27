@@ -61,7 +61,6 @@ Route::group(['prefix' => '/'], function () {
 Route::group(['prefix' => '/'], function () {
     Route::resource('/R_login', C_login::class)->middleware('guest');
     Route::resource('/R_register', C_register::class)->middleware('auth');
-    Route::post('/logout', [C_login::class, 'logout']);
 });
 
 Route::get('/register',function(){

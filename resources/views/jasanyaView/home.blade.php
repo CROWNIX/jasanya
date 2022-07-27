@@ -31,13 +31,13 @@
                         Us</a>
                 </div>
                 <div class="col-lg-5 text-center text-lg-end">
-                    <img class="img-fluid animated zoomIn" src="/img/image-removebg-preview.png" alt=""
+                    <img class="img-fluid animated zoomIn" src="img/image-removebg-preview.png" alt=""
                         style=" width:330px">
                 </div>
             </div>
         </div>
     </div>
-    
+
 </div>
 <!-- Navbar & Hero End -->
 
@@ -119,7 +119,7 @@
                 {{-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a> --}}
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="/img/logo/4.png">
+                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/logo/4.png">
             </div>
         </div>
     </div>
@@ -241,9 +241,9 @@
             <div class="col-lg-4 col-md-6 portfolio-item mobile wow fadeInUp" data-wow-delay="0.1s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/imgProject/aplikasiMobile.png" alt="">
+                        <img class="img-fluid w-100" src="img/imgProject/blob-white.png" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/imgProject/aplikasiMobile.png"
+                            <a class="btn btn-square btn-outline-light mx-1" href="img/imgProject/blob-white.png"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
@@ -259,9 +259,9 @@
             <div class="col-lg-4 col-md-6 portfolio-item api wow fadeInUp" data-wow-delay="0.3s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1 ">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/imgProject/api.png" alt="">
+                        <img class="img-fluid w-100" src="img/imgProject/blob-top-left.png" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/imgProject/api.png"
+                            <a class="btn btn-square btn-outline-light mx-1" href="img/imgProject/blob-top-left.png"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
@@ -277,9 +277,9 @@
             <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.5s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/imgProject/phpNative.png" alt="">
+                        <img class="img-fluid w-100" src="img/imgProject/blob-top-right.png" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/imgProject/phpNative.png"
+                            <a class="btn btn-square btn-outline-light mx-1" href="img/imgProject/blob-top-right.png"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
@@ -295,9 +295,9 @@
             <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.1s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/portfolio-4.jpg" alt="">
+                        <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/portfolio-4.jpg"
+                            <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-4.jpg"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
@@ -311,9 +311,9 @@
             <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.3s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/portfolio-5.jpg" alt="">
+                        <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/portfolio-5.jpg"
+                            <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-5.jpg"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
@@ -327,9 +327,9 @@
             <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.5s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/portfolio-6.jpg" alt="">
+                        <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/portfolio-6.jpg"
+                            <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-6.jpg"
                                 data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
@@ -358,7 +358,7 @@
                     ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
                     clita duo justo.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="/img/testimonial-1.jpg"
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
                         style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Client Name</h5>
@@ -371,7 +371,7 @@
                     ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
                     clita duo justo.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="/img/testimonial-2.jpg"
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg"
                         style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Client Name</h5>
@@ -384,7 +384,7 @@
                     ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
                     clita duo justo.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="/img/testimonial-3.jpg"
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
                         style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Client Name</h5>

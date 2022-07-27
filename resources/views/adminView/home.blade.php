@@ -7,7 +7,7 @@
         <div class="logo-header" data-background-color="dark2">
 
             <a href="index.html" class="logo">
-                <img src="/atlantisTemplate/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+                <img src="atlantisTemplate/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
             </a>
             <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
                 data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -165,7 +165,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="/atlantisTemplate/assets/img/flags/id.png"
+                                                                <img src="atlantisTemplate/assets/img/flags/id.png"
                                                                     alt="indonesia">
                                                             </div>
                                                         </td>
@@ -180,7 +180,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="/atlantisTemplate/assets/img/flags/us.png"
+                                                                <img src="atlantisTemplate/assets/img/flags/us.png"
                                                                     alt="united states">
                                                             </div>
                                                         </td>
@@ -195,7 +195,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="/atlantisTemplate/assets/img/flags/au.png"
+                                                                <img src="atlantisTemplate/assets/img/flags/au.png"
                                                                     alt="australia">
                                                             </div>
                                                         </td>
@@ -210,7 +210,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="/atlantisTemplate/assets/img/flags/ru.png"
+                                                                <img src="atlantisTemplate/assets/img/flags/ru.png"
                                                                     alt="russia">
                                                             </div>
                                                         </td>
@@ -225,7 +225,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="/atlantisTemplate/assets/img/flags/cn.png"
+                                                                <img src="atlantisTemplate/assets/img/flags/cn.png"
                                                                     alt="china">
                                                             </div>
                                                         </td>
@@ -240,7 +240,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="/atlantisTemplate/assets/img/flags/br.png"
+                                                                <img src="atlantisTemplate/assets/img/flags/br.png"
                                                                     alt="brazil">
                                                             </div>
                                                         </td>
@@ -275,7 +275,7 @@
                             <div class="card-body pb-0">
                                 <div class="d-flex">
                                     <div class="avatar">
-                                        <img src="/atlantisTemplate/assets/img/logoproduct.svg" alt="/atlantisTemplate."
+                                        <img src="atlantisTemplate/assets/img/logoproduct.svg" alt="atlantisTemplate."
                                             class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
@@ -289,7 +289,7 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar">
-                                        <img src="/atlantisTemplate/assets/img/logoproduct.svg" alt="/atlantisTemplate."
+                                        <img src="atlantisTemplate/assets/img/logoproduct.svg" alt="atlantisTemplate."
                                             class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
@@ -303,8 +303,8 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar">
-                                        <img src="/atlantisTemplate/assets/img/logoproduct3.svg"
-                                            alt="/atlantisTemplate." class="avatar-img rounded-circle">
+                                        <img src="atlantisTemplate/assets/img/logoproduct3.svg"
+                                            alt="atlantisTemplate." class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
                                         <h6 class="fw-bold mb-1">Ready Pro</h6>
@@ -328,8 +328,8 @@
                                 <div class="card-list">
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="/atlantisTemplate/assets/img/jm_denis.jpg"
-                                                alt="/atlantisTemplate." class="avatar-img rounded-circle">
+                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg"
+                                                alt="atlantisTemplate." class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
                                             <div class="username">Jimmy Denis</div>
@@ -341,8 +341,8 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="/atlantisTemplate/assets/img/chadengle.jpg"
-                                                alt="/atlantisTemplate." class="avatar-img rounded-circle">
+                                            <img src="atlantisTemplate/assets/img/chadengle.jpg"
+                                                alt="atlantisTemplate." class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
                                             <div class="username">Chad</div>
@@ -354,7 +354,7 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="/atlantisTemplate/assets/img/talha.jpg" alt="/atlantisTemplate."
+                                            <img src="atlantisTemplate/assets/img/talha.jpg" alt="atlantisTemplate."
                                                 class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
@@ -367,7 +367,7 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="/atlantisTemplate/assets/img/mlane.jpg" alt="/atlantisTemplate."
+                                            <img src="atlantisTemplate/assets/img/mlane.jpg" alt="atlantisTemplate."
                                                 class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
@@ -380,7 +380,7 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="/atlantisTemplate/assets/img/talha.jpg" alt="/atlantisTemplate."
+                                            <img src="atlantisTemplate/assets/img/talha.jpg" alt="atlantisTemplate."
                                                 class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
@@ -393,8 +393,8 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="/atlantisTemplate/assets/img/jm_denis.jpg"
-                                                alt="/atlantisTemplate." class="avatar-img rounded-circle">
+                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg"
+                                                alt="atlantisTemplate." class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
                                             <div class="username">Jimmy Denis</div>
