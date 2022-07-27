@@ -19,7 +19,7 @@ class team_seed extends Seeder
             [
                 'nama_lengkap' => 'M.Syahrul Saefulah',
                 'jobdesk' => 'Full Stack',
-                'foto' => 'bangSarul.jpg',
+                'foto' => 'imgTeam/bangSarul.jpg',
                 'instagram' => 'syahrulsaef',
                 'github' => 'sahrulprograming',
                 'linkedin' => '',
@@ -28,7 +28,7 @@ class team_seed extends Seeder
             [
                 'nama_lengkap' => 'Rahmat Fauzi Widianto',
                 'jobdesk' => 'Full Stack',
-                'foto' => 'default.jpg',
+                'foto' => 'imgTeam/rahmat.jpg',
                 'instagram' => 'fri3nds_715',
                 'github' => 'CROWNIX',
                 'linkedin' => '',
@@ -37,7 +37,7 @@ class team_seed extends Seeder
             [
                 'nama_lengkap' => 'Syaiban Ahmad Ramadhan',
                 'jobdesk' => 'Back End',
-                'foto' => 'rama.jpeg',
+                'foto' => 'imgTeam/rama.jpeg',
                 'instagram' => 'ibanrmaa',
                 'github' => 'SyaibanAhmadRamadhan',
                 'linkedin' => '',
@@ -46,7 +46,7 @@ class team_seed extends Seeder
             [
                 'nama_lengkap' => 'Dede Maulana',
                 'jobdesk' => 'Frontend & UI/UX design',
-                'foto' => 'default.jpg',
+                'foto' => 'imgTeam/default.jpg',
                 'instagram' => 'maullana_d19',
                 'github' => 'maullana19',
                 'linkedin' => '',
@@ -55,7 +55,7 @@ class team_seed extends Seeder
             [
                 'nama_lengkap' => 'Muhammad Ridwan',
                 'jobdesk' => 'UI/UX design',
-                'foto' => 'bangRidwan.jpeg',
+                'foto' => 'imgTeam/bangRidwan.jpeg',
                 'instagram' => 'muhammadridwan_king11',
                 'github' => '',
                 'linkedin' => '',
@@ -64,7 +64,7 @@ class team_seed extends Seeder
             [
                 'nama_lengkap' => 'Atikah Rahmawati',
                 'jobdesk' => 'UI/UX design',
-                'foto' => 'default.jpg',
+                'foto' => 'imgTeam/default.jpg',
                 'instagram' => 'atikahrahma26',
                 'github' => '',
                 'linkedin' => '',
@@ -73,7 +73,7 @@ class team_seed extends Seeder
             [
                 'nama_lengkap' => 'Yesicha Audria',
                 'jobdesk' => 'UI/UX design',
-                'foto' => 'default.jpg',
+                'foto' => 'imgTeam/default.jpg',
                 'instagram' => 'audriayesicha12',
                 'github' => '',
                 'linkedin' => '',

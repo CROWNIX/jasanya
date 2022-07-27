@@ -73,6 +73,28 @@
 <script src="/atlantisTemplate/assets/js/setting-demo2.js"></script>
 <script src="/atlantisTemplate/assets/js/demo.js"></script>
 <script>
+	function previewImage(){
+        const image = document.querySelector('#foto');
+        const imageShow = document.querySelector('.img-show');
+        imageShow.style.display='block';
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+        oFReader.onload=function(oFREvent){
+            imageShow.src = oFREvent.target.result;
+        }
+    }
+	function previewImage1(){
+        const image1 = document.querySelector('#foto1');
+        const imageShow1 = document.querySelector('.img-show1');
+        imageShow1.style.display='block';
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image1.files[0]);
+        oFReader.onload=function(oFREvent){
+            imageShow1.src = oFREvent.target.result;
+        }
+    }
+</script>
+<script>
 	$('#lineChart').sparkline([102,109,120,99,110,105,115], {
 			type: 'line',
 			height: '70',
