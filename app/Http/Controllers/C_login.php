@@ -19,12 +19,14 @@ class C_login extends Controller
             'email'=>'required|email:dns',
             'password'=>'required'
         ]);
+
+
         if(Auth::attempt($message)){
             $request->session()->regenerate();
             return redirect()->intended('/admin');
         }
 
-        return back();
+        return back()->with("error", "Login failed");
     }
     
     public function logout(Request $request){

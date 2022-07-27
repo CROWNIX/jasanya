@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Hash;
 class C_register extends Controller
 {
     public function index(){
-        return view('adminView.register');
+        return view('adminView.register' ,[
+            'title'=>'Register'
+        ]);
     }
 
     public function store(Request $request){

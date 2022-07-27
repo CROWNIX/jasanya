@@ -60,13 +60,13 @@ Route::group(['prefix' => '/'], function () {
 // login
 Route::group(['prefix' => '/'], function () {
     Route::resource('/R_login', C_login::class)->middleware('guest');
-    Route::resource('/R_register', C_register::class)->middleware('auth');
+    Route::resource('/R_register', C_register::class)->middleware('guest');
     Route::post('/logout', [C_login::class, 'logout']);
 });
 
-Route::get('/register',function(){
-    return view('adminView.register'); 
-});
+// Route::get('/register',function(){
+//     return view('adminView.register'); 
+// });
 
 
 // Porfolio Route
