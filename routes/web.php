@@ -64,9 +64,9 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/logout', [C_login::class, 'logout']);
 });
 
-Route::get('/register',function(){
-    return view('adminView.register'); 
-});
+// Route::get('/register',function(){
+//     return view('adminView.register'); 
+// });
 
 
 // Porfolio Route
