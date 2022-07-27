@@ -12,77 +12,19 @@
             <div class="page-inner">
                 <x-headerTableForm>
                     @slot('nama')
-                    Data Layanan
+                    team
                     @endslot
                     @slot('url')
-                    R_layanan
+                    R_team
                     @endslot
                     @slot('nameurl')
-                    layanan
+                    team
                     @endslot
                 </x-headerTableForm>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <div class="d-flex align-items-center">
-                                    <button class="btn btn-primary btn-round ml-auto" data-toggle="modal"
-                                        data-target="#addRowModal">
-                                        <i class="fa fa-plus"></i>
-                                        Add Layanan
-                                    </button>
-                                </div>
-                            </div>
                             <div class="card-body">
-                                <div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header no-bd">
-                                                <h5 class="modal-title">
-                                                    <span class="fw-mediumbold">
-                                                        Add Jobdesk</span>
-                                                </h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form method="POST" action="{{ route('R_layanan.store') }}"
-                                                    enctype="multipart/form-data">
-                                                    @csrf
-                                                    <div class=" row">
-                                                        <div class="col-sm-12">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Name</label>
-                                                                <input id="addName" name="nama" type="text"
-                                                                    class="form-control" placeholder="Name Layanan">
-                                                            </div>
-                                                            <div class="form-group form-group-default">
-                                                                <label>Deskripsi</label>
-                                                                <input id="deskripsi" name="deskripsi" type="text"
-                                                                    class="form-control" placeholder="deskripsi">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="foto">Foto Team</label>
-                                                                <img class="img-show mb-3 img-fluid rounded d-block"
-                                                                    style="height: 200px" alt="">
-                                                                <input type="file" name="foto" class="form-control-file"
-                                                                    id="foto" onchange="previewImage()">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-primary">Add</button>
-                                                        <button type="button" class="btn btn-danger"
-                                                            data-dismiss="modal">Close</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- Modal -->
                                 <div class="table-responsive">
                                     <table id="add-row" class="display table table-striped table-hover">
@@ -90,19 +32,19 @@
                                             <tr>
                                                 <th> no </th>
                                                 <th> name </th>
-                                                <th> deskripsi </th>
+                                                <th> jobdesk </th>
                                                 <th style="width: 10%">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($layanan as $x)
+                                            @forelse ($M_team as $x)
                                             <tr>
                                                 <td> {{ $no++ }}</td>
-                                                <td>{{ $x->nama}}</td>
-                                                <td>{{ $x->deskripsi}}</td>
+                                                <td>{{ $x->nama_lengkap}}</td>
+                                                <td>{{ $x->jobdesk }}</td>
                                                 <td>
                                                     <form class="form-button-action"
-                                                        action="{{ route('R_layanan.destroy', $x->id) }}" method="POST">
+                                                        action="{{ route('R_team.destroy', $x->id) }}" method="POST">
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
@@ -111,11 +53,13 @@
                                                             <button class="btn" type="button" data-toggle="modal"
                                                                 data-target="#addRowModal{{ $x->id }}">detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('R_team.show',$x->id ) }}">edit</a>
+                                                            <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn">Hapus</button>
                                                         </div>
-
                                                     </form>
                                                     <div class="modal fade" id="addRowModal{{ $x->id }}" tabindex="-1"
                                                         role="dialog" aria-hidden="true">
@@ -124,7 +68,7 @@
                                                                 <div class="modal-header no-bd">
                                                                     <h5 class="modal-title">
                                                                         <span class="fw-mediumbold">
-                                                                            {{ $x->nama }}</span>
+                                                                            {{ $x->nama_lengkap }}</span>
                                                                     </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
@@ -146,17 +90,60 @@
                                                                                     <label>Name</label>
                                                                                     <input id="addName" type="text"
                                                                                         class="form-control"
-                                                                                        value="{{ $x->nama }}">
+                                                                                        value="{{ $x->nama_lengkap }}">
                                                                                 </div>
-                                                                                <div
-                                                                                    class="form-group form-group-default">
-                                                                                    <label>Deskripsi</label>
-                                                                                    <input id="addPosition" type="text"
-                                                                                        class="form-control"
-                                                                                        value="{{ $x->deskripsi }}" />
+
+                                                                                {{-- <div class="col-md-6 pr-0"> --}}
+                                                                                    <div
+                                                                                        class="form-group form-group-default">
+                                                                                        <label>Jobdesk</label>
+                                                                                        <input id="addPosition"
+                                                                                            type="text"
+                                                                                            class="form-control"
+                                                                                            value="{{ $x->jobdesk }}" />
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div
+                                                                                        class="form-group form-group-default">
+                                                                                        <label>Instagram</label>
+                                                                                        <input id="addOffice"
+                                                                                            type="text"
+                                                                                            class="form-control"
+                                                                                            value="{{ $x->instagram }}">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div
+                                                                                        class="form-group form-group-default">
+                                                                                        <label>github</label>
+                                                                                        <input id="addOffice"
+                                                                                            type="text"
+                                                                                            class="form-control"
+                                                                                            value="{{ $x->github }}">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div
+                                                                                        class="form-group form-group-default">
+                                                                                        <label>facebook</label>
+                                                                                        <input id="addOffice"
+                                                                                            type="text"
+                                                                                            class="form-control"
+                                                                                            value="{{ $x->facebook }}">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div
+                                                                                        class="form-group form-group-default">
+                                                                                        <label>Linkedin</label>
+                                                                                        <input id="addOffice"
+                                                                                            type="text"
+                                                                                            class="form-control"
+                                                                                            value="{{ $x->linkedin }}">
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -166,7 +153,7 @@
                                             </tr>
                                             @empty
                                             <div class="alert alert-danger">
-                                                Tidak Jobdesk.
+                                                Tidak Team.
                                             </div>
                                             @endforelse
                                         </tbody>

@@ -8,8 +8,8 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
-                            Hizrian
-                            <span class="user-level">Administrator</span>
+                            {{ auth()->user()->name }}
+                            <span class="user-level">{{ auth()->user()->email }}</span>
                             <span class="caret"></span>
                         </span>
                     </a>
@@ -83,20 +83,21 @@
                         <p>Layanan</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ $title==='project' ? 'active' :'' }} {{ $title==='addproject' ?'active':'' }}">
                     <a data-toggle="collapse" href="#Project" class="collapsed" aria-expanded="false">
                         <i class="fas fa-home"></i>
                         <p>Project</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="Project">
+                    <div class="collapse {{ $title==='project' ? 'show' :'' }} {{ $title==='addproject' ?'show':'' }}"
+                        id="Project">
                         <ul class="nav nav-collapse">
-                            <li>
+                            <li class="{{ $title==='project' ? 'active' :'' }}">
                                 <a href="{{ url('/R_project ') }}">
                                     <span class="sub-item">Project</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="{{ $title==='addproject' ? 'active' :'' }}">
                                 <a href="{{ url('/addProject ') }}">
                                     <span class="sub-item">add Project</span>
                                 </a>
@@ -108,6 +109,12 @@
                     <a href="{{ url('kritikSaran') }}">
                         <i class="fas fa-desktop"></i>
                         <p>Kritik dan Saran</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('R_register') }}">
+                        <i class="fas fa-desktop"></i>
+                        <p>register</p>
                     </a>
                 </li>
 

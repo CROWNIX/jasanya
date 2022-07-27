@@ -23,5 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             team_seed::class,
         ]);
+        $this->call([
+            user_seed::class,
+        ]);
     }
 }

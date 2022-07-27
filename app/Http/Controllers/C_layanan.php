@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\M_layanan;
+use Illuminate\Support\Facades\Storage;
 
 class C_layanan extends Controller
 {
@@ -22,23 +23,23 @@ class C_layanan extends Controller
 
     public function store(Request $request){
         $validasi = $request->validate([
-            'foto' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'foto' => 'required|file|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
-        if ($image = $request->file('foto')) {
-            $destinationPath = 'img/imgLayanan/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
+
+        if($request->file('foto')){
+            $validasi['foto']=$request->file('foto')->store('imgLayanan','public');
         }
         $layanan = new M_layanan;
         $layanan->nama=$request->nama;
         $layanan->deskripsi	=$request->deskripsi;
-        $layanan->foto = $input['image'] = "$profileImage";
+        $layanan->foto = $validasi['foto'];
         $layanan->save();
         return redirect()->route('R_layanan.index')->with('sukses');
     }
 
     public function destroy($id){
         $layanan= M_layanan::find($id);
+        Storage::delete('public/'.$layanan->foto);
         $layanan->delete();
         return redirect()->route('R_layanan.index')->with('sukses');
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\M_team;
 use App\Models\M_jobdesk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class C_team extends Controller
 {
@@ -21,7 +22,7 @@ class C_team extends Controller
             $M_team->where('nama_lengkap','like','%'.request('search').'%');
         }
         $no = 1;
-        return view('adminView.S_team',[
+        return view('adminView.team.S_team',[
             'no' => $no,
             'title' => 'datateam',
             'M_team' => $M_team->get(),
@@ -35,12 +36,11 @@ class C_team extends Controller
      */
     public function store(Request $request){
         $validasi = $request->validate([
-            'foto' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'foto' => 'required|file|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
-        if ($image = $request->file('foto')) {
-            $destinationPath = 'img/imgTeam/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
+
+        if($request->file('foto')){
+            $validasi['foto']=$request->file('foto')->store('imgTeam','public');
         }
         $portofolio = new M_team;
         $portofolio->nama_lengkap = $request->name;
@@ -49,7 +49,7 @@ class C_team extends Controller
         $portofolio->github = $request->github;
         $portofolio->linkedin = $request->linkedin;
         $portofolio->facebook = $request->facebook;
-        $portofolio->foto = $input['image'] = "$profileImage";
+        $portofolio->foto = $validasi['foto'];
         $portofolio->save();
         return redirect()->route('R_team.index')
                         ->with('success','Product deleted successfully');
@@ -63,7 +63,7 @@ class C_team extends Controller
      */
     public function F_A_team(){
         $M_jobdesk = M_jobdesk::latest();
-        return view('adminView.A_team',[
+        return view('adminView.team.A_team',[
             'title'=>'add team',
             'M_jobdesk'=>$M_jobdesk->get(),
         ]);
@@ -79,17 +79,7 @@ class C_team extends Controller
     {
         $M_jobdesk = M_jobdesk::latest();
         $M_team = M_team::find($id);
-        return view('adminView.E_team',compact('M_team'),[
-            'title'=>'edit',
-            'M_jobdesk'=>$M_jobdesk->get()
-        ]);
-    }
-
-    public function detailTeam($id)
-    {
-        $M_jobdesk = M_jobdesk::latest();
-        $M_team = M_team::find($id);
-        return view('adminView.D_team',compact('M_team'),[
+        return view('adminView.team.E_team',compact('M_team'),[
             'title'=>'edit',
             'M_jobdesk'=>$M_jobdesk->get()
         ]);
@@ -104,22 +94,28 @@ class C_team extends Controller
      */
     public function update(Request $request,$id)
     {
-        $request->validate([
+        $validasi = $request->validate([
             'foto' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
-        if ($image = $request->file('foto')) {
-            $destinationPath = 'img/imgTeam/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-        }
         $portofolio = M_team::findOrFail($id);
+        // dd($request->oldFoto);
+        if($request->file('foto')){
+            if($request->oldFoto){
+                Storage::delete('public/'.$request->oldFoto);
+            }
+            $validasi['foto']=$request->file('foto')->store('imgTeam','public');
+            
+        }else {
+            $validasi['foto']=$portofolio->foto;
+        }
+        // dd($portofolio->foto);
         $portofolio->nama_lengkap = $request->name;
         $portofolio->jobdesk = $request->jobdesk;
         $portofolio->instagram = $request->instagram;
         $portofolio->github = $request->github;
         $portofolio->linkedin = $request->linkedin;
         $portofolio->facebook = $request->facebook;
-        $portofolio->foto = $input['image'] = "$profileImage";
+        $portofolio->foto = $validasi['foto'];
         $portofolio->update();
         return redirect()->route('R_team.index')
                         ->with('success','Product deleted successfully');
@@ -132,8 +128,9 @@ class C_team extends Controller
      */
     public function destroy($id)
     {
-        $kritikSaran = M_team::find($id);
-        $kritikSaran->delete();
+        $team = M_team::find($id);
+        Storage::delete('public/'.$team->foto);
+        $team->delete();
         return redirect()->route('R_team.index')
                         ->with('success','Product deleted successfully');
     }
