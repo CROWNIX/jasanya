@@ -18,7 +18,8 @@
             <div class="container my-5 py-5 px-lg-5">
                 <div class="row g-5 py-5">
                     <div class="col-12 text-center">
-                        <h1 class="text-white animated slideInDown">Jasanya.Tech Team</h1>
+                        <h1 class="text-white animated slideInDown">Jasanya.Tech Team </h1>
+                        <input type="hidden" class="auto-type">
                         <hr class="bg-white mx-auto mt-0" style="width: 90px;">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
