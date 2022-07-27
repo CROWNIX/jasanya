@@ -44,7 +44,6 @@
                 @forelse ($M_team as $x)
                 <x-card-team>
                     @slot('foto')
-                    {{-- /img/imgTeam/{{ $x->foto }} --}}
                     {{ asset('storage/'.$x->foto) }}
                     @endslot
                     @slot('nama')

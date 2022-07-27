@@ -29,7 +29,7 @@ class C_login extends Controller
         return back()->with("error", "Login failed");
     }
     
-    public function logout(Request $request){
+    public function update(Request $request){
         Auth::logout();
         request()->session()->invalidate();
         request()->session()->regenerateToken();
