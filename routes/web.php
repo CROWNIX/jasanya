@@ -63,9 +63,9 @@ Route::group(['prefix' => '/'], function () {
     Route::resource('/R_register', C_register::class)->middleware('auth');
 });
 
-Route::get('/register',function(){
-    return view('adminView.register'); 
-});
+// Route::get('/register',function(){
+//     return view('adminView.register'); 
+// });
 
 
 // Porfolio Route
