@@ -25,7 +25,8 @@ class C_layanan extends Controller
     public function store(Request $request){
         $validasi = $request->validate([
             'nama' => 'required|max:100',
-            "deskripsi" => "required|max:255"
+            "deskripsi" => "required|max:255",
+            "icon" => "required|max:100",
         ]);
 
         M_layanan::create($validasi);

@@ -63,6 +63,11 @@
                                                                 <input id="deskripsi" name="deskripsi" type="text"
                                                                     class="form-control" placeholder="deskripsi" required>
                                                             </div>
+                                                            <div class="form-group form-group-default">
+                                                                <label>Icon</label>
+                                                                <input id="icon" name="icon" type="text"
+                                                                    class="form-control" placeholder="Icon" required>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
