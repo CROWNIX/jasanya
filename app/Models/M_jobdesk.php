@@ -10,5 +10,5 @@ class M_jobdesk extends Model
     use HasFactory;
     protected $table = 'jobdesk';
     // protected $primaryKey = 'id';
-    protected $fillabel = ['nama'];
+    protected $guarded = ['id'];
 }

@@ -37,6 +37,16 @@ class C_jobdesk extends Controller
                         ->with('success','Product deleted successfully');
     }
 
+    public function update(Request $request, M_jobdesk $jobdesk){
+        $validasi = $request->validate([
+            "nama" => "required|max:100"
+        ]);
+
+        $jobdesk->update($validasi);
+
+        return redirect("/jobdesk")->with('success','Jobdesk has been updated');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
