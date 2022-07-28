@@ -31,15 +31,9 @@ class C_jobdesk extends Controller
      */
     public function store(Request $request){
         $M_jobdesk = new M_jobdesk;
-        // $users_count = $M_jobdesk->where('nama', '=', request('name'))->count();
-        // if ($users_count > 0){
-        //     return redirect()->route('R_jobdesk.index')
-        //                 ->with('success','Product deleted successfully');
-        //     exit;
-        // }
         $M_jobdesk->nama = $request->name;
         $M_jobdesk->save();
-        return redirect()->route('R_jobdesk.index')
+        return redirect()->route('jobdesk.index')
                         ->with('success','Product deleted successfully');
     }
 
@@ -53,7 +47,7 @@ class C_jobdesk extends Controller
     {
         $M_jobdesk = M_jobdesk::find($id);
         $M_jobdesk->delete();
-        return redirect()->route('R_jobdesk.index')
+        return redirect()->route('jobdesk.index')
                         ->with('success','Product deleted successfully');
     }
 }

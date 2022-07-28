@@ -2,9 +2,16 @@
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <div class="user">
+                @if ($title === 'edit')
                 <div class="avatar-sm float-left mr-2">
                     <img src="/atlantisTemplate/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
                 </div>
+                @else
+                <div class="avatar-sm float-left mr-2">
+                    <img src="atlantisTemplate/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+                @endif
+
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
@@ -59,7 +66,7 @@
                         id="team">
                         <ul class="nav nav-collapse">
                             <li class="{{ $title === 'datateam'?'active':'' }}">
-                                <a href="{{ url('/R_team') }}">
+                                <a href="{{ url('/team') }}">
                                     <span class="sub-item">team</span>
                                 </a>
                             </li>
@@ -72,13 +79,13 @@
                     </div>
                 </li>
                 <li class="nav-item {{ $title === 'jobdesk' ? 'active':'' }}">
-                    <a href="{{ url('R_jobdesk') }}">
+                    <a href="{{ url('jobdesk') }}">
                         <i class="fas fa-desktop"></i>
                         <p>Jobdesk</p>
                     </a>
                 </li>
                 <li class="nav-item {{ $title === 'layanan' ? 'active':'' }}">
-                    <a href="{{ url('R_layanan') }}">
+                    <a href="/layanan">
                         <i class="fas fa-desktop"></i>
                         <p>Layanan</p>
                     </a>
@@ -93,7 +100,7 @@
                         id="Project">
                         <ul class="nav nav-collapse">
                             <li class="{{ $title==='project' ? 'active' :'' }}">
-                                <a href="{{ url('/R_project ') }}">
+                                <a href="/project">
                                     <span class="sub-item">Project</span>
                                 </a>
                             </li>
@@ -112,7 +119,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('R_register') }}">
+                    <a href="{{ url('register') }}">
                         <i class="fas fa-desktop"></i>
                         <p>register</p>
                     </a>

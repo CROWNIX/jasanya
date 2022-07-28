@@ -12,10 +12,10 @@
             <div class="page-inner">
                 <x-headerTableForm>
                     @slot('nama')
-                    team
+                    kritik saran
                     @endslot
                     @slot('url')
-                    R_team
+                    /kritikSaran
                     @endslot
                     @slot('nameurl')
                     team

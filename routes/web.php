@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 // jasanya view route
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [C_home::class, 'index']);
-    Route::get('/team', [C_home::class, 'team']);
+    Route::get('/jasanyateam', [C_home::class, 'team']);
     
 });
 
@@ -31,25 +31,25 @@ Route::group(['prefix' => '/'], function () {
 Route::group(['prefix' => '/'], function () {
     // kritik saaran
     Route::resource('adminView', C_kritikSaran::class)->middleware('auth');
-    Route::post('/kritikSaran', [C_kritikSaran::class, 'kritikSaran'])->middleware('guest');
+    Route::post('/kritikSaran', [C_kritikSaran::class, 'kritikSaran']);
     Route::get('/admin', [C_kritikSaran::class, 'home'])->middleware('auth');
     Route::get('/kritikSaran', [C_kritikSaran::class, 'getKritikSaran'])->middleware('auth');
 
     // jobdesk
     Route::get('/addJobdesk', [C_jobdesk::class, 'formAddJobdesk'])->middleware('auth');
-    Route::resource('R_jobdesk', C_jobdesk::class)->middleware('auth');
+    Route::resource('jobdesk', C_jobdesk::class)->middleware('auth');
 
     // team
-    Route::resource('R_team', C_team::class)->middleware('auth');
+    Route::resource('team', C_team::class)->middleware('auth');
     Route::get('/addTeam', [C_team::class, 'F_A_team'])->middleware('auth');
     Route::get('/detailTeam/{id}', [C_team::class, 'detailTeam'])->middleware('auth');
 
     // layanan
-    Route::resource('R_layanan', C_layanan::class)->middleware('auth');
+    Route::resource('layanan', C_layanan::class)->middleware('auth');
     Route::get('/addlayanan', [C_layanan::class, 'formAddLayanan'])->middleware('auth');
 
     // project
-    Route::resource('R_project', C_project::class);
+    Route::resource('project', C_project::class);
     Route::get('/addProject', [C_project::class, 'addProject'])->middleware('auth');
 });
 
@@ -57,16 +57,13 @@ Route::group(['prefix' => '/'], function () {
 //     return csrf_token(); 
 // });
 
-// login
-Route::group(['prefix' => '/'], function () {
-    Route::resource('/R_login', C_login::class)->middleware('guest');
-    Route::resource('/R_register', C_register::class)->middleware('guest');
-    Route::post('/logout', [C_login::class, 'logout']);
-});
 
-// Route::get('/register',function(){
-//     return view('adminView.register'); 
-// });
+// login & Register
+Route::get('/login', [C_login::class, 'index'])->middleware('guest');
+Route::post('/login', [C_login::class, 'store']);
+Route::get('/register', [C_register::class, 'index'])->middleware('auth');
+Route::post('/register', [C_register::class, 'store'])->middleware('auth');
+Route::post('/logout', [C_login::class, 'logout']);
 
 
 // Porfolio Route

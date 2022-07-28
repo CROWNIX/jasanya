@@ -7,7 +7,7 @@
                 <div class="card col-lg-4 mx-auto shadow">
                     <div class="card-body px-5 py-5">
                         <h3 class="card-title text-left mb-3">Register</h3>
-                        <form action="{{ route('R_register.store') }}" method="POST">
+                        <form action="/register" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label>Username</label>
@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="password" class="form-control p_input @error('password')
+                                <input type="password" autocomplete="off" name="password" class="form-control p_input @error('password')
                                 is-invalid
                             @enderror">
                                 @error('password')
@@ -51,8 +51,7 @@
                                 <button class="btn btn-google col">
                                     <i class="mdi mdi-google-plus"></i> Google plus </button>
                             </div>
-                            <p class="sign-up text-center">Already have an Account?<a
-                                    href="{{ route('R_login.index') }}"> Sign In</a></p>
+                            <p class="sign-up text-center">Already have an Account?<a href="/login"> Sign In</a></p>
                             <p class="terms">By creating an account you are accepting our<a href="#"> Terms &
                                     Conditions</a></p>
                         </form>

@@ -21,7 +21,7 @@
                         Form Add Team
                         @endslot
                         @slot('url')
-                        R_team
+                        team
                         @endslot
                         @slot('nameurl')
                         Team
@@ -31,7 +31,7 @@
                         <div class="col-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <form class="forms-sample" method="POST" action="{{ route('R_team.store') }}"
+                                    <form class="forms-sample" method="POST" action="{{ route('team.store') }}"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">

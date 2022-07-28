@@ -17,14 +17,24 @@ class DatabaseSeeder extends Seeder
         $this->call([
             portfolio_seed::class,
         ]);
+
         $this->call([
             jobdesk_seed::class,
         ]);
+
         $this->call([
             team_seed::class,
         ]);
+
         $this->call([
             user_seed::class,
+        ]);
+
+        $this->call([
+            layanan_seed::class,
+        ]);
+        $this->call([
+            project_seed::class,
         ]);
     }
 }

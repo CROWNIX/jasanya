@@ -19,10 +19,10 @@
                 <div class="page-inner">
                     <x-headerTableForm>
                         @slot('nama')
-                        Form Edit Project
+                        Form Add Project
                         @endslot
                         @slot('url')
-                        R_project
+                        project
                         @endslot
                         @slot('nameurl')
                         Project
@@ -32,18 +32,25 @@
                         <div class="col-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <form class="forms-sample" method="POST" action="{{ route('R_project.store') }}"
+                                    <form class="forms-sample" method="POST" action="/project"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group"><br>
                                                     <label for="name">Name Client</label>
-                                                    <input type="text" name="name" class="form-control" id="name"
+                                                    <input type="text" name="nama_client" class="form-control" id="name"
                                                         value="">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
+                                                <div class="form-group"><br>
+                                                    <label for="name">Name Project</label>
+                                                    <input type="text" name="nama_project" class="form-control"
+                                                        id="name" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
                                                 <div class="form-group"><br>
                                                     <label for="deskripsi">deskripsi</label>
                                                     <input type="text" name="deskripsi" class="form-control"
@@ -81,10 +88,10 @@
                                                     <label>jenis</label>
                                                     <select name="jenis" class="form-control" style="width:100%"
                                                         required>
-                                                        <option value="Aplikasi Mobile">Aplikasi Mobile</option>
-                                                        <option value="Website">Website</option>
-                                                        <option value="Api">Api</option>
-                                                        <option value="UI / UX">UI / UX</option>
+
+                                                        @foreach ($layanan as $x)
+                                                        <option value="{{ $x->nama }}">{{ $x->nama }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>

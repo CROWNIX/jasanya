@@ -31,13 +31,13 @@
                         Us</a>
                 </div>
                 <div class="col-lg-5 text-center text-lg-end">
-                    <img class="img-fluid animated zoomIn" src="/img/image-removebg-preview.png" alt=""
+                    <img class="img-fluid animated zoomIn" src="img/image-removebg-preview.png" alt=""
                         style=" width:330px">
                 </div>
             </div>
         </div>
     </div>
-    
+
 </div>
 <!-- Navbar & Hero End -->
 
@@ -119,7 +119,7 @@
                 {{-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Read More</a> --}}
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="/img/logo/4.png">
+                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/logo/4.png">
             </div>
         </div>
     </div>
@@ -142,12 +142,12 @@
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                 <i class="fa fa-users fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">{{ $client }}</h1>
                 <p class="text-white mb-0">Satisfied Clients</p>
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                 <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">{{ $count }}</h1>
                 <p class="text-white mb-0">Compleate Projects</p>
             </div>
         </div>
@@ -219,7 +219,8 @@
 <!-- Service End -->
 
 <!-- Projects Start -->
-<div class="container-xxl py-5" id="project">
+<div class="container-xxl py-5 mb-5" id="project">
+
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             {{-- <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span>
@@ -230,126 +231,50 @@
             <div class="col-12 text-center">
                 <ul class="list-inline mb-5" id="portfolio-flters">
                     <li class="mx-2 active" data-filter="*">All</li>
-                    <li class="mx-2" data-filter=".mobile">Aplikasi Mobile</li>
-                    <li class="mx-2" data-filter=".website">Website</li>
-                    <li class="mx-2" data-filter=".api">Api</li>
-                    <li class="mx-2" data-filter=".ui">UI / UX</li>
+                    <li class="mx-2" data-filter=".AplikasiMobile">Aplikasi Mobile</li>
+                    <li class="mx-2" data-filter=".Website">Website</li>
+                    <li class="mx-2" data-filter=".Api">Api</li>
+                    <li class="mx-2" data-filter=".UIUX">UI / UX</li>
                 </ul>
             </div>
         </div>
+
         <div class="row g-4 portfolio-container pb-5">
-            <div class="col-lg-4 col-md-6 portfolio-item mobile wow fadeInUp" data-wow-delay="0.1s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
+            @forelse ($project as $x)
+            <div class="col-lg-4 col-md-6 portfolio-item {{ $x->jenis }} wow fadeInUp" data-wow-delay="0.1s">
+                <div class="rounded overflow-hidden">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/imgProject/aplikasiMobile.png" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('storage/'.$x->foto_completed) }}" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/imgProject/aplikasiMobile.png"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-square btn-outline-light mx-1"
+                                href="{{ asset('storage/'.$x->foto_completed) }}" data-lightbox="portfolio"><i
+                                    class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                     <div class="bg-light p-4">
-                        <a href="https://dart.dev/" target="blank">
-                            <p class="text-primary fw-medium mb-2">Aplikasi Mobile Dart-Flutter</p>
-                        </a>
-                        <h5 class="lh-base mb-0">Pembuatan Aplikasi Mobile Dart Flutter</a>
+                        <p class="text-primary fw-medium mb-2">{{ $x->nama_project }}</p>
+                        <h5 class="lh-base mb-0">{{ $x->deskripsi }}</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item api wow fadeInUp" data-wow-delay="0.3s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1 ">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/imgProject/api.png" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/imgProject/api.png"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <a href="https://lumen.laravel.com/docs/9.x" target="blank">
-                            <p class="text-primary fw-medium mb-2">Api laravel-lumen</p>
-                        </a>
-                        <h5 class="lh-base mb-0">Pembuatan Api Menggunakan laravel lumen</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.5s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/imgProject/phpNative.png" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/imgProject/phpNative.png"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <a href="https://www.php.net/" target="blank">
-                            <p class="text-primary fw-medium mb-2">Website PHP native</p>
-                        </a>
-                        <h5 class="lh-base mb-0">pembuatan website dengan php-native
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.1s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/portfolio-4.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/portfolio-4.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.3s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/portfolio-5.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/portfolio-5.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.5s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/img/portfolio-6.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="/img/portfolio-6.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
+            @empty
+            tidak ada data
+
+
+            @endforelse
         </div>
     </div>
 </div>
+
 <!-- Projects End -->
 
 
 <!-- Testimonial Start -->
 <div class="container-xxl pt-5 wow fadeInUp" data-wow-delay="0.1s" id="testimoni">
     <div class="container py-5 px-lg-5">
-        {{-- <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
+        {{-- <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span>
+        </p>
         --}}
         <h1 class="text-center mb-5">What Say Our Clients!</h1>
         <div class="owl-carousel testimonial-carousel">
@@ -358,7 +283,7 @@
                     ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
                     clita duo justo.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="/img/testimonial-1.jpg"
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
                         style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Client Name</h5>
@@ -371,7 +296,7 @@
                     ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
                     clita duo justo.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="/img/testimonial-2.jpg"
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg"
                         style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Client Name</h5>
@@ -384,7 +309,7 @@
                     ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
                     clita duo justo.</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="/img/testimonial-3.jpg"
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
                         style="width: 65px; height: 65px;">
                     <div class="ps-4">
                         <h5 class="mb-1">Client Name</h5>
@@ -401,7 +326,8 @@
 <div class="container-xxl" id="contact">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
-            {{-- <p class="section-title text-secondary justify-content-center"><span></span>Contact Us<span></span></p>
+            {{-- <p class="section-title text-secondary justify-content-center"><span></span>Contact Us<span></span>
+            </p>
             --}}
             <h1 class="text-center mb-5">Kritik Dan Saran</h1>
         </div>

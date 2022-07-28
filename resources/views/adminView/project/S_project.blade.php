@@ -15,7 +15,7 @@
                     Data Project
                     @endslot
                     @slot('url')
-                    R_project
+                    project
                     @endslot
                     @slot('nameurl')
                     project
@@ -27,11 +27,19 @@
                             <div class="card-body">
                                 <!-- Modal -->
                                 <div class="table-responsive">
+                                    @if (session()->has("success"))
+                                        <div class="col-lg-6">
+                                            <div class="alert alert-success alert-dismissible fade show bg-success text-white" role="alert">
+                                                {{ session("success") }}
+                                            </div>         
+                                        </div>
+                                    @endif
                                     <table id="add-row" class="display table table-striped table-hover">
                                         <thead>
                                             <tr>
                                                 <th> no </th>
                                                 <th> Name Client </th>
+                                                <th> Name Project </th>
                                                 <th> deadline </th>
                                                 <th> status </th>
                                                 <th style="width: 10%">Action</th>
@@ -41,26 +49,28 @@
                                             @forelse ($project as $x)
                                             <tr>
                                                 <td> {{ $no++ }}</td>
-                                                <td>{{ $x->nama}}</td>
+                                                <td>{{ $x->nama_client}}</td>
+                                                <td>{{ $x->nama_project}}</td>
                                                 <td>{{ $x->deadline}}</td>
                                                 <td>{{ $x->status}}</td>
                                                 <td>
                                                     <form class="form-button-action"
-                                                        action="{{ route('R_project.destroy', $x->id) }}" method="POST">
+                                                        action="/project/{{ $x->id }}" method="POST">
+
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
                                                                 class="fas fa-ellipsis-v"></i></button>
                                                         <div class="dropdown-menu">
-                                                            <button class="btn" type="button" data-toggle="modal"
+                                                            <button class="btn dropdown-item" type="button" data-toggle="modal"
                                                                 data-target="#addRowModal{{ $x->id }}">detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
-                                                            <a class="dropdown-item"
-                                                                href="{{ route('R_project.show',$x->id ) }}">edit</a>
+                                                            <a class="dropdown-item btn"
+                                                                href="/project/{{ $x->id }}/edit">edit</a>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn">Hapus</button>
+                                                            <button type="submit" class="btn dropdown-item">Hapus</button>
                                                         </div>
                                                     </form>
                                                     <div class="modal fade" id="addRowModal{{ $x->id }}" tabindex="-1"
@@ -85,10 +95,15 @@
                                                                                     class="form-group form-group-default">
                                                                                     <label for="name">Bukti
                                                                                         Transaksi</label>
+                                                                                    @if ($x->foto_transaksi)
                                                                                     <img class="rounded"
                                                                                         src="{{ asset('storage/'.$x->foto_transaksi) }}"
                                                                                         style="height: 200px"
                                                                                         alt="bukti traksaksi kosoong">
+                                                                                    @else
+                                                                                    <p>poto transaksi kosong</p>
+                                                                                    @endif
+
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-md-6">
@@ -96,10 +111,14 @@
                                                                                     class="form-group form-group-default">
                                                                                     <label for="name">Foto
                                                                                         Project</label>
+                                                                                    @if ($x->foto_completed)
                                                                                     <img class="rounded"
                                                                                         src="{{ asset('storage/'.$x->foto_completed) }}"
                                                                                         style="height: 200px"
                                                                                         alt="project foto kosong">
+                                                                                    @else
+                                                                                    <p>poto kosong</p>
+                                                                                    @endif
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-md-6">
@@ -183,9 +202,8 @@
                                                                                         rows="1">{{ $x->keterangan }}</textarea>
                                                                                 </div>
                                                                             </div>
-
+                                                                            @if ($x->pekerja != 'null')
                                                                             @foreach (json_decode($x->pekerja) as $p)
-
                                                                             <div class="col-md-6">
                                                                                 <div
                                                                                     class="form-group form-group-default">
@@ -198,6 +216,7 @@
                                                                                 </div>
                                                                             </div>
                                                                             @endforeach
+                                                                            @endif
 
                                                                     </form>
                                                                 </div>
