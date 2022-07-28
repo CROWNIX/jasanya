@@ -14,7 +14,7 @@
                 <a href="{{ url('/#about') }}" class="nav-item nav-link">About</a>
                 <a href="{{ url('/#service') }}" class="nav-item nav-link">Service</a>
                 <a href="{{ url('/#project') }}" class="nav-item nav-link">Project</a>
-                <a href="{{ url('/team') }}" class="nav-item nav-link">Team</a>
+                <a href="{{ url('/jasanyateam') }}" class="nav-item nav-link">Team</a>
                 {{-- <div class="nav-item dropdown" id="drop">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">

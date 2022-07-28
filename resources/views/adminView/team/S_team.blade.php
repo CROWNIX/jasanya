@@ -81,9 +81,14 @@
                                                                             <div class="col-sm-12">
                                                                                 <div
                                                                                     class="form-group form-group-default">
+                                                                                    @if ($x->foto)
                                                                                     <img class="rounded mx-auto d-block"
                                                                                         src="{{ asset('storage/'.$x->foto) }}"
                                                                                         style="height: 200px" alt="">
+                                                                                    @else
+                                                                                    <p>tidak ada foto member</p>
+                                                                                    @endif
+
                                                                                 </div>
                                                                                 <div
                                                                                     class="form-group form-group-default">

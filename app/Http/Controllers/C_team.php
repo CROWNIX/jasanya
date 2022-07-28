@@ -52,7 +52,7 @@ class C_team extends Controller
         $portofolio->facebook = $request->facebook;
         $portofolio->foto = $validasi['foto'];
         $portofolio->save();
-        return redirect()->route('R_team.index')
+        return redirect()->route('team.index')
                         ->with('success','Product deleted successfully');
     }
 
@@ -118,7 +118,7 @@ class C_team extends Controller
         $portofolio->facebook = $request->facebook;
         $portofolio->foto = $validasi['foto'];
         $portofolio->update();
-        return redirect()->route('R_team.index')
+        return redirect()->route('team.index')
                         ->with('success','Product deleted successfully');
     }
     /**
@@ -130,9 +130,9 @@ class C_team extends Controller
     public function destroy($id)
     {
         $team = M_team::find($id);
-        Storage::delete('public/'.$team->foto);
+        // Storage::delete('public/'.$team->foto);
         $team->delete();
-        return redirect()->route('R_team.index')
+        return redirect()->route('team.index')
                         ->with('success','Product deleted successfully');
     }
     // end team

@@ -142,7 +142,7 @@
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                 <i class="fa fa-users fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">{{ $client }}</h1>
                 <p class="text-white mb-0">Satisfied Clients</p>
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
@@ -220,6 +220,7 @@
 
 <!-- Projects Start -->
 <div class="container-xxl py-5 mb-5" id="project">
+
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             {{-- <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span>
@@ -230,40 +231,50 @@
             <div class="col-12 text-center">
                 <ul class="list-inline mb-5" id="portfolio-flters">
                     <li class="mx-2 active" data-filter="*">All</li>
-                    <li class="mx-2" data-filter=".mobile">Aplikasi Mobile</li>
-                    <li class="mx-2" data-filter=".website">Website</li>
+                    <li class="mx-2" data-filter=".AplikasiMobile">Aplikasi Mobile</li>
+                    <li class="mx-2" data-filter=".Website">Website</li>
                     <li class="mx-2" data-filter=".Api">Api</li>
-                    <li class="mx-2" data-filter=".ui">UI / UX</li>
+                    <li class="mx-2" data-filter=".UIUX">UI / UX</li>
                 </ul>
             </div>
         </div>
+
         <div class="row g-4 portfolio-container pb-5">
-            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.5s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
+            @forelse ($project as $x)
+            <div class="col-lg-4 col-md-6 portfolio-item {{ $x->jenis }} wow fadeInUp" data-wow-delay="0.1s">
+                <div class="rounded overflow-hidden">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('storage/'.$x->foto_completed) }}" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="" data-lightbox="portfolio"><i
+                            <a class="btn btn-square btn-outline-light mx-1"
+                                href="{{ asset('storage/'.$x->foto_completed) }}" data-lightbox="portfolio"><i
                                     class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                     <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2"></p>
-                        <h5 class="lh-base mb-0"></a>
+                        <p class="text-primary fw-medium mb-2">{{ $x->nama_project }}</p>
+                        <h5 class="lh-base mb-0">{{ $x->deskripsi }}</a>
                     </div>
                 </div>
             </div>
+            @empty
+            tidak ada data
+
+
+            @endforelse
         </div>
     </div>
 </div>
+
 <!-- Projects End -->
 
 
 <!-- Testimonial Start -->
 <div class="container-xxl pt-5 wow fadeInUp" data-wow-delay="0.1s" id="testimoni">
     <div class="container py-5 px-lg-5">
-        {{-- <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
+        {{-- <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span>
+        </p>
         --}}
         <h1 class="text-center mb-5">What Say Our Clients!</h1>
         <div class="owl-carousel testimonial-carousel">
@@ -315,7 +326,8 @@
 <div class="container-xxl" id="contact">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
-            {{-- <p class="section-title text-secondary justify-content-center"><span></span>Contact Us<span></span></p>
+            {{-- <p class="section-title text-secondary justify-content-center"><span></span>Contact Us<span></span>
+            </p>
             --}}
             <h1 class="text-center mb-5">Kritik Dan Saran</h1>
         </div>

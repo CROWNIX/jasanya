@@ -80,11 +80,17 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-
                                                 <div class="form-group"><br>
                                                     <label for="name">Name Client</label>
-                                                    <input type="text" name="name" class="form-control" id="name"
-                                                        value="{{ $project->nama }}">
+                                                    <input type="text" name="nama_client" class="form-control" id="name"
+                                                        value="{{ $project->nama_client }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group"><br>
+                                                    <label for="name">Name Project</label>
+                                                    <input type="text" name="nama_project" class="form-control"
+                                                        id="name" value="{{ $project->nama_project }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -106,6 +112,14 @@
                                                     <label for="time_completed">Project Selesai</label>
                                                     <input type="date" name="time_completed" class="form-control"
                                                         id="name" value="{{ $project->time_completed }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleTextarea1">keterangan</label>
+                                                    <textarea class="form-control" name="keterangan"
+                                                        id="exampleTextarea1"
+                                                        rows="3">{{ $project->keterangan }}</textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -132,10 +146,10 @@
                                                         required>
                                                         <option value="{{ $project->jenis }}">{{ $project->jenis}}
                                                         </option>
-                                                        <option value="Aplikasi Mobile">Aplikasi Mobile</option>
+                                                        <option value="AplikasiMobile">Aplikasi Mobile</option>
                                                         <option value="Website">Website</option>
                                                         <option value="Api">Api</option>
-                                                        <option value="UI / UX">UI / UX</option>
+                                                        <option value="UIUX">UI / UX</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -171,12 +185,7 @@
 
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="exampleTextarea1">keterangan</label>
-                                                    <textarea class="form-control" name="keterangan"
-                                                        id="exampleTextarea1"
-                                                        rows="3">{{ $project->keterangan }}</textarea>
-                                                </div>
+
                                             </div>
 
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
