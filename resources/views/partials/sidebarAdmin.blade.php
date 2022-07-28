@@ -2,7 +2,7 @@
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <div class="user">
-                @if ($title === 'edit')
+                @if ($title === 'Edit Project' || $title === "edit team")
                 <div class="avatar-sm float-left mr-2">
                     <img src="/atlantisTemplate/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
                 </div>
