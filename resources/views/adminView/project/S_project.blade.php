@@ -15,7 +15,7 @@
                     Data Project
                     @endslot
                     @slot('url')
-                    R_project
+                    project
                     @endslot
                     @slot('nameurl')
                     project
@@ -46,7 +46,7 @@
                                                 <td>{{ $x->status}}</td>
                                                 <td>
                                                     <form class="form-button-action"
-                                                        action="{{ route('R_project.destroy', $x->id) }}" method="POST">
+                                                        action="{{ route('project.destroy', $x->id) }}" method="POST">
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
@@ -56,7 +56,7 @@
                                                                 data-target="#addRowModal{{ $x->id }}">detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             <a class="dropdown-item"
-                                                                href="{{ route('R_project.show',$x->id ) }}">edit</a>
+                                                                href="{{ route('project.show',$x->id ) }}">edit</a>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')
@@ -183,7 +183,7 @@
                                                                                         rows="1">{{ $x->keterangan }}</textarea>
                                                                                 </div>
                                                                             </div>
-
+                                                                            @if ($x->pekerja != 'null')
                                                                             @foreach (json_decode($x->pekerja) as $p)
 
                                                                             <div class="col-md-6">
@@ -198,6 +198,7 @@
                                                                                 </div>
                                                                             </div>
                                                                             @endforeach
+                                                                            @endif
 
                                                                     </form>
                                                                 </div>

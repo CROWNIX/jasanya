@@ -22,7 +22,7 @@
                         Form Edit Project
                         @endslot
                         @slot('url')
-                        R_project
+                        project
                         @endslot
                         @slot('nameurl')
                         Project

@@ -15,7 +15,7 @@
                     team
                     @endslot
                     @slot('url')
-                    R_team
+                    team
                     @endslot
                     @slot('nameurl')
                     team
@@ -44,7 +44,7 @@
                                                 <td>{{ $x->jobdesk }}</td>
                                                 <td>
                                                     <form class="form-button-action"
-                                                        action="{{ route('R_team.destroy', $x->id) }}" method="POST">
+                                                        action="{{ route('team.destroy', $x->id) }}" method="POST">
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
@@ -54,7 +54,7 @@
                                                                 data-target="#addRowModal{{ $x->id }}">detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             <a class="dropdown-item"
-                                                                href="{{ route('R_team.show',$x->id ) }}">edit</a>
+                                                                href="{{ route('team.show',$x->id ) }}">edit</a>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')

@@ -58,7 +58,7 @@ class C_project extends Controller
         $project->keterangan=$request->keterangan;
         $project['pekerja']=json_encode($request->pekerja);
         $project->save();
-        return redirect()->route('R_project.index');
+        return redirect()->route('project.index');
 
     }
 
@@ -124,7 +124,7 @@ class C_project extends Controller
         $project->foto_completed=$validasi['foto_completed'];
         $project['pekerja']=json_encode($request->pekerja);
         $project->update();
-        return redirect()->route('R_project.index');
+        return redirect()->route('project.index');
     }
 
     /**
@@ -135,9 +135,11 @@ class C_project extends Controller
      */
     public function destroy($id){
         $project = M_project::find($id);
-        Storage::delete('public/'.$project->foto_transaksi);
+        if ($project->foto_transaksi) {
+            Storage::delete('public/'.$project->foto_transaksi);
+        }
         Storage::delete('public/'.$project->foto_completed);
         $project->delete();
-        return redirect()->route('R_project.index')->with('sukses');
+        return redirect()->route('project.index')->with('sukses');
     }
 }
