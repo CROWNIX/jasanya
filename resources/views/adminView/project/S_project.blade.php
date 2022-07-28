@@ -62,15 +62,15 @@
                                                             aria-expanded="false"><i
                                                                 class="fas fa-ellipsis-v"></i></button>
                                                         <div class="dropdown-menu">
-                                                            <button class="btn" type="button" data-toggle="modal"
+                                                            <button class="btn dropdown-item" type="button" data-toggle="modal"
                                                                 data-target="#addRowModal{{ $x->id }}">detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
-                                                            <a class="dropdown-item"
+                                                            <a class="dropdown-item btn"
                                                                 href="/project/{{ $x->id }}/edit">edit</a>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn">Hapus</button>
+                                                            <button type="submit" class="btn dropdown-item">Hapus</button>
                                                         </div>
                                                     </form>
                                                     <div class="modal fade" id="addRowModal{{ $x->id }}" tabindex="-1"

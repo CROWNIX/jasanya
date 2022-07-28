@@ -61,7 +61,7 @@ class C_project extends Controller
         $project['pekerja']=json_encode($request->pekerja);
         $project->save();
 
-        return redirect("/project");
+        return redirect("/project")->with("success", "New Project has beed added");
     }
 
     public function addProject(){
@@ -106,7 +106,8 @@ class C_project extends Controller
      */
     public function update(Request $request, M_project $project){
         $validasi = $request->validate([
-            "nama" => "required",
+            "nama_client" => "required",
+            "nama_project" => "required",
             "deskripsi" => "required",
             "keterangan" => "required",
             "deadline" => "required",
@@ -122,6 +123,14 @@ class C_project extends Controller
             }
 
             $validasi['foto_transaksi'] = $request->file('foto_transaksi')->store('imgTransaksi');
+        }
+
+        if($request->file('foto_completed')){
+            if($request->oldfoto_completed){
+                Storage::delete($project->foto_completed);
+            }
+
+            $validasi['foto_completed'] = $request->file('foto_completed')->store('imgCompleted');
         }
         
         
