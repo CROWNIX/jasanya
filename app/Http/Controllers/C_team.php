@@ -81,7 +81,7 @@ class C_team extends Controller
         $M_jobdesk = M_jobdesk::latest();
         $M_team = M_team::find($id);
         return view('adminView.team.E_team',compact('M_team'),[
-            'title'=>'edit',
+            'title'=>'edit team',
             'M_jobdesk'=>$M_jobdesk->get()
         ]);
     }
