@@ -28,7 +28,7 @@ class team_seed extends Seeder
             [
                 'nama_lengkap' => 'Rahmat Fauzi Widianto',
                 'jobdesk' => 'Full Stack',
-                'foto' => 'imgTeam/rahmat.jpg',
+                'foto' => 'imgTeam/bangRahmat.jpg',
                 'instagram' => 'fri3nds_715',
                 'github' => 'CROWNIX',
                 'linkedin' => '',
@@ -46,7 +46,7 @@ class team_seed extends Seeder
             [
                 'nama_lengkap' => 'Dede Maulana',
                 'jobdesk' => 'Frontend & UI/UX design',
-                'foto' => 'imgTeam/default.jpg',
+                'foto' => 'imgTeam/bangMaul.jpeg',
                 'instagram' => 'maullana_d19',
                 'github' => 'maullana19',
                 'linkedin' => '',
