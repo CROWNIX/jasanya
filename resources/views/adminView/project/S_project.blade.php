@@ -46,7 +46,7 @@
                                                 <td>{{ $x->status}}</td>
                                                 <td>
                                                     <form class="form-button-action"
-                                                        action="{{ route('R_project.destroy', $x->id) }}" method="POST">
+                                                        action="/project/{{ $x->id }}" method="POST">
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
@@ -56,7 +56,7 @@
                                                                 data-target="#addRowModal{{ $x->id }}">detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             <a class="dropdown-item"
-                                                                href="{{ route('R_project.show',$x->id ) }}">edit</a>
+                                                                href="/project/{{ $x->id }}/edit">edit</a>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')

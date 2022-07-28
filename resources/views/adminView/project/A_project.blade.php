@@ -19,7 +19,7 @@
                 <div class="page-inner">
                     <x-headerTableForm>
                         @slot('nama')
-                        Form Edit Project
+                        Form Add Project
                         @endslot
                         @slot('url')
                         R_project
@@ -81,10 +81,9 @@
                                                     <label>jenis</label>
                                                     <select name="jenis" class="form-control" style="width:100%"
                                                         required>
-                                                        <option value="Aplikasi Mobile">Aplikasi Mobile</option>
-                                                        <option value="Website">Website</option>
-                                                        <option value="Api">Api</option>
-                                                        <option value="UI / UX">UI / UX</option>
+                                                        @foreach ($layanan as $x)
+                                                        <option value="{{ $x->nama }}">{{ $x->nama }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>

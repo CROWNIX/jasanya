@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\M_project;
+use App\Models\M_layanan;
 use App\Models\M_team;
 use Illuminate\Support\Facades\Storage;
 
@@ -58,15 +59,16 @@ class C_project extends Controller
         $project->keterangan=$request->keterangan;
         $project['pekerja']=json_encode($request->pekerja);
         $project->save();
-        return redirect()->route('R_project.index');
+        return redirect("/project");
 
     }
 
     public function addProject(){
-        $pekerja = M_team::latest();
+
         return view('adminView.project.A_project',[
-            'title'=>'addproject',
-            'pekerja'=>$pekerja->get(),
+            "title" => "Add Project",
+            "pekerja" => M_team::latest()->get(),
+            "layanan" => M_layanan::latest()->get()
         ]);
     }
 
@@ -80,6 +82,19 @@ class C_project extends Controller
             'pekerja'=>$M_jobdesk->get(),
             'project'=>$project,
             'arrayPekerja'=>$arrayPekerja
+        ]);
+    }
+
+    public function edit($id){
+        $M_jobdesk = M_team::latest();
+        $project = M_project::find($id);
+        $arrayPekerja = json_decode($project->pekerja);
+        return view('adminView.project.A_project',[
+            'title'=>'Edit Project',
+            'pekerja'=>$M_jobdesk->get(),
+            'project'=>$project,
+            'arrayPekerja'=>$arrayPekerja,
+            "layanan" => M_layanan::latest()->get()
         ]);
     }
     /**
@@ -138,6 +153,6 @@ class C_project extends Controller
         Storage::delete('public/'.$project->foto_transaksi);
         Storage::delete('public/'.$project->foto_completed);
         $project->delete();
-        return redirect()->route('R_project.index')->with('sukses');
+        return redirect("/project");
     }
 }
