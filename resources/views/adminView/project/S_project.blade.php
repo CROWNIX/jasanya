@@ -15,7 +15,7 @@
                     Data Project
                     @endslot
                     @slot('url')
-                    R_project
+                    project
                     @endslot
                     @slot('nameurl')
                     project
@@ -27,6 +27,13 @@
                             <div class="card-body">
                                 <!-- Modal -->
                                 <div class="table-responsive">
+                                    @if (session()->has("success"))
+                                        <div class="col-lg-6">
+                                            <div class="alert alert-success alert-dismissible fade show bg-success text-white" role="alert">
+                                                {{ session("success") }}
+                                            </div>         
+                                        </div>
+                                    @endif
                                     <table id="add-row" class="display table table-striped table-hover">
                                         <thead>
                                             <tr>
@@ -47,6 +54,7 @@
                                                 <td>
                                                     <form class="form-button-action"
                                                         action="/project/{{ $x->id }}" method="POST">
+
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
@@ -183,7 +191,7 @@
                                                                                         rows="1">{{ $x->keterangan }}</textarea>
                                                                                 </div>
                                                                             </div>
-
+                                                                            @if ($x->pekerja != 'null')
                                                                             @foreach (json_decode($x->pekerja) as $p)
 
                                                                             <div class="col-md-6">
@@ -198,6 +206,7 @@
                                                                                 </div>
                                                                             </div>
                                                                             @endforeach
+                                                                            @endif
 
                                                                     </form>
                                                                 </div>

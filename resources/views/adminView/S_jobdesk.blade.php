@@ -15,7 +15,7 @@
                     Jobdesk
                     @endslot
                     @slot('url')
-                    R_jobdesk
+                    jobdesk
                     @endslot
                     @slot('nameurl')
                     jobdesk
@@ -48,7 +48,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="{{ route('R_jobdesk.store') }}">
+                                                <form method="POST" action="{{ route('jobdesk.store') }}">
                                                     @csrf
                                                     <div class="row">
                                                         <div class="col-sm-12">
@@ -98,7 +98,7 @@
                                                 <td>{{ $x->nama}}</td>
                                                 <td>
                                                     <form class="form-button-action"
-                                                        action="{{ route('R_jobdesk.destroy', $x->id) }}" method="POST">
+                                                        action="{{ route('jobdesk.destroy', $x->id) }}" method="POST">
 
                                                         @csrf
                                                         @method('DELETE')

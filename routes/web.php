@@ -31,16 +31,16 @@ Route::group(['prefix' => '/'], function () {
 Route::group(['prefix' => '/'], function () {
     // kritik saaran
     Route::resource('adminView', C_kritikSaran::class)->middleware('auth');
-    Route::post('/kritikSaran', [C_kritikSaran::class, 'kritikSaran'])->middleware('guest');
+    Route::post('/kritikSaran', [C_kritikSaran::class, 'kritikSaran']);
     Route::get('/admin', [C_kritikSaran::class, 'home'])->middleware('auth');
     Route::get('/kritikSaran', [C_kritikSaran::class, 'getKritikSaran'])->middleware('auth');
 
     // jobdesk
     Route::get('/addJobdesk', [C_jobdesk::class, 'formAddJobdesk'])->middleware('auth');
-    Route::resource('R_jobdesk', C_jobdesk::class)->middleware('auth');
+    Route::resource('jobdesk', C_jobdesk::class)->middleware('auth');
 
     // team
-    Route::resource('R_team', C_team::class)->middleware('auth');
+    Route::resource('team', C_team::class)->middleware('auth');
     Route::get('/addTeam', [C_team::class, 'F_A_team'])->middleware('auth');
     Route::get('/detailTeam/{id}', [C_team::class, 'detailTeam'])->middleware('auth');
 
@@ -61,8 +61,8 @@ Route::group(['prefix' => '/'], function () {
 // login & Register
 Route::get('/login', [C_login::class, 'index'])->middleware('guest');
 Route::post('/login', [C_login::class, 'store']);
-Route::get('/register', [C_register::class, 'index'])->middleware('guest');
-Route::post('/register', [C_register::class, 'store']);
+Route::get('/register', [C_register::class, 'index'])->middleware('auth');
+Route::post('/register', [C_register::class, 'store'])->middleware('auth');
 Route::post('/logout', [C_login::class, 'logout']);
 
 
