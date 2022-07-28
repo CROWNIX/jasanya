@@ -9,5 +9,5 @@ class M_layanan extends Model
 {
     use HasFactory;
     protected $table = 'layanan';
-    protected $fillabel = ['nama','deskripsi','foto'];
+    protected $guarded = ["id"];
 }
