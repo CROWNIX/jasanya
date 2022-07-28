@@ -22,7 +22,7 @@
                         Form Add Team
                         @endslot
                         @slot('url')
-                        R_team
+                        team
                         @endslot
                         @slot('nameurl')
                         Team
@@ -33,7 +33,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <form class="forms-sample" method="POST"
-                                        action="{{ route('R_team.update',$M_team->id) }}" enctype="multipart/form-data">
+                                        action="{{ route('team.update',$M_team->id) }}" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
                                         <input type="hidden" name="oldFoto" id="" value="{{ $M_team->foto }}">

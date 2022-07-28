@@ -22,7 +22,7 @@
                         Form Edit Project
                         @endslot
                         @slot('url')
-                        R_project
+                        project
                         @endslot
                         @slot('nameurl')
                         Project
@@ -33,7 +33,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <form class="forms-sample" method="POST"
-                                        action="{{ route('R_project.update',$project->id) }}"
+                                        action="{{ route('project.update',$project->id) }}"
                                         enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')

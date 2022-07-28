@@ -37,10 +37,10 @@ Route::group(['prefix' => '/'], function () {
 
     // jobdesk
     Route::get('/addJobdesk', [C_jobdesk::class, 'formAddJobdesk'])->middleware('auth');
-    Route::resource('R_jobdesk', C_jobdesk::class)->middleware('auth');
+    Route::resource('jobdesk', C_jobdesk::class)->middleware('auth');
 
     // team
-    Route::resource('R_team', C_team::class)->middleware('auth');
+    Route::resource('team', C_team::class)->middleware('auth');
     Route::get('/addTeam', [C_team::class, 'F_A_team'])->middleware('auth');
     Route::get('/detailTeam/{id}', [C_team::class, 'detailTeam'])->middleware('auth');
 
