@@ -1,4 +1,4 @@
-@if ($title === 'Edit Project' || $title==="edit team")
+@if ($title === 'Edit Project' || $title==="edit team" || $title === "Add Layanan")
 <!DOCTYPE html>
 <html lang="en">
 

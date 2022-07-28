@@ -86,8 +86,8 @@
                                     <table id="add-row" class="display table table-striped table-hover">
                                         <thead>
                                             <tr>
-                                                <th> no </th>
-                                                <th> name jobdesk </th>
+                                                <th> No </th>
+                                                <th> Nama Jobdesk </th>
                                                 <th style="width: 10%">Action</th>
                                             </tr>
                                         </thead>
@@ -97,19 +97,62 @@
                                                 <td> {{ $no++ }}</td>
                                                 <td>{{ $x->nama}}</td>
                                                 <td>
-                                                    <form class="form-button-action"
-                                                        action="{{ route('jobdesk.destroy', $x->id) }}" method="POST">
+                                                    <div class="d-flex">
+                                                        <form class="form-button-action"
+                                                            action="{{ route('jobdesk.destroy', $x->id) }}" method="POST">
 
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" data-toggle="tooltip" title=""
-                                                            class="btn btn-link btn-danger"
-                                                            data-original-title="Remove">
-                                                            <i class="
-                                                            icon-trash"></i>
-                                                        </button>
-
-                                                    </form>
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" data-toggle="tooltip" title=""
+                                                                class="btn btn-link btn-danger"
+                                                                data-original-title="Remove">
+                                                                <i class="
+                                                                icon-trash"></i>
+                                                            </button>
+                                                        </form>
+                                                        <button class="btn btn-link btn-success" type="button" data-toggle="modal"
+                                                                data-target="#editRowModal{{ $x->id }}" data-original-title="Edit" data-toggle="tooltip" title=""><i class="
+                                                                icon-pencil"></i></button>
+                                                    </div>
+                                                    <div class="modal fade" id="editRowModal{{ $x->id }}" tabindex="-1"
+                                                        role="dialog" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header no-bd">
+                                                                    <h5 class="modal-title">
+                                                                        <span class="fw-mediumbold">
+                                                                            {{ $x->nama }}</span>
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form action="/jobdesk/{{ $x->id }}" method="post">
+                                                                        @method("put")
+                                                                        @csrf
+                                                                        <div class="row">
+                                                                            <div class="col-sm-12">
+                                                                                <div
+                                                                                    class="form-group form-group-default">
+                                                                                    <label>Jobdeks</label>
+                                                                                    <input id="addName" type="text"
+                                                                                        class="form-control"
+                                                                                        value="{{ $x->nama }}" name="nama" required>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="submit" class="btn btn-primary">Update</button>
+                                                                            <button type="button" class="btn btn-danger"
+                                                                                data-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             @empty
