@@ -15,9 +15,9 @@ class C_home extends Controller
     public function index()
     {
         $project = M_project::all()->where('status', 'Special');
-        $userRecord = M_project::where('status','=','Special')->first();
         $count = M_project::where('status','=','Special')->count();
         $count1 = M_project::where('status','=','Completed')->count();
+        $client = M_project::distinct('nama_client')->where('status','=','Special')->orWhere('status','=','Completed')->count('nama_client');
         $total = $count+$count1;
         $tanggalBerdiri = Carbon::parse('2022-07-22 11:00:00');
         $now = Carbon::now();
@@ -25,8 +25,10 @@ class C_home extends Controller
         return view('jasanyaView.home',[
             'title' => 'home',
             'hari'=>$selisih,
-            'project'=>$userRecord ,
-            'count'=>$total
+            'project'=>$project ,
+            'count'=>$total,
+            'client'=>$client
+
         ]);
     }
 

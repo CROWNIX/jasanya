@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 // jasanya view route
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [C_home::class, 'index']);
-    Route::get('/team', [C_home::class, 'team']);
+    Route::get('/jasanyateam', [C_home::class, 'team']);
     
 });
 

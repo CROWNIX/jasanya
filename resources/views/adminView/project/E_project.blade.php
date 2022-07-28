@@ -41,15 +41,28 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
+                                                    <label for="foto1">Foto Project</label>
+                                                    <input type="file" name="foto_completed" class="form-control-file"
+                                                        id="foto1" onchange="previewImage1()">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group"><br>
                                                     <label for="name">Name Client</label>
-                                                    <input type="text" name="nama" class="form-control " id="name"
-                                                        value="{{ old("nama", $project->nama) }}" placeholder="Client">
+                                                    <input type="text" name="nama_client" class="form-control" id="name"
+                                                        value="{{ old("nama", $project->nama) }}">
                                                         @error("nama")
                                                         <div class="text-danger">
                                                             {{ $message }}
                                                         </div>
                                                         @enderror
-                                                        
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group"><br>
+                                                    <label for="name">Name Project</label>
+                                                    <input type="text" name="nama_project" class="form-control"
+                                                        id="name" value="{{ $project->nama_project }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -83,6 +96,14 @@
                                                 </div>
                                             </div>
 
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleTextarea1">keterangan</label>
+                                                    <textarea class="form-control" name="keterangan"
+                                                        id="exampleTextarea1"
+                                                        rows="3">{{ $project->keterangan }}</textarea>
+                                                </div>
+                                            </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>status</label>

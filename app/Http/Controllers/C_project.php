@@ -50,7 +50,8 @@ class C_project extends Controller
         }
 
         $project = new M_project;
-        $project->nama=$request->name;
+        $project->nama_project=$request->nama_project;
+        $project->nama_client=$request->nama_client;
         $project->deskripsi=$request->deskripsi;
         $project->jenis=$request->jenis;
         $project->foto_transaksi=$validasi['foto_transaksi'];
@@ -124,6 +125,7 @@ class C_project extends Controller
         }
         
         
+
         
         // if ($request->file('foto_completed')){
         //     if($request->oldfoto_completed){

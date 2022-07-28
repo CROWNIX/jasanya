@@ -39,6 +39,7 @@
                                             <tr>
                                                 <th> no </th>
                                                 <th> Name Client </th>
+                                                <th> Name Project </th>
                                                 <th> deadline </th>
                                                 <th> status </th>
                                                 <th style="width: 10%">Action</th>
@@ -48,7 +49,8 @@
                                             @forelse ($project as $x)
                                             <tr>
                                                 <td> {{ $no++ }}</td>
-                                                <td>{{ $x->nama}}</td>
+                                                <td>{{ $x->nama_client}}</td>
+                                                <td>{{ $x->nama_project}}</td>
                                                 <td>{{ $x->deadline}}</td>
                                                 <td>{{ $x->status}}</td>
                                                 <td>
@@ -93,10 +95,15 @@
                                                                                     class="form-group form-group-default">
                                                                                     <label for="name">Bukti
                                                                                         Transaksi</label>
+                                                                                    @if ($x->foto_transaksi)
                                                                                     <img class="rounded"
                                                                                         src="{{ asset('storage/'.$x->foto_transaksi) }}"
                                                                                         style="height: 200px"
                                                                                         alt="bukti traksaksi kosoong">
+                                                                                    @else
+                                                                                    <p>poto transaksi kosong</p>
+                                                                                    @endif
+
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-md-6">
@@ -104,10 +111,14 @@
                                                                                     class="form-group form-group-default">
                                                                                     <label for="name">Foto
                                                                                         Project</label>
+                                                                                    @if ($x->foto_completed)
                                                                                     <img class="rounded"
                                                                                         src="{{ asset('storage/'.$x->foto_completed) }}"
                                                                                         style="height: 200px"
                                                                                         alt="project foto kosong">
+                                                                                    @else
+                                                                                    <p>poto kosong</p>
+                                                                                    @endif
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-md-6">
@@ -193,7 +204,6 @@
                                                                             </div>
                                                                             @if ($x->pekerja != 'null')
                                                                             @foreach (json_decode($x->pekerja) as $p)
-
                                                                             <div class="col-md-6">
                                                                                 <div
                                                                                     class="form-group form-group-default">

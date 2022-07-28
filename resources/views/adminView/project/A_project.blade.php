@@ -39,11 +39,18 @@
                                             <div class="col-md-6">
                                                 <div class="form-group"><br>
                                                     <label for="name">Name Client</label>
-                                                    <input type="text" name="name" class="form-control" id="name"
+                                                    <input type="text" name="nama_client" class="form-control" id="name"
                                                         value="">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
+                                                <div class="form-group"><br>
+                                                    <label for="name">Name Project</label>
+                                                    <input type="text" name="nama_project" class="form-control"
+                                                        id="name" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
                                                 <div class="form-group"><br>
                                                     <label for="deskripsi">deskripsi</label>
                                                     <input type="text" name="deskripsi" class="form-control"
@@ -81,6 +88,7 @@
                                                     <label>jenis</label>
                                                     <select name="jenis" class="form-control" style="width:100%"
                                                         required>
+
                                                         @foreach ($layanan as $x)
                                                         <option value="{{ $x->nama }}">{{ $x->nama }}</option>
                                                         @endforeach
