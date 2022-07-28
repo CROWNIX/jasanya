@@ -23,7 +23,6 @@ class C_project extends Controller
         if (request('search')){
             $project->where('nama','like','%'.request('search').'%');
         }
-
         $no = 1;
         $noDetail = 0;
         return view('adminView.project.S_project',[
@@ -113,6 +112,7 @@ class C_project extends Controller
             "deadline" => "required",
             "status" => "required",
             "jenis" => "required",
+            "time_completed" => "",
             "foto_transaksi" => "file|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
             "foto_completed" => "file|image|mimes:jpg,png,jpeg,gif,svg|max:2048"
         ]);
@@ -132,19 +132,6 @@ class C_project extends Controller
 
             $validasi['foto_completed'] = $request->file('foto_completed')->store('imgCompleted');
         }
-        
-        
-
-        
-        // if ($request->file('foto_completed')){
-        //     if($request->oldfoto_completed){
-            //         Storage::delete('public/'.$request->oldfoto_completed);
-        //     }
-        //     $validasi['foto_completed']=$request->file('foto_completed')->store('imgComplete','public');
-        // }else {
-        //     $validasi['foto_completed']=$project->foto_completed;
-        // }
-        
         $validasi['pekerja'] = json_encode($request->pekerja);
         $project->update($validasi);
         

@@ -1,4 +1,4 @@
-@if ($title === 'edit')
+@if ($title === 'Edit Project' || $title=== "edit team")
 <div class="main-header">
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="dark2">
