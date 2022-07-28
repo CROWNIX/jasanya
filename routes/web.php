@@ -45,11 +45,11 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/detailTeam/{id}', [C_team::class, 'detailTeam'])->middleware('auth');
 
     // layanan
-    Route::resource('R_layanan', C_layanan::class)->middleware('auth');
+    Route::resource('layanan', C_layanan::class)->middleware('auth');
     Route::get('/addlayanan', [C_layanan::class, 'formAddLayanan'])->middleware('auth');
 
     // project
-    Route::resource('R_project', C_project::class);
+    Route::resource('project', C_project::class);
     Route::get('/addProject', [C_project::class, 'addProject'])->middleware('auth');
 });
 
@@ -57,16 +57,13 @@ Route::group(['prefix' => '/'], function () {
 //     return csrf_token(); 
 // });
 
-// login
-Route::group(['prefix' => '/'], function () {
-    Route::resource('/R_login', C_login::class)->middleware('guest');
-    Route::resource('/R_register', C_register::class)->middleware('guest');
-    Route::post('/logout', [C_login::class, 'logout']);
-});
+// login & Register
+Route::get('/login', [C_login::class, 'index'])->middleware('guest');
+Route::post('/login', [C_login::class, 'store']);
+Route::get('/register', [C_register::class, 'index'])->middleware('guest');
+Route::post('/register', [C_register::class, 'store']);
+Route::post('/logout', [C_login::class, 'logout']);
 
-// Route::get('/register',function(){
-//     return view('adminView.register'); 
-// });
 
 
 // Porfolio Route

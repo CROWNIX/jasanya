@@ -7,7 +7,7 @@
                 <div class="card col-lg-4 mx-auto shadow">
                     <div class="card-body px-5 py-5">
                         <h3 class="card-title text-left mb-3">Register</h3>
-                        <form action="{{ route('R_register.store') }}" method="POST">
+                        <form action="/register" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label>Username</label>
@@ -52,7 +52,7 @@
                                     <i class="mdi mdi-google-plus"></i> Google plus </button>
                             </div>
                             <p class="sign-up text-center">Already have an Account?<a
-                                    href="{{ route('R_login.index') }}"> Sign In</a></p>
+                                    href="/login"> Sign In</a></p>
                             <p class="terms">By creating an account you are accepting our<a href="#"> Terms &
                                     Conditions</a></p>
                         </form>

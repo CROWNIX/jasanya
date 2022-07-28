@@ -219,7 +219,7 @@
 <!-- Service End -->
 
 <!-- Projects Start -->
-<div class="container-xxl py-5" id="project">
+<div class="container-xxl py-5 mb-5" id="project">
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             {{-- <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span>

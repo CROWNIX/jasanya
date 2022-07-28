@@ -10,14 +10,15 @@ class C_layanan extends Controller
 {
     public function index(){
         $layanan = M_layanan::latest();
+
         if(request('search')){
             $layanan->where('nama','like','%'.request('search').'%');
         }
         $no=1;
         return view('adminView.S_layanan',[
-            'title'=>'layanan',
-            'layanan'=>$layanan->paginate(4),
-            'no'=>$no
+            'title' => 'layanan',
+            'layanan' => $layanan->paginate(4),
+            'no' => $no
         ]);
     }
 
@@ -34,6 +35,7 @@ class C_layanan extends Controller
         $layanan->deskripsi	=$request->deskripsi;
         $layanan->foto = $validasi['foto'];
         $layanan->save();
+        
         return redirect()->route('R_layanan.index')->with('sukses');
     }
 

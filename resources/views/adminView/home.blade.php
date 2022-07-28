@@ -37,11 +37,11 @@
         <div class="content">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h2 class="text-white pb-2">Welcome back, Hizrian!</h2>
+                    <h2 class="text-white pb-2">Welcome back, {{ auth()->user()->name }}</h2>
                     <h5 class="text-white op-7 mb-4">Yesterday I was clever, so I wanted to change the world. Today I am
                         wise, so I am changing myself.</h5>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-4">
                         <div class="card card-dark bg-primary-gradient">
                             <div class="card-body pb-0">
@@ -137,8 +137,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row row-card-no-pd">
+                </div> --}}
+                {{-- <div class="row row-card-no-pd">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
@@ -265,8 +265,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
+                </div> --}}
+                {{-- <div class="row">
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">
@@ -427,8 +427,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
+                </div> --}}
+                {{-- <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
@@ -571,7 +571,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

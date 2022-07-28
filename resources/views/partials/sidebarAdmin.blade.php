@@ -93,7 +93,7 @@
                         id="Project">
                         <ul class="nav nav-collapse">
                             <li class="{{ $title==='project' ? 'active' :'' }}">
-                                <a href="{{ url('/R_project ') }}">
+                                <a href="/project">
                                     <span class="sub-item">Project</span>
                                 </a>
                             </li>
