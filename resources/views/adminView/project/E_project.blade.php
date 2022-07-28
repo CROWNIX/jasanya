@@ -33,45 +33,12 @@
                             <div class="card">
                                 <div class="card-body">
                                     <form class="forms-sample" method="POST"
-                                        action="{{ route('project.update',$project->id) }}"
+                                        action="/project/{{ $project->id }}"
                                         enctype="multipart/form-data">
+                                        @method("put")
                                         @csrf
-                                        @method('PUT')
+                                        <input type="hidden" name="oldfoto_transaksi" value="{{ $project->foto_transaksi }}">
                                         <div class="row">
-                                            {{-- foto transaki --}}
-                                            <div class="col-md-6">
-                                                <input type="hidden" name="oldfoto_transaksi" id=""
-                                                    value="{{ $project->foto_transaksi }}">
-                                                @if ($project->foto_transaksi)
-                                                <img class="img-show rounded mx-auto d-block"
-                                                    src="{{ asset('storage/'.$project->foto_transaksi) }}"
-                                                    style="height: 200px" alt="tidak ada foto transaksi">
-                                                @else
-                                                <img class="img-show rounded" alt="" style="height: 200px">
-                                                @endif
-                                            </div>
-                                            {{-- foto project --}}
-                                            <div class="col-md-6">
-                                                <input type="hidden" name="oldfoto_completed" id=""
-                                                    value="{{ $project->foto_completed }}">
-                                                @if ($project->foto_completed)
-                                                <img class="img-show1 rounded mx-auto d-block"
-                                                    src="{{ asset('storage/'.$project->foto_completed) }}"
-                                                    style="height: 200px" alt="tidak ada foto project">
-                                                @else
-                                                <img class="img-show1 rounded mx-auto d-block" alt=""
-                                                    style="height: 200px">
-                                                @endif
-                                            </div>
-                                            {{-- foto transaki --}}
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="foto">Foto Transaksi</label>
-                                                    <input type="file" name="foto_transaksi" class="form-control-file"
-                                                        id="foto" onchange="previewImage()">
-                                                </div>
-                                            </div>
-                                            {{-- foto project --}}
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="foto1">Foto Project</label>
@@ -83,7 +50,12 @@
                                                 <div class="form-group"><br>
                                                     <label for="name">Name Client</label>
                                                     <input type="text" name="nama_client" class="form-control" id="name"
-                                                        value="{{ $project->nama_client }}">
+                                                        value="{{ old("nama", $project->nama) }}">
+                                                        @error("nama")
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                        @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -94,26 +66,36 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group"><br>
+                                                <div class="form-group">
                                                     <label for="deskripsi">deskripsi</label>
                                                     <input type="text" name="deskripsi" class="form-control"
-                                                        id="deskripsi" value="{{ $project->deskripsi }}">
+                                                        id="deskripsi" value="{{ old("deskripsi", $project->deskripsi) }}" placeholder="Deskripsi">
+                                                        @error("deskripsi")
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                        @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleTextarea1">keterangan</label>
+                                                    <textarea class="form-control" name="keterangan"
+                                                        id="exampleTextarea1" rows="3" placeholder="Keterangan">{{ old("keterangan", $project->keterangan) }}</textarea>
+                                                        @error("keterangan")
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                        @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group"><br>
                                                     <label for="date">Deadline Project</label>
-                                                    <input type="date" name="deadline" class="form-control" id="date"
-                                                        value="{{ $project->deadline }}">
+                                                    <input type="date" name="deadline" class="form-control" id="date" value="{{ $project->deadline }}">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group"><br>
-                                                    <label for="time_completed">Project Selesai</label>
-                                                    <input type="date" name="time_completed" class="form-control"
-                                                        id="name" value="{{ $project->time_completed }}">
-                                                </div>
-                                            </div>
+
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="exampleTextarea1">keterangan</label>
@@ -127,29 +109,22 @@
                                                     <label>status</label>
                                                     <select name="status" class="form-control" style="width:100%"
                                                         required>
-                                                        <option value="{{ $project->status }}">{{
-                                                            $project->status
-                                                            }}
-                                                        </option>
-                                                        <option value="Pending">Pending</option>
-                                                        <option value="Rejected">Rejected</option>
-                                                        <option value="In progress">In progress</option>
-                                                        <option value="Completed">Completed</option>
-                                                        <option value="Special">Special</option>
+                                                        <option value="Pending" {{ old("status", $project->status) == "Pending" ? "selected" : "" }}>Pending</option>
+                                                        <option value="Rejected" {{ old("status", $project->status) == "Rejected" ? "selected" : "" }}>Rejected</option>
+                                                        <option value="In progress" {{ old("status", $project->status) == "In progress" ? "selected" : "" }}>In progress</option>
+                                                        <option value="Completed" {{ old("status", $project->status) == "Completed" ? "selected" : "" }}>Completed</option>
+                                                        <option value="Special" {{ old("status", $project->status) == "Special" ? "selected" : "" }}>Special</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>jenis</label>
-                                                    <select name="jenis" style="width:100%" class="form-control"
+                                                    <select name="jenis" class="form-control" style="width:100%"
                                                         required>
-                                                        <option value="{{ $project->jenis }}">{{ $project->jenis}}
-                                                        </option>
-                                                        <option value="AplikasiMobile">Aplikasi Mobile</option>
-                                                        <option value="Website">Website</option>
-                                                        <option value="Api">Api</option>
-                                                        <option value="UIUX">UI / UX</option>
+                                                        @foreach ($layanan as $x)
+                                                        <option value="{{ $x->nama }}" {{ old("jenis", $project->jenis) == $x->nama ? "selected" : "" }}>{{ $x->nama }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -157,39 +132,67 @@
                                                 <div class="form-group">
                                                     <label class="form-label">Pekerja</label>
                                                     <div class="selectgroup selectgroup-pills">
-                                                        @if ($project->pekerja != 'null')
-                                                        @foreach ($pekerja as $key=> $x)
-                                                        <label class="selectgroup-item">
-                                                            <input type="checkbox" name="pekerja[]"
-                                                                value="{{ $x->nama_lengkap }}" class="selectgroup-input"
-                                                                @foreach($arrayPekerja as $key=> $p)
-                                                            @if($x->nama_lengkap ==$p)
-                                                            {{ "checked" }}
-                                                            @endif
-                                                            @endforeach>
-                                                            <span class="selectgroup-button">{{ $x->nama_lengkap
-                                                                }}</span>
-                                                        </label>
-                                                        @endforeach
-                                                        @elseif ($project->pekerja == 'null')
-                                                        @foreach ($pekerja as $key=> $x)
-                                                        <label class="selectgroup-item">
-                                                            <input type="checkbox" name="pekerja[]"
-                                                                value="{{ $x->nama_lengkap }}"
-                                                                class="selectgroup-input">
-                                                            <span class="selectgroup-button">{{ $x->nama_lengkap
-                                                                }}</span>
-                                                        </label>
-                                                        @endforeach
+                                                        @if (count($arrayPekerja) > 1)
+                                                            @foreach ($pekerja as $x)
+                                                                @foreach ($arrayPekerja as $p) 
+                                                                @if ($x->nama_lengkap == $p)
+                                                                <label class="selectgroup-item">
+                                                                    <input type="checkbox" name="pekerja[]"
+                                                                        value="{{ $x->nama_lengkap }}"
+                                                                        class="selectgroup-input" checked>
+                                                                    <span class="selectgroup-button">{{
+                                                                        $x->nama_lengkap}}</span>
+                                                                </label>
+                                                                @php
+                                                                    $same = true;  
+                                                                    break; 
+                                                                @endphp 
+                                                                @else
+                                                                @php
+                                                                    $same = false;
+                                                                @endphp 
+                                                                @endif
+                                                                @endforeach
+                                                                @if ($same == true)
+                                                                @php
+                                                                    continue;
+                                                                @endphp
+                                                                @endif
+                                                                <label class="selectgroup-item">
+                                                                    <input type="checkbox" name="pekerja[]"
+                                                                        value="{{ $x->nama_lengkap }}"
+                                                                        class="selectgroup-input">
+                                                                    <span class="selectgroup-button">{{
+                                                                        $x->nama_lengkap}}</span>
+                                                                </label>  
+                                                            @endforeach
+                                                        @else
+                                                            @foreach ($pekerja as $x)
+                                                                @foreach ($arrayPekerja as $p) 
+                                                                <label class="selectgroup-item">
+                                                                    <input type="checkbox" name="pekerja[]"
+                                                                        value="{{ $x->nama_lengkap }}"
+                                                                        class="selectgroup-input" {{ old("pekerja[]", $x->nama_lengkap) == $p ? "checked" : "" }}>
+                                                                    <span class="selectgroup-button">{{
+                                                                        $x->nama_lengkap}}</span>
+                                                                </label>
+                                                                @endforeach
+                                                            @endforeach
                                                         @endif
-
                                                     </div>
                                                 </div>
-
+                                                <div class="form-group">
+                                                    <label for="foto_transaksi">Foto Transaksi</label>
+                                                    <img src="{{ asset("storage/" . $project->foto_transaksi) }}" class="img-show mb-3 img-fluid rounded d-block"
+                                                        style="height: 200px" alt="">
+                                                    <input type="file" name="foto_transaksi" class="form-control-file"
+                                                        id="foto" onchange="previewImage()">
+                                                </div>
                                             </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                        <button class="btn btn-dark">Cancel</button>
 
-                                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                            <button class="btn btn-dark">Cancel</button>
                                     </form>
                                 </div>
                             </div>

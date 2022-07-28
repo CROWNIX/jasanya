@@ -27,6 +27,13 @@
                             <div class="card-body">
                                 <!-- Modal -->
                                 <div class="table-responsive">
+                                    @if (session()->has("success"))
+                                        <div class="col-lg-6">
+                                            <div class="alert alert-success alert-dismissible fade show bg-success text-white" role="alert">
+                                                {{ session("success") }}
+                                            </div>         
+                                        </div>
+                                    @endif
                                     <table id="add-row" class="display table table-striped table-hover">
                                         <thead>
                                             <tr>
@@ -48,7 +55,8 @@
                                                 <td>{{ $x->status}}</td>
                                                 <td>
                                                     <form class="form-button-action"
-                                                        action="{{ route('project.destroy', $x->id) }}" method="POST">
+                                                        action="/project/{{ $x->id }}" method="POST">
+
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
@@ -58,7 +66,7 @@
                                                                 data-target="#addRowModal{{ $x->id }}">detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             <a class="dropdown-item"
-                                                                href="{{ route('project.show',$x->id ) }}">edit</a>
+                                                                href="/project/{{ $x->id }}/edit">edit</a>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')
