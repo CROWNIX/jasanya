@@ -27,22 +27,22 @@
                 <p class="section-title text-white h5 mb-4">Gallery</p>
                 <div class="row g-2">
                     <div class="col-4">
-                        <img class="img-fluid" src="/digitalTemplate/img/portfolio-1.jpg" alt="Image">
+                        <img class="img-fluid" src="digitalTemplate/img/portfolio-1.jpg" alt="Image">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid" src="/digitalTemplate/img/portfolio-2.jpg" alt="Image">
+                        <img class="img-fluid" src="digitalTemplate/img/portfolio-2.jpg" alt="Image">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid" src="/digitalTemplate/img/portfolio-3.jpg" alt="Image">
+                        <img class="img-fluid" src="digitalTemplate/img/portfolio-3.jpg" alt="Image">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid" src="/digitalTemplate/img/portfolio-4.jpg" alt="Image">
+                        <img class="img-fluid" src="digitalTemplate/img/portfolio-4.jpg" alt="Image">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid" src="/digitalTemplate/img/portfolio-5.jpg" alt="Image">
+                        <img class="img-fluid" src="digitalTemplate/img/portfolio-5.jpg" alt="Image">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid" src="/digitalTemplate/img/portfolio-6.jpg" alt="Image">
+                        <img class="img-fluid" src="digitalTemplate/img/portfolio-6.jpg" alt="Image">
                     </div>
                 </div>
             </div>

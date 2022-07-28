@@ -18,23 +18,19 @@ class layanan_seed extends Seeder
         $layanan = [
             [
                 "nama" => "Website",
-                "deskripsi" => "Penyedia Jasa website",
-                "foto" => "default.jpg"
+                "deskripsi" => "Penyedia Jasa website"
             ],
             [
                 "nama" => "UI / UX",
-                "deskripsi" => "Penyedia Jasa UI / UX",
-                "foto" => "default.jpg"
+                "deskripsi" => "Penyedia Jasa UI / UX"
             ],
             [
                 "nama" => "Aplikasi Mobile",
-                "deskripsi" => "Penyedia Jasa aplikasi mobile",
-                "foto" => "default.jpg"
+                "deskripsi" => "Penyedia Jasa aplikasi mobile"
             ],
             [
                 "nama" => "API",
-                "deskripsi" => "Penyedia Jasa API",
-                "foto" => "default.jpg"
+                "deskripsi" => "Penyedia Jasa API"
             ],
         ];
 

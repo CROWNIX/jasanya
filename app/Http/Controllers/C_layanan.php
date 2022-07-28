@@ -9,40 +9,34 @@ use Illuminate\Support\Facades\Storage;
 class C_layanan extends Controller
 {
     public function index(){
-        $layanan = M_layanan::latest();
-
+        $layanan = M_layanan::latest()->get();
+       
         if(request('search')){
             $layanan->where('nama','like','%'.request('search').'%');
         }
         $no=1;
         return view('adminView.S_layanan',[
             'title' => 'layanan',
-            'layanan' => $layanan->paginate(4),
+            'layanan' => $layanan,
             'no' => $no
         ]);
     }
 
     public function store(Request $request){
         $validasi = $request->validate([
-            'foto' => 'required|file|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'nama' => 'required|max:100',
+            "deskripsi" => "required|max:255"
         ]);
 
-        if($request->file('foto')){
-            $validasi['foto']=$request->file('foto')->store('imgLayanan','public');
-        }
-        $layanan = new M_layanan;
-        $layanan->nama=$request->nama;
-        $layanan->deskripsi	=$request->deskripsi;
-        $layanan->foto = $validasi['foto'];
-        $layanan->save();
+        M_layanan::create($validasi);
         
-        return redirect()->route('R_layanan.index')->with('sukses');
+        return redirect("/layanan")->with("success", "New layanan has beed added");
     }
 
     public function destroy($id){
         $layanan= M_layanan::find($id);
         Storage::delete('public/'.$layanan->foto);
         $layanan->delete();
-        return redirect()->route('R_layanan.index')->with('sukses');
+        return redirect("/layanan")->with("success", "Layanan has beed deleted");
     }
 }

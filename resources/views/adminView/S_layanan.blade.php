@@ -28,7 +28,7 @@
                                 <div class="d-flex align-items-center">
                                     <button class="btn btn-primary btn-round ml-auto" data-toggle="modal"
                                         data-target="#addRowModal">
-                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-plus mr-1"></i>
                                         Add Layanan
                                     </button>
                                 </div>
@@ -48,7 +48,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="{{ route('R_layanan.store') }}"
+                                                <form method="POST" action="/layanan"
                                                     enctype="multipart/form-data">
                                                     @csrf
                                                     <div class=" row">
@@ -56,19 +56,12 @@
                                                             <div class="form-group form-group-default">
                                                                 <label>Name</label>
                                                                 <input id="addName" name="nama" type="text"
-                                                                    class="form-control" placeholder="Name Layanan">
+                                                                    class="form-control" placeholder="Name Layanan" required>
                                                             </div>
                                                             <div class="form-group form-group-default">
                                                                 <label>Deskripsi</label>
                                                                 <input id="deskripsi" name="deskripsi" type="text"
-                                                                    class="form-control" placeholder="deskripsi">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="foto">Foto Team</label>
-                                                                <img class="img-show mb-3 img-fluid rounded d-block"
-                                                                    style="height: 200px" alt="">
-                                                                <input type="file" name="foto" class="form-control-file"
-                                                                    id="foto" onchange="previewImage()">
+                                                                    class="form-control" placeholder="deskripsi" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -85,12 +78,19 @@
                                 </div>
                                 <!-- Modal -->
                                 <div class="table-responsive">
+                                    @if (session()->has("success"))
+                                        <div class="col-lg-6">
+                                            <div class="alert alert-success alert-dismissible fade show bg-success text-white" role="alert">
+                                                {{ session("success") }}
+                                            </div>         
+                                        </div>
+                                    @endif
                                     <table id="add-row" class="display table table-striped table-hover">
                                         <thead>
                                             <tr>
-                                                <th> no </th>
-                                                <th> name </th>
-                                                <th> deskripsi </th>
+                                                <th> No </th>
+                                                <th> Name </th>
+                                                <th> Deskripsi </th>
                                                 <th style="width: 10%">Action</th>
                                             </tr>
                                         </thead>
@@ -102,7 +102,7 @@
                                                 <td>{{ $x->deskripsi}}</td>
                                                 <td>
                                                     <form class="form-button-action"
-                                                        action="{{ route('R_layanan.destroy', $x->id) }}" method="POST">
+                                                        action="/layanan/{{ $x->id }}" method="POST">
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
@@ -137,12 +137,6 @@
                                                                             <div class="col-sm-12">
                                                                                 <div
                                                                                     class="form-group form-group-default">
-                                                                                    <img class="rounded mx-auto d-block"
-                                                                                        src="{{ asset('storage/'.$x->foto) }}"
-                                                                                        style="height: 200px" alt="">
-                                                                                </div>
-                                                                                <div
-                                                                                    class="form-group form-group-default">
                                                                                     <label>Name</label>
                                                                                     <input id="addName" type="text"
                                                                                         class="form-control"
@@ -165,9 +159,7 @@
                                                 </td>
                                             </tr>
                                             @empty
-                                            <div class="alert alert-danger">
-                                                Tidak Jobdesk.
-                                            </div>
+                                          
                                             @endforelse
                                         </tbody>
                                     </table>

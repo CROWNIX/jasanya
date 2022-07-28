@@ -17,7 +17,8 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="coronaTemplate/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    {{--
+    <link rel="shortcut icon" href="coronaTemplate/assets/images/favicon.png" /> --}}
 </head>
 
 <body>

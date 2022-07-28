@@ -3,7 +3,7 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="/atlantisTemplate/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                    <img src="atlantisTemplate/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -78,7 +78,7 @@
                     </a>
                 </li>
                 <li class="nav-item {{ $title === 'layanan' ? 'active':'' }}">
-                    <a href="{{ url('R_layanan') }}">
+                    <a href="/layanan">
                         <i class="fas fa-desktop"></i>
                         <p>Layanan</p>
                     </a>
