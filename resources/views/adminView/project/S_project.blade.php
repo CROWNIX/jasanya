@@ -132,7 +132,18 @@
                                                                                         Client</label>
                                                                                     <input type="text" name="name"
                                                                                         class="form-control" id="name"
-                                                                                        value="{{ $x->nama }}">
+                                                                                        value="{{ $x->nama_client }}">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div
+                                                                                    class="form-group form-group-default">
+
+                                                                                    <label for="name">Name
+                                                                                        Project</label>
+                                                                                    <input type="text" name="name"
+                                                                                        class="form-control" id="name"
+                                                                                        value="{{ $x->nama_project }}">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-md-6">
@@ -194,7 +205,7 @@
                                                                                         value="{{ $x->jenis }}">
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-sm-12">
+                                                                            <div class="col-md-6">
                                                                                 <div
                                                                                     class="form-group form-group-default">
                                                                                     <label
@@ -219,6 +230,7 @@
                                                                                 </div>
                                                                             </div>
                                                                             @endforeach
+                                                                            @else
                                                                             <p>tidak ada pekerja</p>
                                                                             @endif
 

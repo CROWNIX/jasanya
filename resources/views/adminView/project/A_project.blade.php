@@ -41,6 +41,11 @@
                                                     <label for="name">Name Client</label>
                                                     <input type="text" name="nama_client" class="form-control" id="name"
                                                         value="">
+                                                    @error("nama_client")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -48,6 +53,11 @@
                                                     <label for="name">Name Project</label>
                                                     <input type="text" name="nama_project" class="form-control"
                                                         id="name" value="">
+                                                    @error("nama_project")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
@@ -55,6 +65,11 @@
                                                     <label for="deskripsi">deskripsi</label>
                                                     <input type="text" name="deskripsi" class="form-control"
                                                         id="deskripsi">
+                                                    @error("deskripsi")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -62,12 +77,22 @@
                                                     <label for="exampleTextarea1">keterangan</label>
                                                     <textarea class="form-control" name="keterangan"
                                                         id="exampleTextarea1" rows="3"></textarea>
+                                                    @error("keterangan")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group"><br>
                                                     <label for="date">Deadline Project</label>
                                                     <input type="date" name="deadline" class="form-control" id="date">
+                                                    @error("deadline")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
@@ -81,6 +106,11 @@
                                                         <option value="In progress">In progress</option>
                                                         <option value="Completed">Completed</option>
                                                     </select>
+                                                    @error("status")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -88,7 +118,6 @@
                                                     <label>jenis</label>
                                                     <select name="jenis" class="form-control" style="width:100%"
                                                         required>
-
                                                         @foreach ($layanan as $x)
                                                         <option value="{{ $x->nama }}">{{ $x->nama }}</option>
                                                         @endforeach
@@ -116,6 +145,11 @@
                                                         style="height: 200px" alt="">
                                                     <input type="file" name="foto_transaksi" class="form-control-file"
                                                         id="foto" onchange="previewImage()">
+                                                    @error("foto_transaksi")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>

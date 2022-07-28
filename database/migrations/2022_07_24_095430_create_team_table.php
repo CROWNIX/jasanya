@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_lengkap', 64);
             $table->string('jobdesk', 64);
-            $table->string('foto');
+            $table->string('foto')->nullable()->default('imgTeam/default.jpg');;
             $table->string('instagram')->nullable();
             $table->string('github')->nullable();
             $table->string('linkedin')->nullable();

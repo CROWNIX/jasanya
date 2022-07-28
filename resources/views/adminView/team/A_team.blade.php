@@ -36,13 +36,17 @@
                                         @csrf
                                         <div class="form-group">
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" class="form-control" id="name"
+                                            <input type="text" name="nama_lengkap" class="form-control" id="name"
                                                 placeholder="Enter Name">
+                                            @error("nama_lengkap")
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Jobdesk</label>
                                             <select name="jobdesk" class="form-control" style="width:100%" required>
-                                                <option value="">Pilih Job</option>
                                                 @foreach ( $M_jobdesk as $x )
                                                 <option value="{{ $x->nama }}">{{ $x->nama }}</option>
                                                 @endforeach ()
@@ -52,27 +56,52 @@
                                             <label for="exampleInputCity1">instagram</label>
                                             <input type="text" class="form-control" name="instagram"
                                                 id="exampleInputCity1" placeholder="instagram">
+                                            @error("instagram")
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label for="github">github</label>
                                             <input type="text" class="form-control" name="github" id="github"
                                                 placeholder="github">
+                                            @error("github")
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label for="linkedin">linkedin</label>
                                             <input type="text" class="form-control" name="linkedin" id="linkedin"
                                                 placeholder="linkedin">
+                                            @error("linkedin")
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label for="facebook">facebook</label>
                                             <input type="text" class="form-control" name="facebook" id="facebook"
                                                 placeholder="facebook">
+                                            @error("facebook")
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label for="foto">Foto Team</label>
                                             <img class="img-show img-fluid mb-3 rounded d-block" style="height: 200px">
                                             <input type="file" name="foto" class="form-control-file" id="foto"
                                                 onchange="previewImage()">
+                                            @error("foto")
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                         <button class="btn btn-dark">Cancel</button>
