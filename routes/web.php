@@ -31,7 +31,7 @@ Route::group(['prefix' => '/'], function () {
 Route::group(['prefix' => '/'], function () {
     // kritik saaran
     Route::resource('adminView', C_kritikSaran::class)->middleware('auth');
-    Route::post('/kritikSaran', [C_kritikSaran::class, 'kritikSaran'])->middleware('guest');
+    Route::post('/kritikSaran', [C_kritikSaran::class, 'kritikSaran']);
     Route::get('/admin', [C_kritikSaran::class, 'home'])->middleware('auth');
     Route::get('/kritikSaran', [C_kritikSaran::class, 'getKritikSaran'])->middleware('auth');
 
@@ -59,7 +59,7 @@ Route::group(['prefix' => '/'], function () {
 
 // login
 Route::group(['prefix' => '/'], function () {
-    Route::resource('/R_login', C_login::class)->middleware('guest');
+    Route::resource('/R_login', C_login::class);
     Route::resource('/R_register', C_register::class)->middleware('auth');
     Route::post('/logout', [C_login::class, 'logout']);
 });

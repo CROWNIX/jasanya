@@ -147,7 +147,7 @@
             </div>
             <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                 <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-                <h1 class="text-white mb-2" data-toggle="counter-up">1234</h1>
+                <h1 class="text-white mb-2" data-toggle="counter-up">{{ $count }}</h1>
                 <p class="text-white mb-0">Compleate Projects</p>
             </div>
         </div>
@@ -232,111 +232,26 @@
                     <li class="mx-2 active" data-filter="*">All</li>
                     <li class="mx-2" data-filter=".mobile">Aplikasi Mobile</li>
                     <li class="mx-2" data-filter=".website">Website</li>
-                    <li class="mx-2" data-filter=".api">Api</li>
+                    <li class="mx-2" data-filter=".Api">Api</li>
                     <li class="mx-2" data-filter=".ui">UI / UX</li>
                 </ul>
             </div>
         </div>
         <div class="row g-4 portfolio-container pb-5">
-            <div class="col-lg-4 col-md-6 portfolio-item mobile wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 portfolio-item {{ $project->jenis }} wow fadeInUp" data-wow-delay="0.5s">
                 <div class="card shadow rounded overflow-hidden hover-scale-1">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/imgProject/blob-white.png" alt="">
+                        <img class="img-fluid w-100" src="{{ asset('storage/'.$project->foto_completed) }}" alt="">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="img/imgProject/blob-white.png"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-square btn-outline-light mx-1"
+                                href="{{ asset('storage/'.$project->foto_completed) }}" data-lightbox="portfolio"><i
+                                    class="fa fa-eye"></i></a>
                             <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                     <div class="bg-light p-4">
-                        <a href="https://dart.dev/" target="blank">
-                            <p class="text-primary fw-medium mb-2">Aplikasi Mobile Dart-Flutter</p>
-                        </a>
-                        <h5 class="lh-base mb-0">Pembuatan Aplikasi Mobile Dart Flutter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item api wow fadeInUp" data-wow-delay="0.3s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1 ">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/imgProject/blob-top-left.png" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="img/imgProject/blob-top-left.png"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <a href="https://lumen.laravel.com/docs/9.x" target="blank">
-                            <p class="text-primary fw-medium mb-2">Api laravel-lumen</p>
-                        </a>
-                        <h5 class="lh-base mb-0">Pembuatan Api Menggunakan laravel lumen</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.5s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/imgProject/blob-top-right.png" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="img/imgProject/blob-top-right.png"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <a href="https://www.php.net/" target="blank">
-                            <p class="text-primary fw-medium mb-2">Website PHP native</p>
-                        </a>
-                        <h5 class="lh-base mb-0">pembuatan website dengan php-native
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.1s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-4.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.3s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-5.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item website wow fadeInUp" data-wow-delay="0.5s">
-                <div class="card shadow rounded overflow-hidden hover-scale-1">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-6.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">UI / UX Design</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
+                        <p class="text-primary fw-medium mb-2">{{ $project->nama }}</p>
+                        <h5 class="lh-base mb-0">{{ $project->deskripsi }}</a>
                     </div>
                 </div>
             </div>

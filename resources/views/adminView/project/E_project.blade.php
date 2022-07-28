@@ -121,6 +121,7 @@
                                                         <option value="Rejected">Rejected</option>
                                                         <option value="In progress">In progress</option>
                                                         <option value="Completed">Completed</option>
+                                                        <option value="Special">Special</option>
                                                     </select>
                                                 </div>
                                             </div>
