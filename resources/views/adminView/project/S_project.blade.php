@@ -27,6 +27,13 @@
                             <div class="card-body">
                                 <!-- Modal -->
                                 <div class="table-responsive">
+                                    @if (session()->has("success"))
+                                        <div class="col-lg-6">
+                                            <div class="alert alert-success alert-dismissible fade show bg-success text-white" role="alert">
+                                                {{ session("success") }}
+                                            </div>         
+                                        </div>
+                                    @endif
                                     <table id="add-row" class="display table table-striped table-hover">
                                         <thead>
                                             <tr>
@@ -48,21 +55,22 @@
                                                 <td>{{ $x->status}}</td>
                                                 <td>
                                                     <form class="form-button-action"
-                                                        action="{{ route('project.destroy', $x->id) }}" method="POST">
+                                                        action="/project/{{ $x->id }}" method="POST">
+
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
                                                                 class="fas fa-ellipsis-v"></i></button>
                                                         <div class="dropdown-menu">
-                                                            <button class="btn" type="button" data-toggle="modal"
+                                                            <button class="btn dropdown-item" type="button" data-toggle="modal"
                                                                 data-target="#addRowModal{{ $x->id }}">detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
-                                                            <a class="dropdown-item"
-                                                                href="{{ route('project.show',$x->id ) }}">edit</a>
+                                                            <a class="dropdown-item btn"
+                                                                href="/project/{{ $x->id }}/edit">edit</a>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn">Hapus</button>
+                                                            <button type="submit" class="btn dropdown-item">Hapus</button>
                                                         </div>
                                                     </form>
                                                     <div class="modal fade" id="addRowModal{{ $x->id }}" tabindex="-1"
