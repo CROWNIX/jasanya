@@ -19,7 +19,7 @@
                                 {{ session("error") }}
                             </div>         
                         @endif
-                        <form action="{{ route('R_login.store') }}" method="POST">
+                        <form action="/login" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label>Email</label>
@@ -52,7 +52,7 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
                             </div>
-                            <p>Dont have account ? <a href="/R_register" class="text-decoration-none">Register</a></p>
+                            <p>Dont have account ? <a href="register" class="text-decoration-none">Register</a></p>
                         </form>
                     </div>
                 </div>

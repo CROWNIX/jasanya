@@ -18,16 +18,18 @@ class C_project extends Controller
      */
     public function index(){
         $project = M_project::latest()->get();
+
         if (request('search')){
             $project->where('nama','like','%'.request('search').'%');
         }
+
         $no = 1;
         $noDetail = 0;
         return view('adminView.project.S_project',[
-            'no'=>$no,
-            'title'=>'project',
-            'project'=>$project,
-            'noDetail'=>$noDetail
+            'no' => $no,
+            'title' => 'Project',
+            'project' => $project,
+            'noDetail' => $noDetail
         ]);
     }
 

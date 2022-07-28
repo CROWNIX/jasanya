@@ -78,7 +78,7 @@
                     </a>
                 </li>
                 <li class="nav-item {{ $title === 'layanan' ? 'active':'' }}">
-                    <a href="{{ url('R_layanan') }}">
+                    <a href="/layanan">
                         <i class="fas fa-desktop"></i>
                         <p>Layanan</p>
                     </a>
@@ -93,7 +93,7 @@
                         id="Project">
                         <ul class="nav nav-collapse">
                             <li class="{{ $title==='project' ? 'active' :'' }}">
-                                <a href="{{ url('/R_project ') }}">
+                                <a href="/project">
                                     <span class="sub-item">Project</span>
                                 </a>
                             </li>

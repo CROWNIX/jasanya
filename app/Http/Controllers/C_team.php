@@ -21,6 +21,7 @@ class C_team extends Controller
         if(request('search')){
             $M_team->where('nama_lengkap','like','%'.request('search').'%');
         }
+        
         $no = 1;
         return view('adminView.team.S_team',[
             'no' => $no,
