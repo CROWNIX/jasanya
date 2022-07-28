@@ -97,6 +97,11 @@
                                                     <label for="date">Deadline Project</label>
                                                     <input type="date" name="deadline" class="form-control" id="date"
                                                         value="{{ $project->deadline }}">
+                                                    @error("deadline")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -104,6 +109,11 @@
                                                     <label for="date">Time Completed</label>
                                                     <input type="date" name="time_completed" class="form-control"
                                                         id="date" value="{{ $project->time_completed }}">
+                                                    @error("time_completed")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -140,52 +150,29 @@
                                                 <div class="form-group">
                                                     <label class="form-label">Pekerja</label>
                                                     <div class="selectgroup selectgroup-pills">
-                                                        @if (count($arrayPekerja) > 1)
-                                                        @foreach ($pekerja as $x)
-                                                        @foreach ($arrayPekerja as $p)
-                                                        @if ($x->nama_lengkap == $p)
+                                                        @if ($project->pekerja != 'null')
+                                                        @foreach ($pekerja as $key=> $x)
                                                         <label class="selectgroup-item">
                                                             <input type="checkbox" name="pekerja[]"
                                                                 value="{{ $x->nama_lengkap }}" class="selectgroup-input"
-                                                                checked>
-                                                            <span class="selectgroup-button">{{
-                                                                $x->nama_lengkap}}</span>
+                                                                @foreach($arrayPekerja as $key=> $p)
+                                                            @if($x->nama_lengkap ==$p)
+                                                            {{ "checked" }}
+                                                            @endif
+                                                            @endforeach>
+                                                            <span class="selectgroup-button">{{ $x->nama_lengkap
+                                                                }}</span>
                                                         </label>
-                                                        @php
-                                                        $same = true;
-                                                        break;
-                                                        @endphp
-                                                        @else
-                                                        @php
-                                                        $same = false;
-                                                        @endphp
-                                                        @endif
                                                         @endforeach
-                                                        @if ($same == true)
-                                                        @php
-                                                        continue;
-                                                        @endphp
-                                                        @endif
+                                                        @elseif ($project->pekerja == 'null')
+                                                        @foreach ($pekerja as $key=> $x)
                                                         <label class="selectgroup-item">
                                                             <input type="checkbox" name="pekerja[]"
                                                                 value="{{ $x->nama_lengkap }}"
                                                                 class="selectgroup-input">
-                                                            <span class="selectgroup-button">{{
-                                                                $x->nama_lengkap}}</span>
+                                                            <span class="selectgroup-button">{{ $x->nama_lengkap
+                                                                }}</span>
                                                         </label>
-                                                        @endforeach
-                                                        @else
-                                                        @foreach ($pekerja as $x)
-                                                        @foreach ($arrayPekerja as $p)
-                                                        <label class="selectgroup-item">
-                                                            <input type="checkbox" name="pekerja[]"
-                                                                value="{{ $x->nama_lengkap }}" class="selectgroup-input"
-                                                                {{ old("pekerja[]", $x->nama_lengkap) == $p ? "checked"
-                                                            : "" }}>
-                                                            <span class="selectgroup-button">{{
-                                                                $x->nama_lengkap}}</span>
-                                                        </label>
-                                                        @endforeach
                                                         @endforeach
                                                         @endif
                                                     </div>
@@ -194,19 +181,29 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label for="foto_transaksi">Foto Transaksi</label>
-                                                    <img src="{{ asset(" storage/" . $project->foto_transaksi) }}"
+                                                    <img src="{{ asset( "storage/" . $project->foto_transaksi) }}"
                                                     class="img-show mb-3 img-fluid rounded d-block"
                                                     style="height: 200px" alt="">
                                                     <input type="file" name="foto_transaksi" class="form-control-file"
                                                         id="foto" onchange="previewImage()">
+                                                    @error("foto_transaksi")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="foto1">Foto Project</label>
-                                                    <img src="{{ asset(" storage/" . $project->foto_completed) }}"
+                                                    <img src="{{ asset( "storage/" . $project->foto_completed) }}"
                                                     class="img-show1 mb-3 img-fluid rounded d-block"
                                                     style="height: 200px" alt="">
                                                     <input type="file" name="foto_completed" class="form-control-file"
                                                         id="foto1" onchange="previewImage1()">
+                                                    @error("foto_completed")
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>

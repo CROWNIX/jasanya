@@ -32,15 +32,14 @@
                         <div class="col-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <form class="forms-sample" method="POST"
-                                        action="{{ route('team.update',$M_team->id) }}" enctype="multipart/form-data">
+                                    <form class="forms-sample" method="POST" action="/team/{{ $team->id }}"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
-                                        <input type="hidden" name="oldFoto" id="" value="{{ $M_team->foto }}">
-                                        @if ($M_team->foto)
+                                        <input type="hidden" name="oldFoto" id="" value="{{ $team->foto }}">
+                                        @if ($team->foto)
                                         <img class="img-show rounded mx-auto d-block"
-                                            src="{{ asset('storage/'.$M_team->foto) }}" style="height: 200px"
-                                            alt="asdr">
+                                            src="{{ asset('storage/'.$team->foto) }}" style="height: 200px" alt="asdr">
                                         @else
                                         <img class="img-show rounded mx-auto d-block" alt="">
                                         @endif
@@ -48,16 +47,26 @@
                                             <label for="foto">Foto Team</label>
                                             <input type="file" name="foto" class="form-control-file" id="foto"
                                                 onchange="previewImage()">
+                                            @error('foto')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" class="form-control" id="name"
-                                                value="{{ $M_team->nama_lengkap }}">
+                                            <input type="text" name="nama_lengkap" class="form-control" id="name"
+                                                value="{{ $team->nama_lengkap }}">
+                                            @error('nama_lengkap')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Jobdesk</label>
                                             <select name="jobdesk" class="form-control" style="width:100%" required>
-                                                <option value="{{ $M_team->jobdesk }}">{{ $M_team->jobdesk }}</option>
+                                                <option value="{{ $team->jobdesk }}">{{ $team->jobdesk }}</option>
                                                 @foreach ( $M_jobdesk as $x )
                                                 <option value="{{ $x->nama }}">{{ $x->nama }}</option>
                                                 @endforeach ()
@@ -66,22 +75,42 @@
                                         <div class="form-group">
                                             <label for="instagram">instagram</label>
                                             <input type="text" class="form-control" name="instagram" id="instagram"
-                                                value="{{ $M_team->instagram }}">
+                                                value="{{ $team->instagram }}">
+                                            @error('instagram')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label for="github">github</label>
                                             <input type="text" class="form-control" name="github" id="github"
-                                                value="{{ $M_team->github }}">
+                                                value="{{ $team->github }}">
+                                            @error('github')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label for="linkedin">linkedin</label>
                                             <input type="text" class="form-control" name="linkedin" id="linkedin"
-                                                value="{{ $M_team->linkedin }}">
+                                                value="{{ $team->linkedin }}">
+                                            @error('linkedin')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label for="facebook">facebook</label>
                                             <input type="text" class="form-control" name="facebook" id="facebook"
-                                                value="{{ $M_team->facebook }}">
+                                                value="{{ $team->facebook }}">
+                                            @error('facebook')
+                                            <div class="text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
 
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>

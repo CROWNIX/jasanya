@@ -57,7 +57,6 @@ Route::group(['prefix' => '/'], function () {
 //     return csrf_token(); 
 // });
 
-
 // login & Register
 Route::get('/login', [C_login::class, 'index'])->middleware('guest');
 Route::post('/login', [C_login::class, 'store']);
