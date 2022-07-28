@@ -15,9 +15,9 @@
                     <div class="card-body px-5 py-5">
                         <h3 class="card-title text-left mb-3">Login</h3>
                         @if (session()->has("error"))
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                {{ session("error") }}
-                            </div>         
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session("error") }}
+                        </div>
                         @endif
                         <form action="/login" method="POST">
                             @csrf
@@ -25,7 +25,7 @@
                                 <label>Email</label>
                                 <input type="text" name="email" autofocus class="form-control text-white @error('email')
                                     is-invalid
-                                @enderror" value="{{ old("email") }}">
+                                @enderror" value="{{ old(" email") }}">
                                 @error('email')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -52,7 +52,6 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
                             </div>
-                            <p>Dont have account ? <a href="register" class="text-decoration-none">Register</a></p>
                         </form>
                     </div>
                 </div>

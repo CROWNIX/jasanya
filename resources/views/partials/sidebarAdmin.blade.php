@@ -59,7 +59,7 @@
                         id="team">
                         <ul class="nav nav-collapse">
                             <li class="{{ $title === 'datateam'?'active':'' }}">
-                                <a href="{{ url('/R_team') }}">
+                                <a href="{{ url('/team') }}">
                                     <span class="sub-item">team</span>
                                 </a>
                             </li>
@@ -72,7 +72,7 @@
                     </div>
                 </li>
                 <li class="nav-item {{ $title === 'jobdesk' ? 'active':'' }}">
-                    <a href="{{ url('R_jobdesk') }}">
+                    <a href="{{ url('jobdesk') }}">
                         <i class="fas fa-desktop"></i>
                         <p>Jobdesk</p>
                     </a>
@@ -112,7 +112,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('R_register') }}">
+                    <a href="{{ url('register') }}">
                         <i class="fas fa-desktop"></i>
                         <p>register</p>
                     </a>

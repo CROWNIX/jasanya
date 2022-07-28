@@ -61,8 +61,8 @@ Route::group(['prefix' => '/'], function () {
 // login & Register
 Route::get('/login', [C_login::class, 'index'])->middleware('guest');
 Route::post('/login', [C_login::class, 'store']);
-Route::get('/register', [C_register::class, 'index'])->middleware('guest');
-Route::post('/register', [C_register::class, 'store']);
+Route::get('/register', [C_register::class, 'index'])->middleware('auth');
+Route::post('/register', [C_register::class, 'store'])->middleware('auth');
 Route::post('/logout', [C_login::class, 'logout']);
 
 
