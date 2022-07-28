@@ -33,5 +33,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             layanan_seed::class,
         ]);
+        $this->call([
+            project_seed::class,
+        ]);
     }
 }

@@ -2,9 +2,16 @@
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <div class="user">
+                @if ($title === 'edit')
+                <div class="avatar-sm float-left mr-2">
+                    <img src="/atlantisTemplate/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+                @else
                 <div class="avatar-sm float-left mr-2">
                     <img src="atlantisTemplate/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
                 </div>
+                @endif
+
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
