@@ -23130,14 +23130,14 @@ input:focus {
 @font-face {
     font-family: "Rubik";
     font-weight: 400;
-    src: url("coronaTemplate/fonts/Rubik/Rubik-Regular.ttf");
+    src: url("/coronaTemplate/fonts/Rubik/Rubik-Regular.ttf");
     /* IE9 Compat Modes */
 }
 
 @font-face {
     font-family: "Rubik";
     font-weight: 500;
-    src: url("coronaTemplate/fonts/Rubik/Rubik-Medium.ttf");
+    src: url("/coronaTemplate/fonts/Rubik/Rubik-Medium.ttf");
     /* IE9 Compat Modes */
 }
 
