@@ -38,20 +38,15 @@
                                         @method("put")
                                         @csrf
                                         <input type="hidden" name="oldfoto_transaksi" value="{{ $project->foto_transaksi }}">
+                                        <input type="hidden" name="oldfoto_completed" value="{{ $project->foto_completed }}">
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="foto1">Foto Project</label>
-                                                    <input type="file" name="foto_completed" class="form-control-file"
-                                                        id="foto1" onchange="previewImage1()">
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-md-6">
                                                 <div class="form-group"><br>
                                                     <label for="name">Name Client</label>
                                                     <input type="text" name="nama_client" class="form-control" id="name"
-                                                        value="{{ old("nama", $project->nama) }}">
-                                                        @error("nama")
+                                                        value="{{ old("nama", $project->nama_client) }}">
+                                                        @error("nama_client")
                                                         <div class="text-danger">
                                                             {{ $message }}
                                                         </div>
@@ -63,6 +58,11 @@
                                                     <label for="name">Name Project</label>
                                                     <input type="text" name="nama_project" class="form-control"
                                                         id="name" value="{{ $project->nama_project }}">
+                                                        @error("nama_project")
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                        @enderror
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -181,6 +181,8 @@
                                                         @endif
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label for="foto_transaksi">Foto Transaksi</label>
                                                     <img src="{{ asset("storage/" . $project->foto_transaksi) }}" class="img-show mb-3 img-fluid rounded d-block"
@@ -188,8 +190,16 @@
                                                     <input type="file" name="foto_transaksi" class="form-control-file"
                                                         id="foto" onchange="previewImage()">
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="foto1">Foto Project</label>
+                                                    <img src="{{ asset("storage/" . $project->foto_completed) }}" class="img-show mb-3 img-fluid rounded d-block"
+                                                        style="height: 200px" alt="">
+                                                    <input type="file" name="foto_completed" class="form-control-file"
+                                                        id="foto1" onchange="previewImage1()">
+                                                </div>
                                             </div>
                                         </div>
+
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                         <button class="btn btn-dark">Cancel</button>
 
