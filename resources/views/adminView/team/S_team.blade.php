@@ -26,6 +26,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <!-- Modal -->
+                                @if (session()->has("success"))
+                                <div class="col-lg-6">
+                                    <div class="alert alert-success alert-dismissible fade show bg-success text-white"
+                                        role="alert">
+                                        {{ session("success") }}
+                                    </div>
+                                </div>
+                                @endif
                                 <div class="table-responsive">
                                     <table id="add-row" class="display table table-striped table-hover">
                                         <thead>
@@ -54,7 +62,7 @@
                                                                 data-target="#addRowModal{{ $x->id }}">detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             <a class="dropdown-item"
-                                                                href="{{ route('team.show',$x->id ) }}">edit</a>
+                                                                href="/team/{{ $x->id }}/edit">edit</a>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')

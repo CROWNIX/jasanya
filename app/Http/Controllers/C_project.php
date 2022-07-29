@@ -24,10 +24,10 @@ class C_project extends Controller
             $project->where('nama','like','%'.request('search').'%');
         }
         $no = 1;
-        $noDetail = 0;
+        $noDetail = 1;
         return view('adminView.project.S_project',[
             'no' => $no,
-            'title' => 'Project',
+            'title' => 'project',
             'project' => $project,
             'noDetail' => $noDetail
         ]);
@@ -37,28 +37,26 @@ class C_project extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \App\M_project  $id
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(Request $request, M_project $project){
         $validasi = $request->validate([
-            'foto_transaksi' => 'required|file|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            "nama_client" => "required",
+            "nama_project" => "required",
+            "deskripsi" => "required",
+            "keterangan" => "required",
+            "deadline" => "required",
+            "status" => "required",
+            "jenis" => "required",
+            "foto_transaksi" => "file|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
         ]);
 
         if($request->file('foto_transaksi')){
             $validasi['foto_transaksi']=$request->file('foto_transaksi')->store('imgTransaksi','public');
         }
-
-        $project = new M_project;
-        $project->nama_project=$request->nama_project;
-        $project->nama_client=$request->nama_client;
-        $project->deskripsi=$request->deskripsi;
-        $project->jenis=$request->jenis;
-        $project->foto_transaksi=$validasi['foto_transaksi'];
-        $project->deadline=$request->deadline;
-        $project->status=$request->status;
-        $project->keterangan=$request->keterangan;
-        $project['pekerja']=json_encode($request->pekerja);
-        $project->save();
+        $validasi['pekerja'] = json_encode($request->pekerja);
+        $project->create($validasi);
 
         return redirect("/project")->with("success", "New Project has beed added");
     }
@@ -122,7 +120,7 @@ class C_project extends Controller
                 Storage::delete($project->foto_transaksi);
             }
 
-            $validasi['foto_transaksi'] = $request->file('foto_transaksi')->store('imgTransaksi');
+            $validasi['foto_transaksi'] = $request->file('foto_transaksi')->store('imgTransaksi','public');
         }
 
         if($request->file('foto_completed')){
@@ -130,7 +128,7 @@ class C_project extends Controller
                 Storage::delete($project->foto_completed);
             }
 
-            $validasi['foto_completed'] = $request->file('foto_completed')->store('imgCompleted');
+            $validasi['foto_completed'] = $request->file('foto_completed')->store('imgCompleted','public');
         }
         $validasi['pekerja'] = json_encode($request->pekerja);
         $project->update($validasi);

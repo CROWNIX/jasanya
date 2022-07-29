@@ -54,7 +54,7 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-group form-group-default">
                                                                 <label>Name</label>
-                                                                <input id="addName" name="name" type="text"
+                                                                <input id="addName" name="nama" type="text"
                                                                     class="form-control" placeholder="Jobdesk Name">
                                                             </div>
                                                             <div class="form-group form-group-default">
@@ -99,7 +99,8 @@
                                                 <td>
                                                     <div class="d-flex">
                                                         <form class="form-button-action"
-                                                            action="{{ route('jobdesk.destroy', $x->id) }}" method="POST">
+                                                            action="{{ route('jobdesk.destroy', $x->id) }}"
+                                                            method="POST">
 
                                                             @csrf
                                                             @method('DELETE')
@@ -110,8 +111,10 @@
                                                                 icon-trash"></i>
                                                             </button>
                                                         </form>
-                                                        <button class="btn btn-link btn-success" type="button" data-toggle="modal"
-                                                                data-target="#editRowModal{{ $x->id }}" data-original-title="Edit" data-toggle="tooltip" title=""><i class="
+                                                        <button class="btn btn-link btn-success" type="button"
+                                                            data-toggle="modal" data-target="#editRowModal{{ $x->id }}"
+                                                            data-original-title="Edit" data-toggle="tooltip" title=""><i
+                                                                class="
                                                                 icon-pencil"></i></button>
                                                     </div>
                                                     <div class="modal fade" id="editRowModal{{ $x->id }}" tabindex="-1"
@@ -139,12 +142,14 @@
                                                                                     <label>Jobdeks</label>
                                                                                     <input id="addName" type="text"
                                                                                         class="form-control"
-                                                                                        value="{{ $x->nama }}" name="nama" required>
+                                                                                        value="{{ $x->nama }}"
+                                                                                        name="nama" required>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="modal-footer">
-                                                                            <button type="submit" class="btn btn-primary">Update</button>
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary">Update</button>
                                                                             <button type="button" class="btn btn-danger"
                                                                                 data-dismiss="modal">Close</button>
                                                                         </div>
