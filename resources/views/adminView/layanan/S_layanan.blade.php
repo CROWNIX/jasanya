@@ -7,7 +7,7 @@
     <!-- End Navbar -->
     <!-- Sidebar -->
     @include('partials.sidebarAdmin')
-    <div class="main-panel">
+    <main class="main-panel">
         <div class="content">
             <div class="page-inner">
                 <x-headerTableForm>
@@ -267,7 +267,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Custom template | don't include it in your project! -->
     @include('partials.theme')

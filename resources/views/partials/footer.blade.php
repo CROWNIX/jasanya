@@ -1,4 +1,4 @@
-<div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+<footer class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5 px-lg-5">
         <div class="row g-5">
             <div class="col-md-6 col-lg-3">
@@ -80,4 +80,4 @@
             </div>
         </div>
     </div>
-</div>
+</footer>

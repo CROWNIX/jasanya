@@ -33,7 +33,7 @@
     @include('partials.sidebarAdmin')
     <!-- End Sidebar -->
 
-    <div class="main-panel">
+    <main class="main-panel">
         <div class="content">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
@@ -574,7 +574,7 @@
                 </div> --}}
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Custom template | don't include it in your project! -->
     @include('partials.theme')

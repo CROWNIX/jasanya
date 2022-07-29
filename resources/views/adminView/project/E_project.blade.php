@@ -14,7 +14,7 @@
         {{-- end navbar --}}
 
 
-        <div class="main-panel">
+        <main class="main-panel">
             <div class="content">
                 <div class="page-inner">
                     <x-headerTableForm>
@@ -209,7 +209,7 @@
                                         </div>
 
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <button class="btn btn-dark">Cancel</button>
+                                        <a href="/project" class="btn btn-dark">Cancel</a>
 
                                     </form>
                                 </div>
@@ -218,7 +218,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 </div>
 @endsection
