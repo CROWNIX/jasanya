@@ -26,7 +26,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="d-flex align-items-center">
-                                    <button class="btn btn-primary btn-round ml-auto" data-toggle="modal"
+                                    <button class="btn btn-primary rounded ml-auto" data-toggle="modal"
                                         data-target="#addRowModal">
                                         <i class="fa fa-plus mr-1"></i>
                                         Add Layanan
@@ -113,12 +113,15 @@
                                                             aria-expanded="false"><i
                                                                 class="fas fa-ellipsis-v"></i></button>
                                                         <div class="dropdown-menu">
-                                                            <button class="btn" type="button" data-toggle="modal"
-                                                                data-target="#addRowModal{{ $x->id }}">detail</button>
+                                                            <button class="btn dropdown-item" type="button" data-toggle="modal"
+                                                                data-target="#addRowModal{{ $x->id }}">Detail</button>
+                                                            <div role="separator" class="dropdown-divider"></div>
+                                                            <button class="btn dropdown-item" type="button" data-toggle="modal"
+                                                                data-target="#editRowModal{{ $x->id }}">Edit</button>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn">Hapus</button>
+                                                            <button type="submit" class="btn dropdown-item">Hapus</button>
                                                         </div>
 
                                                     </form>
@@ -155,6 +158,59 @@
                                                                                         value="{{ $x->deskripsi }}" />
                                                                                 </div>
                                                                             </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal fade" id="editRowModal{{ $x->id }}" tabindex="-1"
+                                                        role="dialog" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header no-bd">
+                                                                    <h5 class="modal-title">
+                                                                        <span class="fw-mediumbold">
+                                                                            {{ $x->nama }}</span>
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form action="/layanan/{{ $x->id }}" method="post">
+                                                                        @method("put")
+                                                                        @csrf
+                                                                        <div class="row">
+                                                                            <div class="col-sm-12">
+                                                                                <div
+                                                                                    class="form-group form-group-default">
+                                                                                    <label>Name</label>
+                                                                                    <input id="addName" type="text"
+                                                                                        class="form-control"
+                                                                                        value="{{ $x->nama }}" name="nama" required>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="form-group form-group-default">
+                                                                                    <label>Deskripsi</label>
+                                                                                    <input id="addPosition" type="text"
+                                                                                        class="form-control"
+                                                                                        value="{{ $x->deskripsi }}" name="deskripsi" required/>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="form-group form-group-default">
+                                                                                    <label>Icon</label>
+                                                                                    <input id="addPosition" type="text"
+                                                                                        class="form-control"
+                                                                                        value="{{ $x->icon }}" name="icon" required/>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="submit" class="btn btn-primary">Update</button>
+                                                                            <button type="button" class="btn btn-danger"
+                                                                                data-dismiss="modal">Close</button>
                                                                         </div>
                                                                     </form>
                                                                 </div>

@@ -15,10 +15,16 @@ class C_layanan extends Controller
             $layanan->where('nama','like','%'.request('search').'%');
         }
         $no=1;
-        return view('adminView.S_layanan',[
+        return view('adminView.layanan.S_layanan',[
             'title' => 'layanan',
             'layanan' => $layanan,
             'no' => $no
+        ]);
+    }
+    
+    public function create(){       
+        return view('adminView.layanan.A_layanan',[
+            'title' => 'Add Layanan'
         ]);
     }
 
@@ -32,6 +38,18 @@ class C_layanan extends Controller
         M_layanan::create($validasi);
         
         return redirect("/layanan")->with("success", "New layanan has beed added");
+    }
+
+    public function update(Request $request, M_layanan $layanan){
+        $validasi = $request->validate([
+            "nama" => "required|max:100",
+            "deskripsi" => "required|max:255",
+            "icon" => "required|max:100",
+        ]);
+
+        $layanan->update($validasi);
+        
+        return redirect("/layanan")->with("success", "layanan has beed updated");
     }
 
     public function destroy($id){
