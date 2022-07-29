@@ -27,19 +27,21 @@ class C_jobdesk extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \App\M_jobdesk  $id
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        $M_jobdesk = new M_jobdesk;
-        $M_jobdesk->nama = $request->name;
-        $M_jobdesk->save();
+        $validasi = $request->validate([
+            "nama" => "required|max:100|unique:jobdesk"
+        ]);
+        M_jobdesk::create($validasi);
         return redirect()->route('jobdesk.index')
                         ->with('success','Product deleted successfully');
     }
 
     public function update(Request $request, M_jobdesk $jobdesk){
         $validasi = $request->validate([
-            "nama" => "required|max:100"
+            "nama" => "required|max:100|unique:jobdesk"
         ]);
 
         $jobdesk->update($validasi);
