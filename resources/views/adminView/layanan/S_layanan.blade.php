@@ -40,7 +40,7 @@
                                             <div class="modal-header no-bd">
                                                 <h5 class="modal-title">
                                                     <span class="fw-mediumbold">
-                                                        Add Jobdesk</span>
+                                                        Add Layanan</span>
                                                 </h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
@@ -48,24 +48,30 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="/layanan"
-                                                    enctype="multipart/form-data">
+                                                <form method="POST" action="/layanan" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class=" row">
                                                         <div class="col-sm-12">
                                                             <div class="form-group form-group-default">
                                                                 <label>Name</label>
                                                                 <input id="addName" name="nama" type="text"
-                                                                    class="form-control" placeholder="Name Layanan" required>
+                                                                    class="form-control" placeholder="Name Layanan"
+                                                                    required>
                                                             </div>
                                                             <div class="form-group form-group-default">
                                                                 <label>Deskripsi</label>
                                                                 <input id="deskripsi" name="deskripsi" type="text"
-                                                                    class="form-control" placeholder="deskripsi" required>
+                                                                    class="form-control" placeholder="deskripsi"
+                                                                    required>
                                                             </div>
                                                             <div class="form-group form-group-default">
                                                                 <label>Icon</label>
                                                                 <input id="icon" name="icon" type="text"
+                                                                    class="form-control" placeholder="Icon" required>
+                                                            </div>
+                                                            <div class="form-group form-group-default">
+                                                                <label>Link Whatsapp</label>
+                                                                <input id="icon" name="whatsapp" type="text"
                                                                     class="form-control" placeholder="Icon" required>
                                                             </div>
                                                         </div>
@@ -84,11 +90,12 @@
                                 <!-- Modal -->
                                 <div class="table-responsive">
                                     @if (session()->has("success"))
-                                        <div class="col-lg-6">
-                                            <div class="alert alert-success alert-dismissible fade show bg-success text-white" role="alert">
-                                                {{ session("success") }}
-                                            </div>         
+                                    <div class="col-lg-6">
+                                        <div class="alert alert-success alert-dismissible fade show bg-success text-white"
+                                            role="alert">
+                                            {{ session("success") }}
                                         </div>
+                                    </div>
                                     @endif
                                     <table id="add-row" class="display table table-striped table-hover">
                                         <thead>
@@ -106,22 +113,25 @@
                                                 <td>{{ $x->nama}}</td>
                                                 <td>{{ $x->deskripsi}}</td>
                                                 <td>
-                                                    <form class="form-button-action"
-                                                        action="/layanan/{{ $x->id }}" method="POST">
+                                                    <form class="form-button-action" action="/layanan/{{ $x->id }}"
+                                                        method="POST">
                                                         <button class="btn btn-light btn-link" type="button"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false"><i
                                                                 class="fas fa-ellipsis-v"></i></button>
                                                         <div class="dropdown-menu">
-                                                            <button class="btn dropdown-item" type="button" data-toggle="modal"
+                                                            <button class="btn dropdown-item" type="button"
+                                                                data-toggle="modal"
                                                                 data-target="#addRowModal{{ $x->id }}">Detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
-                                                            <button class="btn dropdown-item" type="button" data-toggle="modal"
+                                                            <button class="btn dropdown-item" type="button"
+                                                                data-toggle="modal"
                                                                 data-target="#editRowModal{{ $x->id }}">Edit</button>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn dropdown-item">Hapus</button>
+                                                            <button type="submit"
+                                                                class="btn dropdown-item">Hapus</button>
                                                         </div>
 
                                                     </form>
@@ -157,6 +167,20 @@
                                                                                         class="form-control"
                                                                                         value="{{ $x->deskripsi }}" />
                                                                                 </div>
+                                                                                <div
+                                                                                    class="form-group form-group-default">
+                                                                                    <label>Deskripsi</label>
+                                                                                    <input id="addPosition" type="text"
+                                                                                        class="form-control"
+                                                                                        value="{{ $x->icon }}" />
+                                                                                </div>
+                                                                                <div
+                                                                                    class="form-group form-group-default">
+                                                                                    <label>link whatsapp</label>
+                                                                                    <textarea id="addPosition"
+                                                                                        type="text" class="form-control"
+                                                                                        rows="4">{{ $x->whatsapp }} </textarea>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </form>
@@ -189,26 +213,38 @@
                                                                                     <label>Name</label>
                                                                                     <input id="addName" type="text"
                                                                                         class="form-control"
-                                                                                        value="{{ $x->nama }}" name="nama" required>
+                                                                                        value="{{ $x->nama }}"
+                                                                                        name="nama" required>
                                                                                 </div>
                                                                                 <div
                                                                                     class="form-group form-group-default">
                                                                                     <label>Deskripsi</label>
                                                                                     <input id="addPosition" type="text"
                                                                                         class="form-control"
-                                                                                        value="{{ $x->deskripsi }}" name="deskripsi" required/>
+                                                                                        value="{{ $x->deskripsi }}"
+                                                                                        name="deskripsi" required />
                                                                                 </div>
                                                                                 <div
                                                                                     class="form-group form-group-default">
                                                                                     <label>Icon</label>
                                                                                     <input id="addPosition" type="text"
                                                                                         class="form-control"
-                                                                                        value="{{ $x->icon }}" name="icon" required/>
+                                                                                        value="{{ $x->icon }}"
+                                                                                        name="icon" required />
+                                                                                </div>
+                                                                                <div
+                                                                                    class="form-group form-group-default">
+                                                                                    <label>link whatsapp</label>
+                                                                                    <textarea id="addPosition"
+                                                                                        name="whatsapp"
+                                                                                        class="form-control"
+                                                                                        rows="4">{{ $x->whatsapp }} </textarea>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="modal-footer">
-                                                                            <button type="submit" class="btn btn-primary">Update</button>
+                                                                            <button type="submit"
+                                                                                class="btn btn-primary">Update</button>
                                                                             <button type="button" class="btn btn-danger"
                                                                                 data-dismiss="modal">Close</button>
                                                                         </div>
@@ -220,7 +256,7 @@
                                                 </td>
                                             </tr>
                                             @empty
-                                          
+
                                             @endforelse
                                         </tbody>
                                     </table>

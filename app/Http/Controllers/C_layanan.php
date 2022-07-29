@@ -33,6 +33,7 @@ class C_layanan extends Controller
             'nama' => 'required|max:100|unique:layanan',
             "deskripsi" => "required|max:255",
             "icon" => "required|max:100|unique:layanan",
+            "whatsapp"=>"required"
         ]);
 
         M_layanan::create($validasi);
@@ -42,9 +43,10 @@ class C_layanan extends Controller
 
     public function update(Request $request, M_layanan $layanan){
         $validasi = $request->validate([
-            "nama" => "required|max:100|unique:layanan",
+            "nama" => "required|max:100",
             "deskripsi" => "required|max:255",
-            "icon" => "required|max:100|unique:layanan",
+            "icon" => "required|max:100",
+            "whatsapp"=>"required",
         ]);
 
         $layanan->update($validasi);
