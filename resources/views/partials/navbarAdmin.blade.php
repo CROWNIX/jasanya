@@ -1,5 +1,5 @@
 @if ($title === 'Edit Project' || $title=== "edit team")
-<div class="main-header">
+<header class="main-header">
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="dark2">
 
@@ -267,9 +267,9 @@
             </ul>
         </div>
     </nav>
-</div>
+</header>
 @else
-<div class="main-header">
+<header class="main-header">
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="dark2">
 
@@ -537,5 +537,5 @@
             </ul>
         </div>
     </nav>
-</div>
+</header>
 @endif

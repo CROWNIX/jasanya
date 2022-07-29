@@ -13,7 +13,7 @@
         @include('partials.sidebarAdmin')
         {{-- end navbar --}}
 
-        <div class="main-panel">
+        <main class="main-panel">
             <div class="content">
                 <div class="page-inner">
                     <x-headerTableForm>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 </div>
 @endsection
