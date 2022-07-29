@@ -30,9 +30,9 @@ class C_layanan extends Controller
 
     public function store(Request $request){
         $validasi = $request->validate([
-            'nama' => 'required|max:100',
+            'nama' => 'required|max:100|unique:layanan',
             "deskripsi" => "required|max:255",
-            "icon" => "required|max:100",
+            "icon" => "required|max:100|unique:layanan",
         ]);
 
         M_layanan::create($validasi);
@@ -42,9 +42,9 @@ class C_layanan extends Controller
 
     public function update(Request $request, M_layanan $layanan){
         $validasi = $request->validate([
-            "nama" => "required|max:100",
+            "nama" => "required|max:100|unique:layanan",
             "deskripsi" => "required|max:255",
-            "icon" => "required|max:100",
+            "icon" => "required|max:100|unique:layanan",
         ]);
 
         $layanan->update($validasi);
@@ -54,7 +54,6 @@ class C_layanan extends Controller
 
     public function destroy($id){
         $layanan= M_layanan::find($id);
-        Storage::delete('public/'.$layanan->foto);
         $layanan->delete();
         return redirect("/layanan")->with("success", "Layanan has beed deleted");
     }
