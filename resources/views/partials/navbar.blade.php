@@ -1,5 +1,4 @@
 <!-- Navbar & Hero Start -->
-<div class="container-xxl position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
         <a href="" class="navbar-brand p-0">
             <h1 class="m-0">Jasanya.Tech</h1>
@@ -28,5 +27,4 @@
             <a href="{{ url('/#home') }}" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
         </div>
     </nav>
-</div>
 <!-- Navbar & Hero End -->
