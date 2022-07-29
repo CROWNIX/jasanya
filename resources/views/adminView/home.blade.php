@@ -303,8 +303,8 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar">
-                                        <img src="atlantisTemplate/assets/img/logoproduct3.svg"
-                                            alt="atlantisTemplate." class="avatar-img rounded-circle">
+                                        <img src="atlantisTemplate/assets/img/logoproduct3.svg" alt="atlantisTemplate."
+                                            class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
                                         <h6 class="fw-bold mb-1">Ready Pro</h6>
@@ -328,8 +328,8 @@
                                 <div class="card-list">
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg"
-                                                alt="atlantisTemplate." class="avatar-img rounded-circle">
+                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg" alt="atlantisTemplate."
+                                                class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
                                             <div class="username">Jimmy Denis</div>
@@ -341,8 +341,8 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="atlantisTemplate/assets/img/chadengle.jpg"
-                                                alt="atlantisTemplate." class="avatar-img rounded-circle">
+                                            <img src="atlantisTemplate/assets/img/chadengle.jpg" alt="atlantisTemplate."
+                                                class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
                                             <div class="username">Chad</div>
@@ -393,8 +393,8 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg"
-                                                alt="atlantisTemplate." class="avatar-img rounded-circle">
+                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg" alt="atlantisTemplate."
+                                                class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
                                             <div class="username">Jimmy Denis</div>

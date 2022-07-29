@@ -27,7 +27,7 @@ class C_project extends Controller
         $noDetail = 1;
         return view('adminView.project.S_project',[
             'no' => $no,
-            'title' => 'Project',
+            'title' => 'project',
             'project' => $project,
             'noDetail' => $noDetail
         ]);
