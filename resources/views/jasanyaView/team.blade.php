@@ -16,7 +16,7 @@
         @include('partials.navbar')
         <div class="container-xxl py-5 bg-primary hero-header">
             <div class="container my-5 py-5 px-lg-5">
-                <div class="row g-5 py-5">
+                <div class="row py-5">
                     <div class="col-12 text-center">
                         <h1 class="text-white animated slideInDown">Jasanya.Tech Team </h1>
                         <input type="hidden" class="auto-type">
@@ -41,7 +41,7 @@
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="text-center mb-5">Team Member</h1>
             </div>
-            <div class="row g-4">
+            <div class="row">
                 @forelse ($M_team as $x)
                 <x-card-team>
                     @slot('foto')
