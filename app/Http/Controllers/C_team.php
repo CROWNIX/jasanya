@@ -12,7 +12,7 @@ class C_team extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\M_team 
+     * @param  \App\M_team
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -21,7 +21,7 @@ class C_team extends Controller
         if(request('search')){
             $M_team->where('nama_lengkap','like','%'.request('search').'%');
         }
-        
+
         $no = 1;
         return view('adminView.team.S_team',[
             'no' => $no,
@@ -58,7 +58,7 @@ class C_team extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\M_jobdesk 
+     * @param  \App\M_jobdesk
      * @return \Illuminate\Http\Response
      */
     public function F_A_team(){
@@ -68,7 +68,7 @@ class C_team extends Controller
             'M_jobdesk'=>$M_jobdesk->get(),
         ]);
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -85,7 +85,7 @@ class C_team extends Controller
             'M_jobdesk'=>$M_jobdesk->get()
         ]);
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -128,7 +128,7 @@ class C_team extends Controller
         // Storage::delete('public/'.$team->foto);
         $team->delete();
         return redirect()->route('team.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success','Team deleted successfully');
     }
     // end team
 }

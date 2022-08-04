@@ -1,7 +1,7 @@
 @extends('layouts.mainAdmin')
 
 @section('container')
-<div class="wrapper sidebar_minimize">
+<div class="wrapper">
 
     {{-- side bar --}}
     @include('partials.navbarAdmin')

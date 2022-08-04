@@ -24,11 +24,10 @@
                         baik dalam bidang frontend, backend, fullstack, UI/UX desaign.
                         jika berminat, silangkah hubungi kami via whatsapp
                     </p>
-                    <a href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya" target="_blank"
+                    <a href="https://wa.me/6288809217772?text=Halo%20admin%20jasanya" target="_blank"
                         class="btn btn-secondary py-sm-3 px-sm-5 px-3 py-2 rounded-pill me-3 animated slideInLeft">
                         <i class="fa fa-phone-alt"></i> Hubungi Kami</a>
-                    <a href="#contact" class="btn btn-light py-sm-3 px-sm-5 px-3 py-2 rounded-pill animated slideInRight">Contact
-                        Us</a>
+                    <a href="#contact" class="btn btn-light py-sm-3 px-sm-5 px-3 py-2 rounded-pill animated slideInRight">Kritik dan Saran</a>
                 </div>
                 <div class="col-lg-5 text-center text-lg-end">
                     <img class="img-fluid animated zoomIn" src="img/image-removebg-preview.png" alt=""
@@ -74,7 +73,7 @@
         </div>
     </section>
     <!-- Feature End -->
-    
+
     <!-- About Start -->
     <section class="container-xxl py-5" id="about">
         <div class="container py-5 px-lg-5">
@@ -126,7 +125,7 @@
         </div>
     </section>
     <!-- About End -->
-    
+
     <!-- Facts Start -->
     <section class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 px-lg-5">
@@ -155,7 +154,7 @@
         </div>
     </section>
     <!-- Facts End -->
-    
+
     <!-- Service Start -->
     <section class="container-xxl" id="service">
         <div class="container py-5 px-lg-5">
@@ -173,7 +172,7 @@
                         <h5 class="mb-3">Website</h5>
                         <p class="m-0">Penyedia Jasa website</p>
                         <a class="btn btn-square"
-                            href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20website"
+                            href="https://wa.me/6288809217772?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20website"
                             target="blank"><i class="fa fa-phone-alt"></i></a>
                     </div>
                 </div>
@@ -185,7 +184,7 @@
                         <h5 class="mb-3">UI / UX</h5>
                         <p class="m-0">Penyedia Jasa UI / UX</p>
                         <a class="btn btn-square"
-                            href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%UI%20/%20UX"
+                            href="https://wa.me/6288809217772?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%UI%20/%20UX"
                             target="blank"><i class="fa fa-phone-alt"></i></a>
                     </div>
                 </div>
@@ -197,7 +196,7 @@
                         <h5 class="mb-3">Aplikasi Mobile</h5>
                         <p class="m-0">Penyedia Jasa aplikasi mobile</p>
                         <a class="btn btn-square"
-                            href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20aplikasi%20mobile"
+                            href="https://wa.me/6288809217772?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20aplikasi%20mobile"
                             target="blank"><i class="fa fa-phone-alt"></i></a>
                     </div>
                 </div>
@@ -209,7 +208,7 @@
                         <h5 class="mb-3">API</h5>
                         <p class="m-0">Penyedia Jasa API</p>
                         <a class="btn btn-square"
-                            href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20API"
+                            href="https://wa.me/6288809217772?text=Halo%20admin%20jasanya,%20jasa%20pembuatan%20API"
                             target="blank"><i class="fa fa-phone-alt"></i></a>
                     </div>
                 </div>
@@ -217,7 +216,7 @@
         </div>
     </section>
     <!-- Service End -->
-    
+
     <!-- Projects Start -->
     <section class="container-xxl py-5 mb-5" id="project">
         <div class="container py-5 px-lg-5">
@@ -237,7 +236,7 @@
                     </ul>
                 </div>
             </div>
-    
+
             <div class="row portfolio-container pb-5">
                 @forelse ($project as $x)
                 <div class="col-lg-4 col-md-6 portfolio-item {{ $x->jenis }} wow fadeInUp" data-wow-delay="0.1s">
@@ -259,8 +258,8 @@
                 </div>
                 @empty
                 tidak ada data
-    
-    
+
+
                 @endforelse
             </div>
         </div>
@@ -268,62 +267,8 @@
     <!-- Projects End -->
 
 </main>
-
-
-<!-- Testimonial Start -->
-<section class="container-xxl pt-5 wow fadeInUp" data-wow-delay="0.1s" id="testimoni">
-    <div class="container py-5 px-lg-5">
-        {{-- <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span>
-        </p>
-        --}}
-        <h1 class="text-center mb-5">What Say Our Clients!</h1>
-        <div class="owl-carousel testimonial-carousel">
-            <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam
-                    ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
-                    clita duo justo.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
-                        style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam
-                    ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
-                    clita duo justo.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg"
-                        style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item bg-light rounded my-4">
-                <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam
-                    ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
-                    clita duo justo.</p>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
-                        style="width: 65px; height: 65px;">
-                    <div class="ps-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Testimonial End -->
-
 <!-- Contact Start -->
-<section class="container-xxl" id="contact">
+<section class="container-xxl" id="contact" >
     <div class="container py-5 px-lg-5">
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             {{-- <p class="section-title text-secondary justify-content-center"><span></span>Contact Us<span></span>
@@ -334,13 +279,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="wow fadeInUp" data-wow-delay="0.3s">
-                    {{-- <p class="text-center mb-4">The contact form is currently inactive. Get a functional and
-                        working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a
-                        little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.
-                    </p> --}}
                     <form method="POST" action="{{ url('/kritikSaran') }}">
                         @csrf
-                        @include('sweetalert::alert')
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -356,21 +296,21 @@
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 mt-3">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" name="subject" id="subject"
                                         placeholder="Subject">
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 mt-3">
                                 <div class="form-floating">
                                     <textarea class="form-control" name="message" placeholder="Leave a message here"
                                         id="message" style="height: 150px"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 mt-3">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                             </div>
                         </div>

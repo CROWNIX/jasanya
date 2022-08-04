@@ -29,7 +29,7 @@
 
 </head>
 
-<body data-background-color="dark">
+<body>
 	@yield('container')
 </body>
 <!--   Core JS Files   -->
@@ -203,7 +203,7 @@
 
 </head>
 
-<body data-background-color="dark">
+<body>
 	@yield('container')
 </body>
 <!--   Core JS Files   -->
@@ -244,9 +244,14 @@
 <!-- Atlantis JS -->
 <script src="atlantisTemplate/assets/js/atlantis.min.js"></script>
 
+{{-- validasi --}}
+<script src="atlantisTemplate/assets/validation/jquery.validate.min.js"></script>
+<script src="atlantisTemplate/assets/validation/jquery.validate-init.js"></script>
+
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="atlantisTemplate/assets/js/setting-demo2.js"></script>
 <script src="atlantisTemplate/assets/js/demo.js"></script>
+
 <script>
 	function previewImage(){
         const image = document.querySelector('#foto');

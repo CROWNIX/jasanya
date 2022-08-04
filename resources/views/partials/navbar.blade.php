@@ -14,15 +14,6 @@
                 <a href="{{ url('/#service') }}" class="nav-item nav-link">Service</a>
                 <a href="{{ url('/#project') }}" class="nav-item nav-link">Project</a>
                 <a href="{{ url('/jasanyateam') }}" class="nav-item nav-link">Team</a>
-                {{-- <div class="nav-item dropdown" id="drop">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="{{ url('/team') }}" class="dropdown-item">Our Team</a>
-                        <a href="{{ url('/#testimoni') }}" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div> --}}
-                <a href="{{ url('./#contact') }}" class="nav-item nav-link">Contact</a>
             </div>
             <a href="{{ url('/#home') }}" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
         </div>
