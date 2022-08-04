@@ -15,7 +15,7 @@
     @include('partials.navbar')
     <div class="container-xxl bg-primary hero-header">
         <div class="container px-lg-5" id="home">
-            <div class="row g-5 align-items-end">
+            <div class="row align-items-end">
                 <div class="col-lg-7 text-center text-lg-start">
                     <h1 class="text-white mb-4 animated slideInDown">Jasa <span class="auto-type text-warning"></span>
                     </h1>
@@ -25,9 +25,9 @@
                         jika berminat, silangkah hubungi kami via whatsapp
                     </p>
                     <a href="https://wa.me/6281290853613?text=Halo%20admin%20jasanya" target="_blank"
-                        class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">
+                        class="btn btn-secondary py-sm-3 px-sm-5 px-3 py-2 rounded-pill me-3 animated slideInLeft">
                         <i class="fa fa-phone-alt"></i> Hubungi Kami</a>
-                    <a href="#contact" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
+                    <a href="#contact" class="btn btn-light py-sm-3 px-sm-5 px-3 py-2 rounded-pill animated slideInRight">Contact
                         Us</a>
                 </div>
                 <div class="col-lg-5 text-center text-lg-end">
@@ -45,7 +45,7 @@
     <!-- Feature Start -->
     <section class="container-xxl">
         <div class="container py-5 px-lg-5">
-            <div class="row g-4">
+            <div class="row">
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="feature-item bg-light rounded text-center p-4 shadow">
                         <i class="fa fa-3x fa-server text-primary mb-4"></i>
@@ -78,7 +78,7 @@
     <!-- About Start -->
     <section class="container-xxl py-5" id="about">
         <div class="container py-5 px-lg-5">
-            <div class="row g-5 align-items-center">
+            <div class="row align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     {{-- <p class="section-title text-secondary">About Us<span></span></p> --}}
                     <h1 class="mb-5">Jasanya.Tech</h1>
@@ -130,7 +130,7 @@
     <!-- Facts Start -->
     <section class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 px-lg-5">
-            <div class="row g-4">
+            <div class="row">
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">{{ $hari }}</h1>
@@ -164,7 +164,7 @@
                 </p> --}}
                 <h1 class="text-center mb-5">Jasa Kami</h1>
             </div>
-            <div class="row g-4">
+            <div class="row">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item d-flex flex-column text-center rounded">
                         <div class="service-icon flex-shrink-0 ">
@@ -238,7 +238,7 @@
                 </div>
             </div>
     
-            <div class="row g-4 portfolio-container pb-5">
+            <div class="row portfolio-container pb-5">
                 @forelse ($project as $x)
                 <div class="col-lg-4 col-md-6 portfolio-item {{ $x->jenis }} wow fadeInUp" data-wow-delay="0.1s">
                     <div class="rounded overflow-hidden">
@@ -341,7 +341,7 @@
                     <form method="POST" action="{{ url('/kritikSaran') }}">
                         @csrf
                         @include('sweetalert::alert')
-                        <div class="row g-3">
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" name="name" id="name"
