@@ -218,11 +218,11 @@
     <!-- Service End -->
 
     <!-- Projects Start -->
-    <section class="container-xxl py-5 mb-5" id="project">
+    {{-- <section class="container-xxl py-5 mb-5" id="project">
         <div class="container py-5 px-lg-5">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
-                {{-- <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span>
-                </p> --}}
+                <p class="section-title text-secondary justify-content-center"><span></span>Our Projects<span></span>
+                </p>
                 <h1 class="text-center mb-5">Project Yang Kami Buat</h1>
             </div>
             <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
@@ -264,9 +264,9 @@
             </div>
         </div>
     </section>
-    <!-- Projects End -->
+    <!-- Projects End --> --}}
 
-</main>
+
 <!-- Contact Start -->
 <section class="container-xxl" id="contact" >
     <div class="container py-5 px-lg-5">
@@ -322,6 +322,7 @@
     </div>
 </section>
 <!-- Contact End -->
+</main>
 
 <!-- Footer Start -->
 @include('partials.footer')

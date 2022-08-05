@@ -12,7 +12,7 @@
                 <a href="{{ url('/#home') }}" class="nav-item nav-link">Home</a>
                 <a href="{{ url('/#about') }}" class="nav-item nav-link">About</a>
                 <a href="{{ url('/#service') }}" class="nav-item nav-link">Service</a>
-                <a href="{{ url('/#project') }}" class="nav-item nav-link">Project</a>
+                {{-- <a href="{{ url('/#project') }}" class="nav-item nav-link">Project</a> --}}
                 <a href="{{ url('/jasanyateam') }}" class="nav-item nav-link">Team</a>
             </div>
             <a href="{{ url('/#home') }}" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
