@@ -35,6 +35,14 @@
                                                 </div>
                                             </div>
                                         @endif
+                                        @if (session()->has('error'))
+                                            <div class="col-lg-6">
+                                                <div class="alert alert-danger alert-dismissible fade show bg-success text-white"
+                                                    role="alert">
+                                                    {{ session('success') }}
+                                                </div>
+                                            </div>
+                                        @endif
                                         <table id="add-row" class="display table table-striped table-hover">
                                             <thead>
                                                 <tr>
