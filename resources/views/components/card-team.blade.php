@@ -1,7 +1,7 @@
 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
     <div class="shadow hover-scale-1 team-item bg-light rounded mb-sm-3 mb-3">
         <div class="text-center border-bottom p-4">
-            <img class=" rounded-circle mb-4" src="https://source.unsplash.com/gySMaocSdqs/600x1000" alt="" style="height: 14rem; width: 13rem; object-fit:cover; ">
+            <img class=" rounded-circle mb-4" src="{{ $foto }}" alt="" style="height: 14rem; width: 13rem; object-fit:cover; ">
             <h5>{{ $nama }}</h5>
             <span>{{ $job }}</span>
         </div>
