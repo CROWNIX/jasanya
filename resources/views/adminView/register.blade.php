@@ -45,15 +45,6 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-block enter-btn">Register</button>
                             </div>
-                            <div class="d-flex">
-                                <button class="btn btn-facebook col mr-2">
-                                    <i class="mdi mdi-facebook"></i> Facebook </button>
-                                <button class="btn btn-google col">
-                                    <i class="mdi mdi-google-plus"></i> Google plus </button>
-                            </div>
-                            <p class="sign-up text-center">Already have an Account?<a href="/login"> Sign In</a></p>
-                            <p class="terms">By creating an account you are accepting our<a href="#"> Terms &
-                                    Conditions</a></p>
                         </form>
                     </div>
                 </div>

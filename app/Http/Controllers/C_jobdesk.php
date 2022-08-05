@@ -10,7 +10,7 @@ class C_jobdesk extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\M_jobdesk 
+     * @param  \App\M_jobdesk
      * @return \Illuminate\Http\Response
      */
     public function index (){
@@ -32,16 +32,16 @@ class C_jobdesk extends Controller
      */
     public function store(Request $request){
         $validasi = $request->validate([
-            "nama" => "required|max:100|unique:jobdesk"
+            "nama_jobdesk" => "required|max:100|unique:jobdesk"
         ]);
         M_jobdesk::create($validasi);
         return redirect()->route('jobdesk.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success','Jobdesk has been add successfully');
     }
 
     public function update(Request $request, M_jobdesk $jobdesk){
         $validasi = $request->validate([
-            "nama" => "required|max:100|unique:jobdesk"
+            "nama_jobdesk" => "required|max:100|unique:jobdesk"
         ]);
 
         $jobdesk->update($validasi);
@@ -60,6 +60,6 @@ class C_jobdesk extends Controller
         $M_jobdesk = M_jobdesk::find($id);
         $M_jobdesk->delete();
         return redirect()->route('jobdesk.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success','Jobdesk deleted successfully');
     }
 }

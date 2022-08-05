@@ -48,13 +48,13 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="/layanan" enctype="multipart/form-data">
+                                                <form method="POST" class="form-valide"action="/layanan">
                                                     @csrf
                                                     <div class=" row">
                                                         <div class="col-sm-12">
                                                             <div class="form-group form-group-default">
                                                                 <label>Name</label>
-                                                                <input id="addName" name="nama" type="text"
+                                                                <input id="addName" name="nama_layanan" type="text"
                                                                     class="form-control" placeholder="Name Layanan"
                                                                     required>
                                                             </div>
@@ -110,7 +110,7 @@
                                             @forelse ($layanan as $x)
                                             <tr>
                                                 <td> {{ $no++ }}</td>
-                                                <td>{{ $x->nama}}</td>
+                                                <td>{{ $x->nama_layanan}}</td>
                                                 <td>{{ $x->deskripsi}}</td>
                                                 <td>
                                                     <form class="form-button-action" action="/layanan/{{ $x->id }}"
@@ -142,7 +142,7 @@
                                                                 <div class="modal-header no-bd">
                                                                     <h5 class="modal-title">
                                                                         <span class="fw-mediumbold">
-                                                                            {{ $x->nama }}</span>
+                                                                            {{ $x->nama_layanan }}</span>
                                                                     </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
@@ -158,7 +158,7 @@
                                                                                     <label>Name</label>
                                                                                     <input id="addName" type="text"
                                                                                         class="form-control"
-                                                                                        value="{{ $x->nama }}">
+                                                                                        value="{{ $x->nama_layanan }}">
                                                                                 </div>
                                                                                 <div
                                                                                     class="form-group form-group-default">
@@ -195,7 +195,7 @@
                                                                 <div class="modal-header no-bd">
                                                                     <h5 class="modal-title">
                                                                         <span class="fw-mediumbold">
-                                                                            {{ $x->nama }}</span>
+                                                                            {{ $x->nama_layanan }}</span>
                                                                     </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
@@ -203,9 +203,9 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form action="/layanan/{{ $x->id }}" method="post">
-                                                                        @method("put")
+                                                                    <form action="/layanan/{{ $x->id }}" method="POST">
                                                                         @csrf
+                                                                        @method("put")
                                                                         <div class="row">
                                                                             <div class="col-sm-12">
                                                                                 <div
@@ -213,8 +213,8 @@
                                                                                     <label>Name</label>
                                                                                     <input id="addName" type="text"
                                                                                         class="form-control"
-                                                                                        value="{{ $x->nama }}"
-                                                                                        name="nama" required>
+                                                                                        value="{{ $x->nama_layanan }}"
+                                                                                        name="nama_layanan" required>
                                                                                 </div>
                                                                                 <div
                                                                                     class="form-group form-group-default">
@@ -238,7 +238,7 @@
                                                                                     <textarea id="addPosition"
                                                                                         name="whatsapp"
                                                                                         class="form-control"
-                                                                                        rows="4">{{ $x->whatsapp }} </textarea>
+                                                                                        rows="4" required>{{ $x->whatsapp }} </textarea>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

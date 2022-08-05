@@ -48,13 +48,13 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="{{ route('jobdesk.store') }}">
+                                                <form method="POST" class="form-valide"action="{{ route('jobdesk.store') }}">
                                                     @csrf
                                                     <div class="row">
                                                         <div class="col-sm-12">
                                                             <div class="form-group form-group-default">
                                                                 <label>Name</label>
-                                                                <input id="addName" name="nama" type="text"
+                                                                <input id="addName" name="nama_jobdesk" type="text"
                                                                     class="form-control" placeholder="Jobdesk Name">
                                                             </div>
                                                             <div class="form-group form-group-default">
@@ -63,7 +63,7 @@
                                                                 <select multiple class="form-control"
                                                                     id="exampleFormControlSelect2">
                                                                     @foreach ( $M_jobdesk as $x )
-                                                                    <option value="{{ $x->nama }}">{{ $x->nama }}
+                                                                    <option value="{{ $x->nama_jobdesk }}">{{ $x->nama_jobdesk }}
                                                                     </option>
                                                                     @endforeach ()
                                                                 </select>
@@ -95,7 +95,7 @@
                                             @forelse ($M_jobdesk as $x)
                                             <tr>
                                                 <td> {{ $no++ }}</td>
-                                                <td>{{ $x->nama}}</td>
+                                                <td>{{ $x->nama_jobdesk}}</td>
                                                 <td>
                                                     <div class="d-flex">
                                                         <form class="form-button-action"
@@ -124,7 +124,7 @@
                                                                 <div class="modal-header no-bd">
                                                                     <h5 class="modal-title">
                                                                         <span class="fw-mediumbold">
-                                                                            {{ $x->nama }}</span>
+                                                                            {{ $x->nama_jobdesk }}</span>
                                                                     </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
@@ -142,8 +142,8 @@
                                                                                     <label>Jobdeks</label>
                                                                                     <input id="addName" type="text"
                                                                                         class="form-control"
-                                                                                        value="{{ $x->nama }}"
-                                                                                        name="nama" required>
+                                                                                        value="{{ $x->nama_jobdesk }}"
+                                                                                        name="nama_jobdesk" required>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

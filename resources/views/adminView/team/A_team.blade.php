@@ -34,14 +34,14 @@
                                         <form class="forms-sample form-valide" method="POST"
                                             action="{{ route('team.store') }}" enctype="multipart/form-data">
                                             @csrf
-                                            <div class="form-group row">
+                                            <div class="form-group row has-success">
                                                 <label for="name" class="col-lg-4 col-form-label">Name Team</label>
                                                 <div class="col-lg-6">
                                                     <input type="text" name="nama_lengkap" class="form-control"
                                                         id="name" placeholder="Enter Name">
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                            <div class="form-group row has-success">
                                                 <label class="col-lg-4 col-form-label">Jobdesk</label>
                                                 <div class="col-lg-6">
                                                     <select name="jobdesk" class="form-control" style="width:100%" required>
@@ -52,7 +52,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                            <div class="form-group row has-success">
                                                 <label class="col-lg-4 col-form-label"
                                                     for="exampleInputCity1">instagram</label>
                                                 <div class="col-lg-6">
@@ -60,28 +60,28 @@
                                                         id="exampleInputCity1" placeholder="instagram">
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                            <div class="form-group row has-success">
                                                 <label class="col-lg-4 col-form-label" for="github">github</label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" name="github" id="github"
+                                                    <input type="text" class="form-control " name="github" id="github"
                                                         placeholder="github">
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                            <div class="form-group row has-success">
                                                 <label class="col-lg-4 col-form-label" for="linkedin">linkedin</label>
                                                 <div class="col-lg-6">
                                                     <input type="text" class="form-control" name="linkedin"
                                                         id="linkedin" placeholder="linkedin">
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                            <div class="form-group row has-success">
                                                 <label class="col-lg-4 col-form-label" for="facebook">facebook</label>
                                                 <div class="col-lg-6">
                                                     <input type="text" class="form-control" name="facebook"
                                                         id="facebook" placeholder="facebook">
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                            <div class="form-group row has-success">
                                                 <label class="col-lg-4 col-form-label" for="foto">Foto Team</label>
                                                 <div class="col-lg-6">
                                                     <img class="img-show img-fluid mb-3 rounded d-block"
@@ -90,7 +90,7 @@
                                                         id="foto" onchange="previewImage()">
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                            <div class="form-group row has-success">
                                                 <div class="col-lg-8 ml-auto">
                                                     <button type="submit" class="btn btn-primary">Submit</button>
                                                     <a href="/team" class="btn btn-dark">Cancel</a>

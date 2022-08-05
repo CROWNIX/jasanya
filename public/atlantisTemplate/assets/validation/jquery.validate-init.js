@@ -33,14 +33,56 @@ jQuery(".form-valide").validate({
         // "val-terms": { required: !0 },
         nama_lengkap: { required: !0 },
         jobdesk: { required: !0 },
+        nama_jobdesk: { required: !0 },
+        nama_layanan: { required: !0 },
+        deskripsi: { required: !0 },
+        icon: { required: !0 },
+        whatsapp: { required: !0 },
+        nama_client: { required: !0 },
+        nama_project: { required: !0 },
+        keterangan: { required: !0 },
+        deadline: { required: !0 },
+        status: { required: !0 },
     },
     messages: {
+        nama_client: {
+            required: "Masukan Nama Client",
+        },
+        nama_project: {
+            required: "Masukan Nama Project",
+        },
+        keterangan: {
+            required: "Masukan Keterangan Project",
+        },
+        deadline: {
+            required: "Masukan Deadline Project",
+        },
+        status: {
+            required: "Masukan Status Project",
+        },
+        jenis: {
+            required: "Masukan Jenis Project",
+        },
         nama_lengkap: {
             required: "Masukan Nama Team",
-            // minlength: "Your username must consist of at least 3 characters",
         },
         jobdesk: {
             required: "Masukan Jobdesk",
+        },
+        nama_jobdesk: {
+            required: "Isi Nama Jobdesk",
+        },
+        nama_layanan: {
+            required: "Layanan Harus diisi",
+        },
+        deskripsi: {
+            required: "Layanan Harus diisi",
+        },
+        icon: {
+            required: "Layanan Harus diisi",
+        },
+        whatsapp: {
+            required: "Layanan Harus diisi",
         },
         // "val-email": "Please enter a valid email address",
         // "val-password": {

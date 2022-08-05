@@ -32,8 +32,7 @@ class C_kritikSaran extends Controller
     {
         $kritikSaran = M_kritikSaran::find($id);
         $kritikSaran->delete();
-        Alert::success('data berhasil di hapus');
-        return redirect('/kritikSaran');
+        return redirect('/kritikSaran')->with('success','kritik saran berhasil dihapus');
     }
 
     /**

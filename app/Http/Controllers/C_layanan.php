@@ -10,7 +10,7 @@ class C_layanan extends Controller
 {
     public function index(){
         $layanan = M_layanan::latest()->get();
-       
+
         if(request('search')){
             $layanan->where('nama','like','%'.request('search').'%');
         }
@@ -21,8 +21,8 @@ class C_layanan extends Controller
             'no' => $no
         ]);
     }
-    
-    public function create(){       
+
+    public function create(){
         return view('adminView.layanan.A_layanan',[
             'title' => 'Add Layanan'
         ]);
@@ -30,27 +30,27 @@ class C_layanan extends Controller
 
     public function store(Request $request){
         $validasi = $request->validate([
-            'nama' => 'required|max:100|unique:layanan',
+            'nama_layanan' => 'required|max:100|unique:layanan',
             "deskripsi" => "required|max:255",
             "icon" => "required|max:100|unique:layanan",
             "whatsapp"=>"required"
         ]);
 
         M_layanan::create($validasi);
-        
+
         return redirect("/layanan")->with("success", "New layanan has beed added");
     }
 
     public function update(Request $request, M_layanan $layanan){
         $validasi = $request->validate([
-            "nama" => "required|max:100",
+            "nama_layanan" => "required|max:100",
             "deskripsi" => "required|max:255",
             "icon" => "required|max:100",
             "whatsapp"=>"required",
         ]);
 
         $layanan->update($validasi);
-        
+
         return redirect("/layanan")->with("success", "layanan has beed updated");
     }
 
