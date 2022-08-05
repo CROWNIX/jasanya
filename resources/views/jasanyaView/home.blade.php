@@ -45,7 +45,7 @@
     <section class="container-xxl">
         <div class="container py-5 px-lg-5">
             <div class="row">
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 wow fadeInUp mb-3" data-wow-delay="0.1s">
                     <div class="feature-item bg-light rounded text-center p-4 shadow">
                         <i class="fa fa-3x fa-server text-primary mb-4"></i>
                         <h5 class="mb-3">API</h5>
@@ -53,7 +53,7 @@
                             komponen perangkat lunak</p>
                     </div>
                 </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4 wow fadeInUp mb-3" data-wow-delay="0.3s">
                     <div class="feature-item bg-light rounded text-center p-4 shadow">
                         <i class="fa fa-3x fa-mobile text-primary mb-4"></i>
                         <h5 class="mb-3">Aplikasi Mobile</h5>
@@ -61,7 +61,7 @@
                             bergerak (Mobile)</p>
                     </div>
                 </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-4 wow fadeInUp mb-3" data-wow-delay="0.5s">
                     <div class="feature-item bg-light rounded text-center p-4 shadow">
                         <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
                         <h5 class="mb-3">UI / UX</h5>
@@ -130,22 +130,22 @@
     <section class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 px-lg-5">
             <div class="row">
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn mb-3 mb-lg-0" data-wow-delay="0.1s">
                     <i class="fa fa-certificate fa-3x text-secondary mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">{{ $hari }}</h1>
                     <p class="text-white mb-0">Days Experience</p>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn mb-3 mb-lg-0" data-wow-delay="0.3s">
                     <i class="fa fa-users-cog fa-3x text-secondary mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">7</h1>
                     <p class="text-white mb-0">Team Members</p>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn mb-3 mb-lg-0" data-wow-delay="0.5s">
                     <i class="fa fa-users fa-3x text-secondary mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">{{ $client }}</h1>
                     <p class="text-white mb-0">Satisfied Clients</p>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn mb-3 mb-lg-0" data-wow-delay="0.7s">
                     <i class="fa fa-check fa-3x text-secondary mb-3"></i>
                     <h1 class="text-white mb-2" data-toggle="counter-up">{{ $count }}</h1>
                     <p class="text-white mb-0">Compleate Projects</p>
@@ -164,7 +164,7 @@
                 <h1 class="text-center mb-5">Jasa Kami</h1>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp mb-3" data-wow-delay="0.1s">
                     <div class="service-item d-flex flex-column text-center rounded">
                         <div class="service-icon flex-shrink-0 ">
                             <i class="fa fa-laptop fa-2x"></i>
@@ -176,7 +176,7 @@
                             target="blank"><i class="fa fa-phone-alt"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp mb-3" data-wow-delay="0.3s">
                     <div class="service-item d-flex flex-column text-center rounded">
                         <div class="service-icon flex-shrink-0">
                             <i class="fa fa-laptop-code fa-2x"></i>
@@ -188,7 +188,7 @@
                             target="blank"><i class="fa fa-phone-alt"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp mb-3" data-wow-delay="0.5s">
                     <div class="service-item d-flex flex-column text-center rounded">
                         <div class="service-icon flex-shrink-0">
                             <i class="fa fa-mobile fa-2x"></i>
@@ -283,7 +283,7 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-floating">
+                                <div class="form-floating mb-3 mb-sm-0">
                                     <input type="text" class="form-control" name="name" id="name"
                                         placeholder="Your Name" maxlength="35">
                                     <label for="name">Your Name</label>
