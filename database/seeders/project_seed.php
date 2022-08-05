@@ -18,12 +18,12 @@ class project_seed extends Seeder
         $project = [
             [
                 'nama_client' => 'rama',
-                'jenis'=>'AplikasiMobile',
+                'jenis'=> null,
                 'nama_project' => 'Aplikasi Mobile dart flutter',
                 'deskripsi' => 'pembuatan aplikasi mobile dengan dart flutter',
                 'status' => 'Special',
                 'pekerja'=>'["Syaiban Ahmad Ramadhan"]',
-                'foto_completed' => 'imgCompleted/ramaMobile.png',
+                'foto_completed' => null,
             ],
             [
                 'nama_client' => 'client1',
