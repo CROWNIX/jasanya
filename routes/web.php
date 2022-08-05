@@ -46,7 +46,6 @@ Route::group(['prefix' => '/'], function () {
 
     // layanan
     Route::resource('layanan', C_layanan::class)->middleware('auth');
-    Route::get('/addlayanan', [C_layanan::class, 'formAddLayanan'])->middleware('auth');
 
     // project
     Route::resource('project', C_project::class);
@@ -56,7 +55,6 @@ Route::group(['prefix' => '/'], function () {
 // Route::get('/token',function(){
 //     return csrf_token(); 
 // });
-
 
 // login & Register
 Route::get('/login', [C_login::class, 'index'])->middleware('guest');

@@ -4,7 +4,7 @@
 <div class="wrapper">
     <div class="main-header">
         <!-- Logo Header -->
-        <div class="logo-header" data-background-color="dark2">
+        <div class="logo-header" data-background-color="blue">
 
             <a href="index.html" class="logo">
                 <img src="atlantisTemplate/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
@@ -33,11 +33,11 @@
     @include('partials.sidebarAdmin')
     <!-- End Sidebar -->
 
-    <div class="main-panel">
+    <main class="main-panel">
         <div class="content">
-            <div class="page-inner">
+            <div class="page-inner bg-primary-gradient">
                 <div class="mt-2 mb-4">
-                    <h2 class="text-white pb-2">Welcome back, {{ auth()->user()->name }}</h2>
+                    <h2 class="text-white pb-2 fw-bold">Welcome back, {{ auth()->user()->name }}</h2>
                     <h5 class="text-white op-7 mb-4">Yesterday I was clever, so I wanted to change the world. Today I am
                         wise, so I am changing myself.</h5>
                 </div>
@@ -303,8 +303,8 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar">
-                                        <img src="atlantisTemplate/assets/img/logoproduct3.svg"
-                                            alt="atlantisTemplate." class="avatar-img rounded-circle">
+                                        <img src="atlantisTemplate/assets/img/logoproduct3.svg" alt="atlantisTemplate."
+                                            class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
                                         <h6 class="fw-bold mb-1">Ready Pro</h6>
@@ -328,8 +328,8 @@
                                 <div class="card-list">
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg"
-                                                alt="atlantisTemplate." class="avatar-img rounded-circle">
+                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg" alt="atlantisTemplate."
+                                                class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
                                             <div class="username">Jimmy Denis</div>
@@ -341,8 +341,8 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="atlantisTemplate/assets/img/chadengle.jpg"
-                                                alt="atlantisTemplate." class="avatar-img rounded-circle">
+                                            <img src="atlantisTemplate/assets/img/chadengle.jpg" alt="atlantisTemplate."
+                                                class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
                                             <div class="username">Chad</div>
@@ -393,8 +393,8 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg"
-                                                alt="atlantisTemplate." class="avatar-img rounded-circle">
+                                            <img src="atlantisTemplate/assets/img/jm_denis.jpg" alt="atlantisTemplate."
+                                                class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
                                             <div class="username">Jimmy Denis</div>
@@ -574,7 +574,7 @@
                 </div> --}}
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Custom template | don't include it in your project! -->
     @include('partials.theme')

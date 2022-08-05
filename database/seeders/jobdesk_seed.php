@@ -17,16 +17,16 @@ class jobdesk_seed extends Seeder
     {
         $jobdesk = [
             [
-                'nama'=> 'Back End',
+                'nama_jobdesk'=> 'Back End',
             ],
             [
-                'nama'=>'Full Stack',
+                'nama_jobdesk'=>'Full Stack',
             ],
             [
-                'nama'=>'Frontend & UI/UX design',
+                'nama_jobdesk'=>'Frontend & UI/UX design',
             ],
             [
-                'nama'=>'UI/UX design',
+                'nama_jobdesk'=>'UI/UX design',
             ]
         ];
         DB::table('jobdesk')->insert($jobdesk);

@@ -9,7 +9,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class C_kritikSaran extends Controller
 {
-    
+
     public function home(){
         return view('adminView.home',['title'=>'admin']);
     }
@@ -17,7 +17,7 @@ class C_kritikSaran extends Controller
     // kritik saran
     public function getKritikSaran()
     {
-       
+
         $no = 1;
         $kritikSaran = M_kritikSaran::latest()->get();
         return view('adminView.S_kritikSaran',compact('kritikSaran'),['no'=>$no,'title'=>'kritiksaran']);
@@ -32,8 +32,7 @@ class C_kritikSaran extends Controller
     {
         $kritikSaran = M_kritikSaran::find($id);
         $kritikSaran->delete();
-        Alert::success('data berhasil di hapus');
-        return redirect('/kritikSaran'); 
+        return redirect('/kritikSaran')->with('success','kritik saran berhasil dihapus');
     }
 
     /**
@@ -52,12 +51,11 @@ class C_kritikSaran extends Controller
     public function kritikSaran(Request $request)
     {
         $kritikSaran = new M_kritikSaran;
-        $kritikSaran->name = $request->name;
-        $kritikSaran->email = $request->email;
+        $kritikSaran->name = $request->name_email;
+        $kritikSaran->email = $request->email_kritik;
         $kritikSaran->subject = $request->subject;
         $kritikSaran->message = $request->message;
         $kritikSaran->save();
-        Alert::success('kritik/saran berhasil dikirim, terimakasih');
-        return redirect('/#contact'); 
+        return redirect('/#contact')->with('success','kritik atau saran anda telah dikirim');
     }
 }

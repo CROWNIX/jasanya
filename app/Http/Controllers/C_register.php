@@ -20,10 +20,9 @@ class C_register extends Controller
             'email'=>'required|email:rfc,dns|unique:users',
             'password'=>'required'
         ]);
-        
+
         $message['password'] = Hash::make($message['password']);
         User::create($message);
-        $request->session()->flash('succes','register berhasil');
-        return redirect()->route('R_login.index');
+        return redirect('/admin')->with('success','register berhasil');
     }
 }

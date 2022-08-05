@@ -1,4 +1,4 @@
-<div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+<footer class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5 px-lg-5">
         <div class="row g-5">
             <div class="col-md-6 col-lg-3">
@@ -18,10 +18,7 @@
                 <a class="btn btn-link" href=" {{ url('/#home') }} ">Home</a>
                 <a class="btn btn-link" href=" {{ url('/#about') }} ">About Us</a>
                 <a class="btn btn-link" href=" {{ url('/#service') }} ">Service</a>
-                <a class="btn btn-link" href=" {{ url('./#contact') }} ">Contact Us</a>
                 <a class="btn btn-link" href=" {{ url('/team') }} ">Team</a>
-                {{-- <a class="btn btn-link" href="">Terms & Condition</a> --}}
-                {{-- <a class="btn btn-link" href="">Career</a> --}}
             </div>
             <div class="col-md-6 col-lg-3">
                 <p class="section-title text-white h5 mb-4">Gallery</p>
@@ -69,15 +66,15 @@
                     Distributed By a <a class="border-bottom" href="https://themewagon.com"
                         target="_blank">ThemeWagon</a>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
+                {{-- <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
                         <a href="{{ url('/#home') }}">Home</a>
                         <a href="">Cookies</a>
                         <a href="">Help</a>
                         <a href="">FQAs</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
-</div>
+</footer>

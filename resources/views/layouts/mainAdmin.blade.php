@@ -1,10 +1,10 @@
-@if ($title === 'Edit Project')
+@if ($title === 'Edit Project' || $title==="edit team" || $title === "Add Layanan")
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Jasanya | Admin</title>
+	<title>Jasanya | {{ $title }}</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="/atlantisTemplate/assets/img/icon.ico" type="image/x-icon" />
 
@@ -29,7 +29,7 @@
 
 </head>
 
-<body data-background-color="dark">
+<body>
 	@yield('container')
 </body>
 <!--   Core JS Files   -->
@@ -73,6 +73,10 @@
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="/atlantisTemplate/assets/js/setting-demo2.js"></script>
 <script src="/atlantisTemplate/assets/js/demo.js"></script>
+
+{{-- validasi --}}
+<script src="/atlantisTemplate/assets/validation/jquery.validate.min.js"></script>
+<script src="/atlantisTemplate/assets/validation/jquery.validate-init.js"></script>
 <script>
 	function previewImage(){
         const image = document.querySelector('#foto');
@@ -203,7 +207,7 @@
 
 </head>
 
-<body data-background-color="dark">
+<body>
 	@yield('container')
 </body>
 <!--   Core JS Files   -->
@@ -244,9 +248,14 @@
 <!-- Atlantis JS -->
 <script src="atlantisTemplate/assets/js/atlantis.min.js"></script>
 
+{{-- validasi --}}
+<script src="atlantisTemplate/assets/validation/jquery.validate.min.js"></script>
+<script src="atlantisTemplate/assets/validation/jquery.validate-init.js"></script>
+
 <!-- Atlantis DEMO methods, don't include it in your project! -->
 <script src="atlantisTemplate/assets/js/setting-demo2.js"></script>
 <script src="atlantisTemplate/assets/js/demo.js"></script>
+
 <script>
 	function previewImage(){
         const image = document.querySelector('#foto');

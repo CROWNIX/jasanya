@@ -1,13 +1,13 @@
 @extends('layouts.mainAdmin')
 
 @section('container')
-<div class="wrapper sidebar_minimize">
+<div class="wrapper">
     <!-- Navbar Header -->
     @include('partials.navbarAdmin')
     <!-- End Navbar -->
     <!-- Sidebar -->
     @include('partials.sidebarAdmin')
-    <div class="main-panel">
+    <main class="main-panel">
         <div class="content">
             <div class="page-inner">
                 <x-headerTableForm>
@@ -52,12 +52,14 @@
                                                             aria-expanded="false"><i
                                                                 class="fas fa-ellipsis-v"></i></button>
                                                         <div class="dropdown-menu">
-                                                            <button class="btn" type="button" data-toggle="modal"
-                                                                data-target="#addRowModal{{ $x->id }}">detail</button>
+                                                                <button class="btn dropdown-item" type="button"
+                                                                data-toggle="modal"
+                                                                data-target="#addRowModal{{ $x->id }}">Detail</button>
                                                             <div role="separator" class="dropdown-divider"></div>
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn">Hapus</button>
+                                                            <button type="submit"
+                                                                class="btn dropdown-item">Hapus</button>
                                                         </div>
                                                     </form>
                                                     <div class="modal fade" id="addRowModal{{ $x->id }}" tabindex="-1"
@@ -133,7 +135,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Custom template | don't include it in your project! -->
     @include('partials.theme')

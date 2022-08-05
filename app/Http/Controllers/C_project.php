@@ -14,23 +14,23 @@ class C_project extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\M_project 
+     * @param  \App\M_project
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
         $project = M_project::latest()->get();
 
-        if (request('search')){
-            $project->where('nama','like','%'.request('search').'%');
+        if (request('search')) {
+            $project->where('nama', 'like', '%' . request('search') . '%');
         }
-
         $no = 1;
-        $noDetail = 0;
-        return view('adminView.project.S_project',[
+        $noDetail = 1;
+        return view('adminView.project.S_project', [
             'no' => $no,
-            'title' => 'Project',
+            'title' => 'project',
             'project' => $project,
-            'noDetail' => $noDetail
+            'noDetail' => $noDetail,
         ]);
     }
 
@@ -38,38 +38,37 @@ class C_project extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \App\M_project  $id
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(Request $request, M_project $project)
+    {
         $validasi = $request->validate([
-            'foto_transaksi' => 'required|file|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'nama_client' => 'required',
+            'nama_project' => 'required',
+            'deskripsi' => 'required',
+            'keterangan' => 'required',
+            'deadline' => 'required',
+            'status' => 'required',
+            'jenis' => 'required',
+            'foto_transaksi' => 'file|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
-        if($request->file('foto_transaksi')){
-            $validasi['foto_transaksi']=$request->file('foto_transaksi')->store('imgTransaksi','public');
+        if ($request->file('foto_transaksi')) {
+            $validasi['foto_transaksi'] = $request->file('foto_transaksi')->store('imgTransaksi', 'public');
         }
+        $validasi['pekerja'] = json_encode($request->pekerja);
+        $project->create($validasi);
 
-        $project = new M_project;
-        $project->nama_project=$request->nama_project;
-        $project->nama_client=$request->nama_client;
-        $project->deskripsi=$request->deskripsi;
-        $project->jenis=$request->jenis;
-        $project->foto_transaksi=$validasi['foto_transaksi'];
-        $project->deadline=$request->deadline;
-        $project->status=$request->status;
-        $project->keterangan=$request->keterangan;
-        $project['pekerja']=json_encode($request->pekerja);
-        $project->save();
-
-        return redirect("/project")->with("success", "New Project has beed added");
+        return redirect('/project')->with('success', 'New Project has beed added');
     }
 
-    public function addProject(){
-
-        return view('adminView.project.A_project',[
-            "title" => "Add Project",
-            "pekerja" => M_team::latest()->get(),
-            "layanan" => M_layanan::latest()->get()
+    public function addProject()
+    {
+        return view('adminView.project.A_project', [
+            'title' => 'Add Project',
+            'pekerja' => M_team::latest()->get(),
+            'layanan' => M_layanan::latest()->get(),
         ]);
     }
 
@@ -78,23 +77,24 @@ class C_project extends Controller
         $M_jobdesk = M_team::latest();
         $project = M_project::find($id);
         $arrayPekerja = json_decode($project->pekerja);
-        return view('adminView.project.E_project',[
-            'title'=>'edit',
-            'pekerja'=>$M_jobdesk->get(),
-            'project'=>$project,
-            'arrayPekerja'=>$arrayPekerja
+        return view('adminView.project.E_project', [
+            'title' => 'edit',
+            'pekerja' => $M_jobdesk->get(),
+            'project' => $project,
+            'arrayPekerja' => $arrayPekerja,
         ]);
     }
 
-    public function edit(M_project $project){
+    public function edit(M_project $project)
+    {
         $arrayPekerja = json_decode($project->pekerja);
-        
-        return view('adminView.project.E_project',[
+
+        return view('adminView.project.E_project', [
             'title' => 'Edit Project',
             'pekerja' => M_team::latest()->get(),
             'project' => $project,
             'arrayPekerja' => $arrayPekerja,
-            "layanan" => M_layanan::latest()->get()
+            'layanan' => M_layanan::latest()->get(),
         ]);
     }
     /**
@@ -104,51 +104,40 @@ class C_project extends Controller
      * @param  \App\M_project  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, M_project $project){
+    public function update(Request $request, M_project $project)
+    {
         $validasi = $request->validate([
-            "nama_client" => "required",
-            "nama_project" => "required",
-            "deskripsi" => "required",
-            "keterangan" => "required",
-            "deadline" => "required",
-            "status" => "required",
-            "jenis" => "required",
-            "foto_transaksi" => "file|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
-            "foto_completed" => "file|image|mimes:jpg,png,jpeg,gif,svg|max:2048"
+            'nama_client' => 'required',
+            'nama_project' => 'required',
+            'deskripsi' => 'required',
+            'keterangan' => 'required',
+            'deadline' => 'required',
+            'status' => 'required',
+            'jenis' => 'required',
+            'time_completed' => '',
+            'foto_transaksi' => 'file|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'foto_completed' => 'file|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
-        if($request->file('foto_transaksi')){
-            if($request->oldfoto_transaksi){
+        if ($request->file('foto_transaksi')) {
+            if ($request->oldfoto_transaksi) {
                 Storage::delete($project->foto_transaksi);
             }
 
-            $validasi['foto_transaksi'] = $request->file('foto_transaksi')->store('imgTransaksi');
+            $validasi['foto_transaksi'] = $request->file('foto_transaksi')->store('imgTransaksi', 'public');
         }
 
-        if($request->file('foto_completed')){
-            if($request->oldfoto_completed){
+        if ($request->file('foto_completed')) {
+            if ($request->oldfoto_completed != 'imgCompleted/ramaMobile.png') {
                 Storage::delete($project->foto_completed);
             }
 
-            $validasi['foto_completed'] = $request->file('foto_completed')->store('imgCompleted');
+            $validasi['foto_completed'] = $request->file('foto_completed')->store('imgCompleted', 'public');
         }
-        
-        
-
-        
-        // if ($request->file('foto_completed')){
-        //     if($request->oldfoto_completed){
-            //         Storage::delete('public/'.$request->oldfoto_completed);
-        //     }
-        //     $validasi['foto_completed']=$request->file('foto_completed')->store('imgComplete','public');
-        // }else {
-        //     $validasi['foto_completed']=$project->foto_completed;
-        // }
-        
         $validasi['pekerja'] = json_encode($request->pekerja);
         $project->update($validasi);
-        
-        return redirect("/project")->with("success", "Project has beed updated");
+
+        return redirect('/project')->with('success', 'Project has beed updated');
     }
 
     /**
@@ -157,13 +146,24 @@ class C_project extends Controller
      * @param  \App\M_project  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id){
+    public function destroy($id)
+    {
         $project = M_project::find($id);
-        if ($project->foto_transaksi) {
-            Storage::delete('public/'.$project->foto_transaksi);
+        if ($project->status === 'Completed') {
+            return redirect('/project')->with('error', 'status project Completed tidak bisa dihapus');
+        } elseif ($project->status === 'In progress') {
+            return redirect('/project')->with('error', 'status project In progress tidak bisa dihapus');
+        } elseif ($project->status === 'Special') {
+            return redirect('/project')->with('error', 'status project Special tidak bisa dihapus');
         }
-        Storage::delete('public/'.$project->foto_completed);
+        if ($project->foto_transaksi) {
+            Storage::delete('public/' . $project->foto_transaksi);
+        }
+        if ($project->foto_completed != 'imgCompleted/ramaMobile.png') {
+            Storage::delete('public/' . $project->foto_completed);
+        }
+
         $project->delete();
-        return redirect("/project");
+        return redirect('/project')->with('success', 'Project has been delete');
     }
 }

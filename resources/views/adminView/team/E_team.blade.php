@@ -1,99 +1,120 @@
 @extends('layouts.mainAdmin')
 
 @section('container')
-<div class="wrapper sidebar_minimize">
+    <div class="wrapper">
 
-    {{-- side bar --}}
-    @include('partials.navbarAdmin')
-    {{-- end side bar --}}
+        {{-- side bar --}}
+        @include('partials.navbarAdmin')
+        {{-- end side bar --}}
 
-    <div class="container-fluid page-body-wrapper">
+        <div class="container-fluid page-body-wrapper">
 
-        {{-- navbar --}}
-        @include('partials.sidebarAdmin')
-        {{-- end navbar --}}
+            {{-- navbar --}}
+            @include('partials.sidebarAdmin')
+            {{-- end navbar --}}
 
 
-        <div class="main-panel">
-            <div class="content">
-                <div class="page-inner">
-                    <x-headerTableForm>
-                        @slot('nama')
-                        Form Add Team
-                        @endslot
-                        @slot('url')
-                        team
-                        @endslot
-                        @slot('nameurl')
-                        Team
-                        @endslot
-                    </x-headerTableForm>
-                    <div class="row">
-                        <div class="col-12 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <form class="forms-sample" method="POST"
-                                        action="{{ route('team.update',$M_team->id) }}" enctype="multipart/form-data">
-                                        @csrf
-                                        @method('PUT')
-                                        <input type="hidden" name="oldFoto" id="" value="{{ $M_team->foto }}">
-                                        @if ($M_team->foto)
-                                        <img class="img-show rounded mx-auto d-block"
-                                            src="{{ asset('storage/'.$M_team->foto) }}" style="height: 200px"
-                                            alt="asdr">
-                                        @else
-                                        <img class="img-show rounded mx-auto d-block" alt="">
-                                        @endif
-                                        <div class="form-group align-items-center">
-                                            <label for="foto">Foto Team</label>
-                                            <input type="file" name="foto" class="form-control-file" id="foto"
-                                                onchange="previewImage()">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="name">Name</label>
-                                            <input type="text" name="name" class="form-control" id="name"
-                                                value="{{ $M_team->nama_lengkap }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Jobdesk</label>
-                                            <select name="jobdesk" class="form-control" style="width:100%" required>
-                                                <option value="{{ $M_team->jobdesk }}">{{ $M_team->jobdesk }}</option>
-                                                @foreach ( $M_jobdesk as $x )
-                                                <option value="{{ $x->nama }}">{{ $x->nama }}</option>
-                                                @endforeach ()
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="instagram">instagram</label>
-                                            <input type="text" class="form-control" name="instagram" id="instagram"
-                                                value="{{ $M_team->instagram }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="github">github</label>
-                                            <input type="text" class="form-control" name="github" id="github"
-                                                value="{{ $M_team->github }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="linkedin">linkedin</label>
-                                            <input type="text" class="form-control" name="linkedin" id="linkedin"
-                                                value="{{ $M_team->linkedin }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="facebook">facebook</label>
-                                            <input type="text" class="form-control" name="facebook" id="facebook"
-                                                value="{{ $M_team->facebook }}">
-                                        </div>
+            <main class="main-panel">
+                <div class="content">
+                    <div class="page-inner">
+                        <x-headerTableForm>
+                            @slot('nama')
+                                Form Add Team
+                            @endslot
+                            @slot('url')
+                                team
+                            @endslot
+                            @slot('nameurl')
+                                Team
+                            @endslot
+                        </x-headerTableForm>
+                        <div class="row">
+                            <div class="col-12 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="forms-sample" method="POST" action="/team/{{ $team->id }}"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
 
-                                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <button class="btn btn-dark">Cancel</button>
-                                    </form>
+                                            <div class="form-group row has-success">
+                                                <label for="name" class="col-lg-4 col-form-label">Name Team</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" name="nama_lengkap" class="form-control"
+                                                        id="name"
+                                                        value="{{ $team->nama_lengkap }}"placeholder="Enter Name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row has-success">
+                                                <label class="col-lg-4 col-form-label">Jobdesk</label>
+                                                <div class="col-lg-6">
+                                                    <select name="jobdesk" class="form-control" style="width:100%" required>
+                                                        <option value="{{ $team->jobdesk }}">{{ $team->jobdesk }}</option>
+                                                        @foreach ($M_jobdesk as $x)
+                                                            <option value="{{ $x->nama }}">{{ $x->nama }}</option>
+                                                        @endforeach ()
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row has-success">
+                                                <label class="col-lg-4 col-form-label" for="instagram">instagram</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" name="instagram"
+                                                        id="instagram" value="{{ $team->instagram }}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row has-success">
+                                                <label class="col-lg-4 col-form-label" for="github">github</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" name="github" id="github"
+                                                        value="{{ $team->github }}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row has-success">
+                                                <label class="col-lg-4 col-form-label" for="linkedin">linkedin</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" name="linkedin"
+                                                        id="linkedin" value="{{ $team->linkedin }}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row has-success">
+                                                <label class="col-lg-4 col-form-label" for="facebook">facebook</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control" name="facebook"
+                                                        id="facebook" value="{{ $team->facebook }}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row has-success">
+                                                <label class="col-lg-4 col-form-label" for="foto">Foto Team</label>
+                                                <div class="col-lg-6">
+                                                    @if ($team->foto)
+                                                        <img class="img-show rounded mx-auto d-block"
+                                                            src="{{ asset('storage/' . $team->foto) }}"
+                                                            style="height: 200px" alt="tidak ada foto team">
+                                                    @else
+                                                    @endif
+                                                    <img class="img-show img-fluid mb-3 rounded d-block" alt="">
+                                                    <input type="file" name="foto" class="form-control" id="foto"
+                                                        onchange="previewImage()">
+                                                    <input type="hidden" name="oldFoto" id=""
+                                                        value="{{ $team->foto }}">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row has-success">
+                                                <div class="col-lg-8 ml-auto">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                    <a href="/team" class="btn btn-dark">Cancel</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
         </div>
     </div>
-</div>
 @endsection

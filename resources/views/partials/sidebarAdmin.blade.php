@@ -1,8 +1,8 @@
-<div class="sidebar sidebar-style-2" data-background-color="dark2">
+<aside class="sidebar sidebar-style-2">
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <div class="user">
-                @if ($title === 'edit')
+                @if ($title === 'Edit Project' || $title === "edit team")
                 <div class="avatar-sm float-left mr-2">
                     <img src="/atlantisTemplate/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
                 </div>
@@ -90,13 +90,13 @@
                         <p>Layanan</p>
                     </a>
                 </li>
-                <li class="nav-item {{ $title==='project' ? 'active' :'' }} {{ $title==='addproject' ?'active':'' }}">
+                <li class="nav-item {{ $title==='project' ? 'active' :'' }} {{ $title==='Add Project' ?'active':'' }}">
                     <a data-toggle="collapse" href="#Project" class="collapsed" aria-expanded="false">
                         <i class="fas fa-home"></i>
                         <p>Project</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse {{ $title==='project' ? 'show' :'' }} {{ $title==='addproject' ?'show':'' }}"
+                    <div class="collapse {{ $title==='project' ? 'show' :'' }} {{ $title==='Add Project' ?'show':'' }}"
                         id="Project">
                         <ul class="nav nav-collapse">
                             <li class="{{ $title==='project' ? 'active' :'' }}">
@@ -104,7 +104,7 @@
                                     <span class="sub-item">Project</span>
                                 </a>
                             </li>
-                            <li class="{{ $title==='addproject' ? 'active' :'' }}">
+                            <li class="{{ $title==='Add Project' ? 'active' :'' }}">
                                 <a href="{{ url('/addProject ') }}">
                                     <span class="sub-item">add Project</span>
                                 </a>
@@ -128,4 +128,4 @@
             </ul>
         </div>
     </div>
-</div>
+</aside>

@@ -10,7 +10,7 @@ class C_jobdesk extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\M_jobdesk 
+     * @param  \App\M_jobdesk
      * @return \Illuminate\Http\Response
      */
     public function index (){
@@ -27,14 +27,26 @@ class C_jobdesk extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \App\M_jobdesk  $id
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        $M_jobdesk = new M_jobdesk;
-        $M_jobdesk->nama = $request->name;
-        $M_jobdesk->save();
+        $validasi = $request->validate([
+            "nama_jobdesk" => "required|max:100|unique:jobdesk"
+        ]);
+        M_jobdesk::create($validasi);
         return redirect()->route('jobdesk.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success','Jobdesk has been add successfully');
+    }
+
+    public function update(Request $request, M_jobdesk $jobdesk){
+        $validasi = $request->validate([
+            "nama_jobdesk" => "required|max:100|unique:jobdesk"
+        ]);
+
+        $jobdesk->update($validasi);
+
+        return redirect("/jobdesk")->with('success','Jobdesk has been updated');
     }
 
     /**
@@ -48,6 +60,6 @@ class C_jobdesk extends Controller
         $M_jobdesk = M_jobdesk::find($id);
         $M_jobdesk->delete();
         return redirect()->route('jobdesk.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success','Jobdesk deleted successfully');
     }
 }
