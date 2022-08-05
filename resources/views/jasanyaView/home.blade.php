@@ -284,29 +284,30 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-sm-0">
-                                    <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Your Name" maxlength="35">
+                                    <input type="text" class="form-control" name="name_email" id="name"
+                                        placeholder="Your Name" maxlength="35" required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" maxlength="35">
+                                    <input type="email" class="form-control" name="email_kritik" id="email"
+                                        placeholder="Your Email" maxlength="35" required>
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12 mt-3">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" name="subject" id="subject"
-                                        placeholder="Subject">
+                                        placeholder="Subject" required>
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12 mt-3">
                                 <div class="form-floating">
                                     <textarea class="form-control" name="message" placeholder="Leave a message here"
-                                        id="message" style="height: 150px"></textarea>
+                                        id="message" style="height: 150px" required></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>

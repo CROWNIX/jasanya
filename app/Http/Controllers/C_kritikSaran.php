@@ -51,8 +51,8 @@ class C_kritikSaran extends Controller
     public function kritikSaran(Request $request)
     {
         $kritikSaran = new M_kritikSaran;
-        $kritikSaran->name = $request->name;
-        $kritikSaran->email = $request->email;
+        $kritikSaran->name = $request->name_email;
+        $kritikSaran->email = $request->email_kritik;
         $kritikSaran->subject = $request->subject;
         $kritikSaran->message = $request->message;
         $kritikSaran->save();
