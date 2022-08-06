@@ -47,6 +47,7 @@ class C_home extends Controller
                 }
             }
         }
+
         
         return view('jasanyaView.team',compact('M_team'),['title'=>'team']);
     }
