@@ -35,8 +35,20 @@ class C_home extends Controller
     public function team()
     {
         $M_team = M_team::all();
+        $jobdesk = ["Full Stack", "UI/UX design", "Back End"];
+
+        for ($jobdeskIndex = 0; $jobdeskIndex < count($jobdesk); $jobdeskIndex++) { 
+            for ($i = 0; $i < count($M_team); $i++) { 
+                if ($M_team[$i]->jobdesk == $jobdesk[$jobdeskIndex]) {
+                    $temp = $M_team[$jobdeskIndex];
+                    $M_team[$jobdeskIndex] = $M_team[$i];
+                    $M_team[$i] = $temp;
+                    break;
+                }
+            }
+        }
+        
         return view('jasanyaView.team',compact('M_team'),['title'=>'team']);
     }
 
 }
-
